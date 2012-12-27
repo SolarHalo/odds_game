@@ -1,9 +1,9 @@
 <?php
 include "../../configs/load.php";
 
-//if(!array_key_exists('administrator', $_SESSION)){
-//	header("Location: login.php");
-//}
+if(!array_key_exists('administrator', $_SESSION)){
+	header("Location: login.php");
+}
 
 
 

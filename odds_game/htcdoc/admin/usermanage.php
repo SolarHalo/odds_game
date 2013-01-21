@@ -9,9 +9,9 @@ if(array_key_exists('type', $_GET)){
 	$mgtype = 'user';
 }
 
-if(!array_key_exists('administrator', $_SESSION)){
-	header("Location: login.php");
-}
+//if(!array_key_exists('administrator', $_SESSION)){
+//	header("Location: login.php");
+//}
 
 
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-01-21 04:35:13
+<?php /* Smarty version Smarty-3.1.13, created on 2013-01-22 10:28:58
          compiled from "G:\odds_game\odds_game\templates\admin\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2584050fcc58107fdc1-98340540%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'acdd348b527cb548e62bbe41b316e444819bced8' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\admin\\header.tpl',
-      1 => 1357452483,
+      1 => 1358850506,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_50fcc5810d4e97_16903771',
   'variables' => 
   array (
     'modulename' => 0,
     'appname' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_50fcc5810d4e97_16903771',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_50fcc5810d4e97_16903771')) {function content_50fcc5810d4e97_16903771($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="zh_CN">
@@ -39,8 +39,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </head>
 
 <header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1>后台管理</h1>
-    <p class="lead">爱博博彩系统后台管理系统.</p>
+  <div class="container"> 
+    <p class="lead">爱博博彩系统后台管理系统</p>
   </div>
 </header><?php }} ?>

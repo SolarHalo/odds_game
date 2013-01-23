@@ -27,4 +27,8 @@ ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.SMARTY_DIR);
 
 //配置程序根目录,非文档根目录
 define('BASE_HOME', "G:/odds_game/odds_game/");
+//获得http路径的地址
+//define('DOMAIN_HOME', $_SERVER['HTTP_HOST']);
+define('DOMAIN_HOME', "http://localhost/");
+
 ?>

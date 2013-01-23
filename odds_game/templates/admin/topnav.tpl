@@ -14,8 +14,9 @@
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse navbar-responsive-collapse">
 	       <ul class="nav">
-	       		<li {{if $currentnav == 'index'}}class="active"{{/if}}><a href="index.php" >首页</a></li>
-	       		<li {{if $currentnav == 'usermanage'}}class="active"{{/if}}><a href="usermanage.php" >用户管理</a></li>
+	       		<li {{if $currentnav == 'index'}}class="active"{{/if}}><a href="{{$domainname}}index.php" >首页</a></li>
+	       		<li {{if $currentnav == 'usermanage'}}class="active"{{/if}}><a href="{{$domainname}}/admin/usermanage.php" >用户管理</a></li>
+	       		<li {{if $currentnav == 'oddsmanage'}}class="active"{{/if}}><a href="{{$domainname}}/admin/oddsmanage.php" >赛事管理</a></li>
 	       </ul>
       </div>
  

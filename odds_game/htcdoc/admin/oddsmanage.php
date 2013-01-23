@@ -1,5 +1,6 @@
 <?php
 include "../../configs/load.php";
+include BASE_HOME."includes/EventsDBUtil.php";
 
 
 
@@ -12,6 +13,9 @@ include "../../configs/load.php";
 //$admin_user = $_SESSION['administrator'];
 
 $smarty->assign("currentnav" , "oddsmanage");
+$eventsdb = new EventsDBUtil($dbutil);
+$events = $eventsdb->getAllEventsByDateDesc();
+$smarty->assign("events" ,$events);
 
 
 

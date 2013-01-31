@@ -2,6 +2,7 @@
 include "../configs/load.php";
 include BASE_HOME."/includes/IboEvent.class.php";
 
+
 $eventdb = new IboEvent($dbutil);
 
 $events = $eventdb->getAllEvent();
@@ -16,4 +17,5 @@ if($user){
 $smarty->assign("urlroot" , $rooturl);
 $smarty->assign("events", $events);
 $smarty->display("index.tpl");
+
 ?>

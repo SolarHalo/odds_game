@@ -11,8 +11,7 @@
 </head>
 
 <header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1>后台管理</h1>
-    <p class="lead">爱博博彩系统后台管理系统.</p>
+  <div class="container"> 
+    <p class="lead">爱博博彩系统后台管理系统</p>
   </div>
 </header>

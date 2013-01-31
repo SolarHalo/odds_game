@@ -4,9 +4,9 @@
  * Enter description here ...
  * @var unknown_type
  */
-define('DB_NAME', 'ibo'); 
+define('DB_NAME', 'odds_game'); 
 define('DB_USER', 'root'); 
-define('DB_PASSWORD', ''); 
+define('DB_PASSWORD', 'root'); 
 define('DB_HOST', 'localhost'); 
 define('DB_CHARSET', 'utf8'); 
 
@@ -21,13 +21,15 @@ define("ARRAY_A", "array_a");
 define("ARRAY_N", "array_n");
 
 // 手动指定Smarty的libs目录位置
-define('SMARTY_DIR', 'D:/Program Files/wamp/bin/php/SmartyLibs/libs/');
+define('SMARTY_DIR', 'G:/odds_game/odds_game/lib/Smarty-3.1.13/libs/');
 
 ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.SMARTY_DIR);
 
 //配置程序根目录,非文档根目录
-define('BASE_HOME', "E:/gisrespository/personal/php/php/odds_game/odds_game/");
 
-//该程序的URL根目录,如果是网站根目录可不填,否则后面不需要加/
-$rooturl = "";
+define('BASE_HOME', "G:/odds_game/odds_game/");
+//获得http路径的地址
+//define('DOMAIN_HOME', $_SERVER['HTTP_HOST']);
+define('DOMAIN_HOME', "http://localhost/");
+
 ?>

@@ -26,5 +26,8 @@ define('SMARTY_DIR', 'D:/Program Files/wamp/bin/php/SmartyLibs/libs/');
 ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.SMARTY_DIR);
 
 //配置程序根目录,非文档根目录
-define('BASE_HOME', "E:/workspace/personspace/phpspace/phpspace1/odds_game/");
+define('BASE_HOME', "E:/gisrespository/personal/php/php/odds_game/odds_game/");
+
+//该程序的URL根目录,如果是网站根目录可不填,否则后面不需要加/
+$rooturl = "";
 ?>

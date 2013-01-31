@@ -30,7 +30,7 @@ class Administrator{
 	function checkLogin($name, $password){
 		$admin = $this->getAdminByName($name);
 		if($admin){
-			if($passwd == $password){
+			if($admin->admin_passwd == $password){
 				return $admin;
 			}else{
 				return false;

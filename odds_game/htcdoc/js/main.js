@@ -193,6 +193,13 @@ function betNow(){
 			'data': {'method': 'betevent', 'betodd' :betodd},
 			'success': function(data){
 				if(data == "投注已保存成功！"){
+					var betm = 0;
+					$(".betmoney").each(function(){
+						betm += Number($(this).val());
+					});
+					var om = $("#ownmoney").html();
+					om = Number(om) - betm;
+					$("#ownmoney").html(om);
 					$("#betpanel").children().remove();
 				}
 				$("#beterror").html(data);

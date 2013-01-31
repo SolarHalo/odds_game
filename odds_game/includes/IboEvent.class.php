@@ -18,6 +18,7 @@ class IboEvent{
 	
 	function setBet($param){
 		$this->dbutil->insert("ibo_bet", $param);
+		return $this->dbutil->last_error;
 	}
 }
 ?>

@@ -48,5 +48,9 @@ class IboUser{
 		$user = $this->dbutil->get_row("select * from ibo_user where user_email='".$email."'");
 		return $user;
 	}
+	
+	function updateUserMoney($user){
+		$this->dbutil->update("ibo_user", array("user_vmoney"=> $user->user_vmoney), array("user_id"=>$user->user_id) );
+	}
 }
 ?>

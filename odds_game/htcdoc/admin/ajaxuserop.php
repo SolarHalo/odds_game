@@ -29,6 +29,12 @@ if($method == 'addadmin'){
 	$admindb->deleteAdmin($username);
 	echo "success";
 	exit(0);
+}elseif ($method == 'deleteuser'){
+	$username = $_GET['useremail'];
+	$admindb = new Administrator($dbutil);
+	$admindb->deleteUser($useremail);
+	echo "success";
+	exit(0);
 }
 
 ?>

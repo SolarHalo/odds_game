@@ -11,6 +11,5 @@ $smarty = new Smarty_Ibo();
 
 //开启session
 
-$root_path = "/";
 
 ?>

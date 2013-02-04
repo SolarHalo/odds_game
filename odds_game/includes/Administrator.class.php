@@ -20,6 +20,9 @@ class Administrator{
 	 * @param unknown_type $name
 	 */
 	function getAdminByName($name){
+		//echo "<pre>";
+        //print_r("select * from ibo_administrator where admin_name='".$name."'");
+        //exit();
 		return $this->dbutil->get_row("select * from ibo_administrator where admin_name='".$name."'");
 	}
 	/**
@@ -29,8 +32,12 @@ class Administrator{
 	 */
 	function checkLogin($name, $password){
 		$admin = $this->getAdminByName($name);
+		echo $admin->admin_passwd;
+		echo "xxxxxxxxxx";
+		echo $password;
 		if($admin){
-			if($passwd == $password){
+			echo $admin->admin_passwd."      ".$password;
+			if($admin->admin_passwd == $password){
 				return $admin;
 			}else{
 				return false;

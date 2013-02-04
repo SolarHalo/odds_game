@@ -17,6 +17,6 @@ if($user){
 
 $smarty->assign("urlroot" , $rooturl);
 $smarty->assign("events", $events);
-$smarty->display("index.tpl");
+$smarty->display("manager.tpl");
 
 ?>

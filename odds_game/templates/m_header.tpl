@@ -4,6 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="{{$urlroot}}/style/style.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="{{$urlroot}}/js/jquery-1.8.0.min.js"></script> 
+<script type="text/javascript" src="../js/bootstrap.min.js" ></script> 
+<script type="text/javascript" src="../js/bootstrap.min.js" ></script>
+
 <title>iBo123</title>
 </head>
 <div id="box">

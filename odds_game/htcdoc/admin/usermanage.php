@@ -30,6 +30,10 @@ if($mgtype == 'admin'){
 	$admindb = new Administrator($dbutil);
 	$admins = $admindb->getAllAdmins();
 	$smarty->assign('admins', $admins);
+}elseif ($mgtype == 'user'){
+	$admindb = new Administrator($dbutil);
+	$users = $admindb->getAllUsers();
+	$smarty->assign('users',$users);
 }
 
 $smarty->assign("modulename","用户管理首页");

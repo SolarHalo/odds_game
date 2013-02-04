@@ -59,6 +59,14 @@ class Administrator{
 	}
 	
 	/**
+	 * 获取所有的用户.无分页.
+	 * Enter description here ...
+	 */
+	function getAllUsers(){
+		return $this->dbutil->get_results("select * from ibo_user");
+	}
+	
+	/**
 	 * 更新管理员密码
 	 * Enter description here ...
 	 * @param unknown_type $data
@@ -75,6 +83,15 @@ class Administrator{
 	 */
 	function deleteAdmin($username){
 		$this->dbutil->query("delete from ibo_administrator where admin_name='" . $username . "'");
+	}
+	
+/**
+	 * 删除普通用户
+	 * Enter description here ...
+	 * @param unknown_type $username
+	 */
+	function deleteUser($useremail){
+		$this->dbutil->query("delete from ibo_user where user_email='" . $useremail . "'");
 	}
 }
 

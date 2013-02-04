@@ -35,7 +35,10 @@ $(function() {
         $("#pic")[0].src = "./jiantou.jpg";
     	
     });
-   
+ <body>
+<?php
+echo  md5("admin"."iboadmin");
+    
 });
 </script>
  

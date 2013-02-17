@@ -21,6 +21,18 @@ if($method == 'betevent'){
 	}
 	$mybets = $_GET['betodd'];
 	$eventdb = new IboEvent($dbutil);
+	$eids = '';
+	foreach ($mybets as $k => $mybet){
+		$eids = $eids.$k.',';
+	}
+	$eids = substr($eids, 0, strlen($eids) -1);
+	$eventresult = $eventdb->getEventResults($eids);
+	foreach ($eventresult as $res){
+		if($res->event_result != '' && $res->event_result != null){
+			echo "部分赛事已结束，请刷新页面后重新投注！";
+				exit(0);
+		}
+	}
 	$betmoneyC = 0;
 	foreach ($mybets as $key => $mybet){
 		foreach ($mybet as $bet){

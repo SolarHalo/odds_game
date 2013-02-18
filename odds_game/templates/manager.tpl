@@ -71,7 +71,7 @@
             </div>
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
-                	正在历史
+                	投注历史
                     <a href="#">更多</a>
                 </span>
                 <ul class="list-title">
@@ -80,7 +80,7 @@
                     <li class="yked">客队</li>
                     <li class="peil">赔率</li>
                     <li class="touzje">投注金额</li>
-                    <li class="shour">押注正确将收入</li> 
+                    <li class="shour">收入</li> 
                 </ul>
                 <ul class="list-list bg1">
                     <li class="sfp"><font class="bold11">胜</font></li>

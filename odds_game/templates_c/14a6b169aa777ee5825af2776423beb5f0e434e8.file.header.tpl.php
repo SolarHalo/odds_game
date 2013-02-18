@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-02-04 08:49:10
+<?php /* Smarty version Smarty-3.1.13, created on 2013-02-18 15:36:22
          compiled from "G:\odds_game\odds_game\templates\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2005510a20b69eadc2-94889668%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '14a6b169aa777ee5825af2776423beb5f0e434e8' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\header.tpl',
-      1 => 1359967747,
+      1 => 1361201778,
       2 => 'file',
     ),
   ),
@@ -55,13 +55,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             	立即试玩
             </a>
             <?php }else{ ?> 
-            欢迎你:<?php echo $_smarty_tpl->tpl_vars['username']->value;?>
-
-             <a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/manager.php">
-            	管理中心  
-             </a>
-             退出
+            <div class="user_colum">
+            	欢迎你 : <font><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+</font><br />
+				<a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
+/manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">退出</a>
+            </div>
           <?php }?>
 	     
             

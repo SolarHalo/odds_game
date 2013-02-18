@@ -37,9 +37,7 @@ $(function() {
     });
  <body>
 <?php
-echo  md5("admin"."iboadmin");
-    
-});
+ 
 </script>
  
 </head>

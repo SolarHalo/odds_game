@@ -20,7 +20,7 @@
             </a>
           
           {{if $ownmoney eq '未登录' }}
-		    <a href="{{$urlroot}}/register.php">
+		    <a href="{{$urlroot}}/register.php" class="sw-but">
             	立即试玩
             </a>
             {{else}} 

@@ -25,8 +25,8 @@
 							<td>{{$event->event_result}}</td>
 							<td>
 								<a href="#deladminModal" data-toggle="modal" class="btn btn-danger deladmin" un="{{$event->team_main_name}}"><i class="icon-trash icon-white"></i> 删除</a>
-								<a href="eventbetusers.php?event_id={{$event->event_id}}"  class="btn btn-info" target="_blank"><i class="icon-trash icon-white"></i> 投注用户</a>
-								<a href="eventhistoryscore.php?event_id={{$event->event_id}}" class="btn btn-info" target="_blank"><i class="icon-trash icon-white"></i> 历史比分</a>
+								<a href="eventbetusers.php?event_id={{$event->event_id}}"  class="btn btn-info" target="_blank"><i class="icon-user icon-white"></i> 投注用户</a>
+								<a href="eventhistoryscore.php?event_id={{$event->event_id}}" class="btn btn-info" target="_blank"><i class="icon-th-list icon-white"></i> 历史比分</a>
   							</td>
   							<td>
   							</td>

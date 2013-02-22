@@ -22,7 +22,6 @@ class IboEvent{
 											"WHERE e.event_id = o.event_id AND e.event_time > date_format(curdate(), '%Y-%m-%d' ) and e.event_result='' order by e.event_time asc";
 			
 		}
-		echo $sql;
 		return $this->dbutil->get_results($sql);
 	}
 	
@@ -56,9 +55,6 @@ class IboEvent{
 	 * 获取赛事投注的用户列表
 	 */
 	function getEventUserBet($event_id){
-		$event_id = "676";
-//		return $this->dbutil->get_results("select distinct b.user_name from ibo_event e,ibo_bet b 
-//		where e.event_id=b.event_id and e.event_id='".$event_id."'");
 		$sql = "select b.user_name, e.sport_subtype_name,e.team_mian_name,e.team_sec_name, b.bet_vmoney,b.bet_odd,b.odds_name,b.bet_time from ibo_event e,ibo_bet b 
 		where e.event_id=b.event_id and e.event_id='".$event_id."'";
 		return $this->dbutil->get_results($sql);

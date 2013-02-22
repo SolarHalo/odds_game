@@ -15,4 +15,5 @@ class EventsDBUtil{
 		return $this->dbutil->get_results("select * from ibo_event limit 100");
 	}
 	
+	
 }

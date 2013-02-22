@@ -11,7 +11,11 @@ if(array_key_exists('username', $_POST) && array_key_exists('password', $_POST))
 	$result = $admindb->checkLogin($username, encodePassword($password));
 	if($result){
 		$_SESSION['administrator'] = $result;
-		header("Location: index.php");
+		$pageto = $_GET['pageto'];
+		if(!$pageto){
+			$pageto = "index.php";
+		}
+		header("Location: ".$pageto);
 	}
 }
 

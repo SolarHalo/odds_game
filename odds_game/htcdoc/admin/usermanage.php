@@ -2,18 +2,18 @@
 include "../../configs/load.php";
 include BASE_HOME."includes/Administrator.class.php";
 
+if(!array_key_exists('administrator', $_SESSION)){
+	//如果更换文件名，此处需修改
+	$currentPage = "usermanage.php";
+	header("Location: login.php?pageto=".$currentPage);
+}
+
 $mgtype = false;
 if(array_key_exists('type', $_GET)){
 	$mgtype = $_GET['type'];
 }else{
 	$mgtype = 'user';
 }
-
-//if(!array_key_exists('administrator', $_SESSION)){
-//	header("Location: login.php");
-//}
-
-
 
 //$admin_user = $_SESSION['administrator'];
 

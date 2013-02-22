@@ -63,7 +63,7 @@ class Administrator{
 	 * Enter description here ...
 	 */
 	function getAllUsers(){
-		return $this->dbutil->get_results("select * from ibo_user");
+		return $this->dbutil->get_results("select * from ibo_user order by user_regdate desc");
 	}
 	
 	/**

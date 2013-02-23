@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	class IboBet{
 		
@@ -20,6 +20,43 @@
 			where t.event_id=e.event_id and t.user_name='".$username."'";
 			return $this->dbutil->get_results($sql);
 		}
+	/**
+	 * 获取所有当前投注.
+	 */
+	function getAllBet4User($username){
+		$sql = "SELECT bet.odds_name odds_name, 	".
+			"	ev.team_mian_name team_mian_name, 	".
+			"	ev.team_sec_name team_sec_name, 	".
+			"	bet.bet_odd bet_odd, 				".
+			"	bet.bet_vmoney bet_vmoney 			".
+			"from ibo_bet bet, ibo_event ev 		".
+			"where bet.event_id = ev.event_id 		";
+		if($username != null){
+			$sql = $sql." and bet.user_name = '".$username."'";
+		}
+		$sql = $sql." ORDER BY bet.bet_time desc LIMIT 5";
+		return $this->dbutil->get_results($sql);
+	}
+	
+	function getAllBetHistory4User($username){
+		$sql = "SELECT bet.odds_name odds_name, 	".
+			"	ev.team_mian_name team_mian_name, 	".
+			"	ev.team_sec_name team_sec_name, 	".
+			"	bet.bet_odd bet_odd, 				".
+			"	bet.bet_vmoney bet_vmoney 			".
+			"from ibo_bet_history bet, ibo_event ev ".
+			"where bet.event_id = ev.event_id 		";
+		if($username != null){
+			$sql = $sql." and bet.user_name = '".$username."'";
+		}
+		$sql = $sql." ORDER BY bet.bet_time desc LIMIT 5";
+		
+		return $this->dbutil->get_results($sql);
+	}
+	
+	function getBetResults($eids){
+		
+	}
 	}
 
 ?>

@@ -42,7 +42,7 @@
 				$this->pre = $this->getPre($this->pageNo);
 				$this->next = $this->getNext($this->pageNo);
 				$this->startIndex = $this->getStartIndex($this->pageNo, $pagesize, $this->totalpage);
-				$this->endIndex = $this->getEndIndex($this->pageNo, $this->pageSize, $this->totalpage, $totalsize);
+//				$this->endIndex = $this->getEndIndex($this->pageNo, $this->pageSize, $this->totalpage, $totalsize);
 				
 			}
 		}

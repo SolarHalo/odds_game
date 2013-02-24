@@ -5,7 +5,7 @@ include BASE_HOME."/includes/IboEvent.class.php";
 
 $eventdb = new IboEvent($dbutil);
 
-$events = $eventdb->getAllEvent();
+$events = $eventdb->getAllEvent(null,null,null,null);
 
 $user = $_SESSION['user'];
 if($user){

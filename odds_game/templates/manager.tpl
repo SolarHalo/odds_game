@@ -10,13 +10,17 @@
                 </div>
                 <ul>
                 	<li>
-                    	王小二<span><a href="#">修改昵称</a></span>
+                    	{{$name}}
+                    	<span><a href="#">修改昵称</a></span>
                     </li>
                     <li>
-                    	superyuyue@sina.cn<span><a href="#">修改密码</a></span>
+                    	{{$username}}
+                    	<span><a href="#">修改密码</a></span>
                     </li>
                     <li>
-                    	帐号余额:<font>800</font>金币
+                    	帐号余额:<font>
+                    	{{$ownmoney}}
+                    	</font>金币
                     </li>
                 </ul>
                 <div class="user-hr">
@@ -36,38 +40,8 @@
                     <li class="touzje">投注金额</li>
                     <li class="shour">押注正确将收入</li> 
                 </ul>
-                <ul class="list-list bg1">
-                    <li class="sfp"><font class="bold11">胜</font></li>
-                    <li class="yzhud">牛卡尔斯</li>
-                    <li class="yked">曼城</li>
-                    <li class="peil">2.35</li>
-                    <li class="touzje">800</li>
-                    <li class="shour">6000</li>  
-                </ul>
-                <ul class="list-list bg2">
-                    <li class="sfp"><font class="bold12">负</font></li>
-                    <li class="yzhud">牛卡尔斯</li>
-                    <li class="yked">曼城</li>
-                    <li class="peil">2.35</li>
-                    <li class="touzje">800</li>
-                    <li class="shour">6000</li> 
-                </ul> 
-                <ul class="list-list bg1">
-                    <li class="sfp"><font class="bold13">平</font></li>
-                    <li class="yzhud">牛卡尔斯</li>
-                    <li class="yked">曼城</li>
-                    <li class="peil">2.35</li>
-                    <li class="touzje">800</li>
-                    <li class="shour">6000</li>  
-                </ul>
-                <ul class="list-list bg2">
-                    <li class="sfp"><font class="bold11">胜</font></li>
-                    <li class="yzhud">牛卡尔斯</li>
-                    <li class="yked">曼城</li>
-                    <li class="peil">2.35</li>
-                    <li class="touzje">800</li>
-                    <li class="shour">6000</li> 
-                </ul> 
+                {{$bets=$betsData}}
+               	{{include file='bettable.tpl'}}
             </div>
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
@@ -82,7 +56,11 @@
                     <li class="touzje">投注金额</li>
                     <li class="shour">收入</li> 
                 </ul>
-                <ul class="list-list bg1">
+                {{$bets=$betsHistoryData}}
+                {{include file='bettable.tpl'}}
+                
+                <!--
+               	<ul class="list-list bg1">
                     <li class="sfp"><font class="bold11">胜</font></li>
                     <li class="yzhud">牛卡尔斯</li>
                     <li class="yked">曼城</li>
@@ -114,6 +92,7 @@
                     <li class="touzje">800</li>
                     <li class="shour">6000</li> 
                 </ul> 
+                -->
             </div>
         </div>
         <!-- left END -->

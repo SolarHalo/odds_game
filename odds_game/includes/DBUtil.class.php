@@ -33,6 +33,8 @@ class DbUtil{
 	
 	var $result;
 	
+	var $row_nums;
+	
 	/**
 	 * 构造函数
 	 * Enter description here ...
@@ -338,6 +340,21 @@ class DbUtil{
 			return mysql_real_escape_string( $string, $this->dbh );
 		else
 			return addslashes( $string );
+	}
+	
+	/**
+	 * 查询返回的记录数（select * from table）
+	 * Enter description here ...
+	 * @param unknown_type $query
+	 */
+	function getResultNums($query = null){
+		if(is_null($query)){
+			return null;
+		}
+		$result = @mysql_query($query, $this->dbh);
+		$this->last_error =  mysql_errno($this->dbh);
+		$num_rows = mysql_num_rows($result);
+		return $num_rows;
 	}
 }
 

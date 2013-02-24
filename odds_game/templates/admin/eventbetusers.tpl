@@ -1,57 +1,76 @@
-{{* 引入头部文件 *}}
-{{include file='admin/header.tpl'}}
-
-<!--<div class="container-fluid">-->
-<!--	<div class="row"> -->
-<!--		<div class="span12"> -->
-<!--	 -->
-<!--		       {{foreach $users as $user}}-->
-<!--						{{$user->user_name}}-->
-<!--				{{/foreach}}-->
-<!--    -->
-<!--   </div>-->
-<!--	</div> -->
-<!--</div>-->
-
-<div class="container-fluid">
-	<div class="row"> 
-		<div class="span12"> 
-	 		
-		       <table id="usertable" class="table table-striped table-bordered table-condensed span9" style="font-size: 16px;">
-					<caption class="well">投注用户列表</caption>
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>用户</th>
-							<th>类别</th>
-							<th>主队</th>
-							<th>客队</th>
-							<th>投注金额</th>
-							<th>赔率</th>
-							<th>投注名称</th>
-							<th>投注时间</th>
-						</tr>
-					</thead>
-					<tbody>
-						{{foreach $users as $key=>$user}}
-						<tr>
-							<td>{{$key}}</td>
-							<td>{{$user->user_name}}</td>
-							<td>{{$user->sport_subtype_name}}</td>
-							<td>{{$user->team_mian_name}}</td>
-							<td>{{$user->team_sec_name}}</td>
-							<td>{{$user->bet_vmoney}}</td>
-							<td>{{$user->bet_odd}}</td>
-							<td>{{$user->odds_name}}</td>
-							<td>{{$user->bet_time}}</td>
-						</tr>
-						{{/foreach}}
-					</tbody>
-				</table>
-    
-   </div>
-	</div> 
+<!-- 投注用户列表窗口 -->
+<div class="modal hide fade" id="eventbetusersModal" >
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3 id="wintitle">投注用户列表</h3>
+    </div>
+	<div class="modal-body">
+		<table id="userbettable" class="table table-striped table-bordered table-condensed span9" style="font-size: 16px;">
+			<caption class="well">投注用户列表</caption>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>用户</th>
+					<th>类别</th>
+					<th>主队</th>
+					<th>客队</th>
+					<th>投注金额</th>
+					<th>赔率</th>
+					<th>投注名称</th>
+					<th>投注时间</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
 </div>
+<script type="text/javascript">
 
-{{* 引入底部文件 *}}
-{{include file='admin/footer.tpl'}}
+$(document).ready(function(){
+	$(".eventbetusers").click(function(){
+			var table1 = document.getElementById("userbettable");
+			deleteAllRow(table1);
+			var event_id = $(this).attr("un");
+			$.ajax({
+				'url': 'ajaxoddsmanageop.php',
+				'data': {'method': 'getEventUserBet', 'event_id': event_id},
+				'success': function(data){
+					if(data!=null){
+						var obj = eval('(' + data + ')');
+						for(var i=0;i<obj.length;i++){
+							var objRow = table1.insertRow(i+1);
+							var event = obj[i];
+							var cellIndex = 0;
+							var idexCel = objRow.insertCell(cellIndex);
+							idexCel.innerHTML = i;
+							cellIndex++;
+							for(var k in event){
+								var objCel = objRow.insertCell(cellIndex);
+								objCel.innerHTML =event[k];
+								cellIndex++;
+								}
+							}
+					}else {
+					}
+				}
+				});
+		});
+	//删除表格所有数据（不删除表头）
+	function deleteAllRow(table){
+		var rownum = table.rows.length;
+		for(var i=rownum-1;i>0;i--){
+			deleteOneRow(table,i);
+		}
+	}
+
+	//删除表格一行数据
+	function deleteOneRow(table,rowIndex){
+		if(rowIndex>0){
+			table.deleteRow(rowIndex);
+		}
+	}
+	
+	
+});
+</script>

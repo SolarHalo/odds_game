@@ -26,7 +26,7 @@
 					<td>{{$user->user_lastdate}}</td>
 					<td width="280">
 						<a href="#deluserModal" data-toggle="modal" class="btn btn-danger deluser" un="{{$user->user_email}}"><i class="icon-trash icon-white"></i> 删除</a>
-						<a href="userhistorybet.php?useremail={{$user->user_email}}" target="_blank" data-toggle="modal" class="btn btn-info "><i class="icon-hand-right icon-white"></i> 投注历史</a>
+						<a href="#userhistorybetModal" data-toggle="modal" class="btn btn-info userhistorybet" un="{{$user->user_email}}"><i class="icon-hand-right icon-white"></i> 投注历史</a>
 					</td>
 				</tr>
 				{{/foreach}}
@@ -51,6 +51,8 @@
     <a id="deluser" href="#" class="btn btn-danger">确认</a>
   </div>
 </div>
+
+{{include 'admin/userhistorybet.tpl'}}
 
 <script type="text/javascript">
 

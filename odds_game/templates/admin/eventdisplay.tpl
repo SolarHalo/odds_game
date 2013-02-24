@@ -25,8 +25,10 @@
 							<td>{{$event->event_result}}</td>
 							<td>
 								<a href="#deladminModal" data-toggle="modal" class="btn btn-danger deladmin" un="{{$event->team_main_name}}"><i class="icon-trash icon-white"></i> 删除</a>
-								<a href="eventbetusers.php?event_id={{$event->event_id}}"  class="btn btn-info" target="_blank"><i class="icon-user icon-white"></i> 投注用户</a>
-								<a href="eventhistoryscore.php?event_id={{$event->event_id}}" class="btn btn-info" target="_blank"><i class="icon-th-list icon-white"></i> 历史比分</a>
+<!--								<a href="eventbetusers.php?event_id={{$event->event_id}}" data-toggle="modal" class="btn btn-info"><i class="icon-user icon-white"></i> 投注用户</a>-->
+<!--								<a href="eventhistoryscore.php?event_id={{$event->event_id}}" data-toggle="modal" class="btn btn-info" ><i class="icon-th-list icon-white"></i> 历史比分</a>-->
+  								<a  href="#eventbetusersModal" data-toggle="modal" class="btn btn-info eventbetusers" un="{{$event->event_id}}"><i class="icon-user icon-white"></i> 投注用户</a>
+								<a  href="#eventhistoryscoreModal" data-toggle="modal" class="btn btn-info eventhistoryscore" un="{{$event->event_id}}"><i class="icon-th-list icon-white"></i> 历史比分</a>
   							</td>
   							<td>
   							</td>
@@ -34,10 +36,38 @@
 						{{/foreach}}
 					</tbody>
 				</table>
-    
+				{{if $eventcurrentnav=='history'}}
+				<div class="pagination">
+				  <ul>
+				  	{{if $page->hasnext}}
+				    <li><a href="oddsmanage.php?pageNo={{$page->pre}}&&type=history" class="active">Prev</a></li>
+				  	{{else}}
+				  	 <li><a href="#" class="disabled">Prev</a></li>
+				  	{{/if}}
+				  	
+				  	{{for $foo=1 to $page->totalpage}}
+				    <li><a href="oddsmanage.php?pageNo={{$foo}}&&type=history">{{$foo}}</a></li>
+				    {{/for}}
+				    
+				    {{if $page->hasnext}}
+				    <li><a href="oddsmanage.php?pageNo={{$page->next}}&&type=history" class="active">Next</a></li>
+				    {{else}}
+				     <li><a href="#" class="disabled">Next</a></li>
+				     {{/if}}
+				  </ul>
+				</div>
+    			{{/if}}
    </div>
 	</div> 
 </div>
+
+<!-- 投注用户列表窗口 -->
+{{include 'admin/eventbetusers.tpl'}}
+
+
+<!-- 历史比分窗口 -->
+{{include 'admin/eventhistoryscore.tpl'}}
+
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -57,8 +87,7 @@ $(document).ready(function(){
 			});
 		});
 
-	 
-	
 });
+
 
 </script>

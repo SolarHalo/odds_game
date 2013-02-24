@@ -1,4 +1,5 @@
 <?php
+ ob_start();
 /**
  * 定义数据库连接
  * Enter description here ...
@@ -35,4 +36,5 @@ define('BASE_HOME', "D:/game/odds_game/");
 //define('DOMAIN_HOME', $_SERVER['HTTP_HOST']);
 define('DOMAIN_HOME', "http://localhost/");
 
+ob_flush();
 ?>

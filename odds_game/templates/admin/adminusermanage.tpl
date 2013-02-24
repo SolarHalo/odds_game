@@ -100,6 +100,7 @@ $(document).ready(function(){
 
 	$(".deladmin").live('click', function(){
 		var un = $(this).attr("un");
+		alert(un);
 		$("#deluser").attr('un', un);
 	});
 

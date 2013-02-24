@@ -106,18 +106,18 @@
 		 * @param unknown_type $pageSize 每页条数
 		 * @param unknown_type $totalPage 总页码
 		 */
-		function getEndIndex($pageNo,$pageSize,$totalPage,$totalSize){
-			if($totalPage==0){
-				$endIndex = 0;
-			}else{
-				if($pageNo!=$totalPage){
-					$endIndex = $pageSize*$pageNo;
-				}else{
-					$endIndex = $totalSize;
-				}
-			}
-			return $endIndex;
-		}
+//		function getEndIndex($pageNo,$pageSize,$totalPage,$totalSize){
+//			if($totalPage==0){
+//				$endIndex = 0;
+//			}else{
+//				if($pageNo!=$totalPage){
+//					$endIndex = $pageSize*$pageNo;
+//				}else{
+//					$endIndex = $totalSize;
+//				}
+//			}
+//			return $endIndex;
+//		}
 		
 		function setResult($result){
 			$this->result = $result;

@@ -1,5 +1,3 @@
-<div class="row">
-	<div class="span12" style="background-color:#00ff00;hight:800px">
 <div class="modal hide fade span12" id="userhistorybetModal" >
     <div class="modal-header">
       <a class="close" data-dismiss="modal">×</a>
@@ -20,8 +18,6 @@
 						</tr>
 					</thead>
 				</table>
-	</div>
-</div>
 	</div>
 </div>
 

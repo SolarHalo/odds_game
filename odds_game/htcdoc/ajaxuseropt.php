@@ -34,5 +34,62 @@ if($method == "register"){
 	$userdb->addUser($email, $pass);
 	echo "yes";
 	exit(0);
+}elseif ("updateUsername" == $method){
+	$updateValue = $_GET['updateValue'];
+	$userKey = $_GET['userKey'];
+	$userdb = new IboUser($dbutil);
+	$re = $userdb->updateUsername($userKey, $updateValue);
+	if($re){
+		$user = $_SESSION['user'];
+		if($user != null){
+			$user->user_name = $updateValue;
+		}
+		echo "yes";
+	}else{
+		echo "no";
+	}
+	exit(0);
+}elseif ("updatePassword" == $method){
+	$updateValue = $_GET['updateValue'];
+	$userKey = $_GET['userKey'];
+	$userdb = new IboUser($dbutil);
+	$pass = encodePassword($updateValue);
+	$re = $userdb->updatePassword($userKey, $pass);
+	if($re){
+		$user = $_SESSION['user'];
+		if($user != null){
+			$user->user_passwd = $pass;
+		}
+		echo "yes";
+	}else{
+		echo "no";
+	}
+	exit(0);
+}elseif("updatePhoto" == $method){
+	$userid = $_GET['userKey'];
+	$fileElementName = "tagsInput";
+	if(!empty($_FILES[$fileElementName]['error'])){
+		echo $_FILES[$fileElementName]['error'];
+	}elseif(empty($_FILES[$fileElementName]['tmp_name']) || $_FILES[$fileElementName]['tmp_name'] == 'none'){
+		$error = 'No file was uploaded..';
+		echo $error;
+	}else{
+		$filenameTmp = $_FILES[$fileElementName]['tmp_name'];
+		$time = str_replace(" ","",microtime());
+		$filename = 'upload/'.$userid."-userPhoto-".$time;
+		move_uploaded_file($filenameTmp, $filename);
+		echo $filename;
+// 		$userdb = new IboUser($dbutil);
+// 		$re = $userdb->updatePhoto($userKey, $filename);
+// 		if($re){
+// 			$user = $_SESSION['user'];
+// 			if($user != null){
+// 				$user->user_photo = $filename;
+// 			}
+// 			echo "yes";
+// 		}else{
+// 			echo "no";
+// 		}
+	}
 }
 ?>

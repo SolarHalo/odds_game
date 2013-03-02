@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * 用户管理类
  */
@@ -47,6 +47,18 @@ class IboUser{
 	function getUser($email){
 		$user = $this->dbutil->get_row("select * from ibo_user where user_email='".$email."'");
 		return $user;
+	}
+	
+	function updateUsername($userKey,$username){
+		$this->dbutil->update("ibo_user", array("user_name"=> $username), array("user_id"=>$userKey) );
+	}
+	
+	function updatePassword($userKey,$password){
+		$this->dbutil->update("ibo_user", array("user_password"=> $password), array("user_id"=>$userKey) );
+	}
+	
+	function updatePhoto($userKey,$photoPath){
+		$this->dbutil->update("ibo_user", array("user_photo"=> $photoPath), array("user_id"=>$userKey) );
 	}
 	
 	function updateUserMoney($user){

@@ -37,23 +37,16 @@
 					</tbody>
 				</table>
 				{{if $eventcurrentnav=='history'}}
-				<div class="pagination">
+				<div class="pagination pagination-centered">
 				  <ul>
-				  	{{if $page->hasnext}}
-				    <li><a href="oddsmanage.php?pageNo={{$page->pre}}&&type=history" class="active">Prev</a></li>
-				  	{{else}}
-				  	 <li><a href="#" class="disabled">Prev</a></li>
-				  	{{/if}}
+				    <li {{if $page->haspre}}class="active"{{else}}class="disabled"{{/if}}><a href="oddsmanage.php?pageNo={{$page->pre}}&&type=history" class="active">Prev</a></li>
 				  	
-				  	{{for $foo=1 to $page->totalpage}}
-				    <li><a href="oddsmanage.php?pageNo={{$foo}}&&type=history">{{$foo}}</a></li>
+				  	{{for $foo=$startPage to $endPage}}
+				    <li {{if $page->pageNo==$foo}}class="active"{{/if}}><a href="oddsmanage.php?pageNo={{$foo}}&&type=history" >{{$foo}}</a></li>
 				    {{/for}}
 				    
-				    {{if $page->hasnext}}
-				    <li><a href="oddsmanage.php?pageNo={{$page->next}}&&type=history" class="active">Next</a></li>
-				    {{else}}
-				     <li><a href="#" class="disabled">Next</a></li>
-				     {{/if}}
+				    
+				    <li {{if $page->hasnext}}class="active"{{else}}class="disabled"{{/if}}><a href="oddsmanage.php?pageNo={{$page->next}}&&type=history" class="active">Next</a></li>
 				  </ul>
 				</div>
     			{{/if}}

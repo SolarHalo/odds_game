@@ -75,7 +75,7 @@
 		 * @param unknown_type $pageNo 当前页
 		 */
 		function getPre($pageNo){
-			return ($this->haspre?$pageNo-1:1);
+			return ($this->haspre==true?$pageNo-1:1);
 		}
 		
 		/**
@@ -83,7 +83,7 @@
 		 * @param unknown_type $pageNo 当前页
 		 */
 		function getNext($pageNo){
-			return ($this->hasnext?$pageNo+1:1);
+			return ($this->hasnext==true?$pageNo+1:1);
 		}
 		
 		/**

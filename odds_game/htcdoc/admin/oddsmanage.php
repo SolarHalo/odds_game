@@ -79,7 +79,7 @@ if($type=='current'){
 	$events = $iboEvent->getAllEvent($conditionArr);
 }else{
 	//查询比赛结束赛事
-	$page = new Page($pageNo);
+	$page = new Page($pageNo,10);
 	$events = $iboEvent->getAllFinishedEvent($conditionArr,$page)->result;
 	$page->result = null;
 }
@@ -88,6 +88,30 @@ $smarty->assign("currentnav" , "oddsmanage");
 $smarty->assign("events",$events);
 $smarty->assign("page",$page);
 
+$maxdisplaypageNum = 5;
+if($page->totalpage<=5){
+	$startPage = 1;
+	$endPage = $page->totalpage;
+}else{
+	if($page->pageNo>(int)$maxdisplaypageNum/2+1){
+		if($page->pageNo+2<$page->totalpage){
+			$startPage = $page->pageNo-2;
+			$endPage = $page->pageNo+2;
+		}else{
+			$startPage = $page->totalpage-$maxdisplaypageNum+1;
+			$endPage = $page->totalpage;
+		}
+	}else{
+		$startPage = 1;
+		if($page->totalpage>5){
+			$endPage = $maxdisplaypageNum;
+		}else{
+			$endPage = $page->totalpage;
+		}
+	}
+}
+$smarty->assign("startPage",$startPage);
+$smarty->assign("endPage",$endPage);
 
 
 $smarty->assign("modulename","赛事管理首页");

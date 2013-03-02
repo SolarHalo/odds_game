@@ -1,5 +1,5 @@
-<div class="modal hide fade span12" id="userhistorybetModal" >
-    <div class="modal-header">
+<div class="modal hide fade " id="userhistorybetModal" >
+    <div class="modal-header ">
       <a class="close" data-dismiss="modal">×</a>
       <h3 id="wintitle">投注历史记录</h3>
     </div>

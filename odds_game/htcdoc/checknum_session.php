@@ -37,7 +37,7 @@ function vCode($num = 4, $size = 20, $width = 0, $height = 0) {
 		imagesetpixel($im, mt_rand(0, $width), mt_rand(0, $height), $font_color);
 	} 
 	// 画验证码
-	@imagefttext($im, $size , 0, 5, $size + 3, $text_color, 'c:\\WINDOWS\\Fonts\\simsun.ttc', $code);
+	@imagefttext($im, $size , 0, 5, $size + 3, $text_color, '/usr/local/share/fonts/times.ttf', $code);
 	$_SESSION["VerifyCode"]=$code; 
 	header("Cache-Control: max-age=1, s-maxage=1, no-cache, must-revalidate");
 	header("Content-type: image/png;charset=gb2312");

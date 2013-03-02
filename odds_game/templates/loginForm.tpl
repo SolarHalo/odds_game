@@ -21,7 +21,7 @@
                             </tr>
                              <tr>
                             	<td><input type="submit" value="登录爱博" class="login-but login-bg1" /><br />
-                                	<a href="#" style="color:#979797; font-size:14px; display:inline-block; margin:10px 0;">快速注册</a>
+                                	<a href="register.php" style="color:#979797; font-size:14px; display:inline-block; margin:10px 0;">快速注册</a>
 								</td>
                             </tr>
                         </table>

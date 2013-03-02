@@ -32,7 +32,7 @@
                                     <td><input id="password2" type="password" class="login-inp" /></td>
                                 </tr>
                                 <tr>
-                                    <td><input id="checkicon" type="text" class="yanz" /><a href="javascript:void(0)"><img src="{{$urlroot}}/checkNum_session.php" /></a></td>
+                                    <td><input id="checkicon" type="text" class="yanz" /><a href="javascript:void(0)"><img src="{{$urlroot}}/checknum_session.php" /></a></td>
                                 </tr>
                                 <tr style=" height:30px;">
                                     <td style="color:#a0a1a1;"><input id="readNotic" type="checkbox"/>&nbsp;&nbsp;已经阅读并同意<a href="#" style="color:#a0a1a1;text-decoration:underline;"><爱博服务条款></a></td>

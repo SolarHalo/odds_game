@@ -8,7 +8,7 @@ $user = $_SESSION['user'];
 
 if($method == 'getAllEvent'){
 	$eventdb = new IboEvent($dbutil);
-	$events = $eventdb->getAllEvent();
+	$events = $eventdb->getAllEvent(null,null,null,null);
 	$smarty->assign("events", $events);
 	echo $smarty->fetch("eventtable.tpl", false);
 	exit(0);

@@ -9,6 +9,8 @@ $dbutil = new DbUtil(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 $smarty = new Smarty_Ibo();
 
+$smarty->assign("domainname", DOMAIN_HOME);
+
 //开启session
 
 

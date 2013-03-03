@@ -1,31 +1,32 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-02-18 15:36:22
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-03 16:43:50
          compiled from "G:\odds_game\odds_game\templates\header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2005510a20b69eadc2-94889668%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3257851278d389c1303-27236081%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '14a6b169aa777ee5825af2776423beb5f0e434e8' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\header.tpl',
-      1 => 1361201778,
+      1 => 1362329021,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2005510a20b69eadc2-94889668',
+  'nocache_hash' => '3257851278d389c1303-27236081',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_510a20b6a2f923_04114443',
+  'unifunc' => 'content_51278d38a53318_76490927',
   'variables' => 
   array (
     'urlroot' => 0,
     'ownmoney' => 0,
     'username' => 0,
+    'mainmenu' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510a20b6a2f923_04114443')) {function content_510a20b6a2f923_04114443($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if ($_valid && !is_callable('content_51278d38a53318_76490927')) {function content_51278d38a53318_76490927($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,7 +52,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           
           <?php if ($_smarty_tpl->tpl_vars['ownmoney']->value=='未登录'){?>
 		    <a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/register.php">
+/login.php" class="sw-but">
             	立即试玩
             </a>
             <?php }else{ ?> 
@@ -66,8 +67,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             
          </div>
          <ul class="nav">
-         	<li><a href="#">首页</a></li>
-            <li class="xz"><a href="#">游戏中心</a></li>
-            <li><a href="#">帮助</a></li>
+         	<li><a href="http://www.ibo123.com">首页</a></li>
+         	
+            <li <?php if ($_smarty_tpl->tpl_vars['mainmenu']->value=='gamecenter'){?> class="xz" <?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
+">游戏中心</a></li>
+            <li <?php if ($_smarty_tpl->tpl_vars['mainmenu']->value=='latestupdate'){?> class="xz" <?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
+/latestupdate.php">最新动态</a></li>
+            <li <?php if ($_smarty_tpl->tpl_vars['mainmenu']->value=='help'){?> class="xz" <?php }?>><a href="#">帮助</a></li>
          </ul>
     </div><?php }} ?>

@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-02-04 15:22:00
+<?php /* Smarty version Smarty-3.1.13, created on 2013-02-24 15:20:33
          compiled from "G:\odds_game\odds_game\templates\admin\normalusermanage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2029250fcc6c3b1a263-65584430%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1184051279315290c51-11090185%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7a9ce0892a3b5d1431cf75903e89d3f3021e005f' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\admin\\normalusermanage.tpl',
-      1 => 1359991127,
+      1 => 1361719119,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2029250fcc6c3b1a263-65584430',
+  'nocache_hash' => '1184051279315290c51-11090185',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_50fcc6c3b200d1_93601383',
+  'unifunc' => 'content_5127931532faa1_11292728',
   'variables' => 
   array (
     'users' => 0,
@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50fcc6c3b200d1_93601383')) {function content_50fcc6c3b200d1_93601383($_smarty_tpl) {?><div class="row">
+<?php if ($_valid && !is_callable('content_5127931532faa1_11292728')) {function content_5127931532faa1_11292728($_smarty_tpl) {?><div class="row">
 	<div class="span12 well">
 		<strong>用户列表</strong>
 	</div>
@@ -66,6 +66,8 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
 					<td width="280">
 						<a href="#deluserModal" data-toggle="modal" class="btn btn-danger deluser" un="<?php echo $_smarty_tpl->tpl_vars['user']->value->user_email;?>
 "><i class="icon-trash icon-white"></i> 删除</a>
+						<a href="#userhistorybetModal" data-toggle="modal" class="btn btn-info userhistorybet" un="<?php echo $_smarty_tpl->tpl_vars['user']->value->user_email;?>
+"><i class="icon-hand-right icon-white"></i> 投注历史</a>
 					</td>
 				</tr>
 				<?php } ?>
@@ -90,6 +92,9 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
     <a id="deluser" href="#" class="btn btn-danger">确认</a>
   </div>
 </div>
+
+<?php echo $_smarty_tpl->getSubTemplate ('admin/userhistorybet.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 
 <script type="text/javascript">
 
@@ -116,6 +121,7 @@ $(document).ready(function(){
 			}
 			});
 		});
+
 
 	
 	

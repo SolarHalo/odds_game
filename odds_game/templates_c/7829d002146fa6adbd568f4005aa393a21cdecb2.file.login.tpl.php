@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-01-31 07:53:01
+<?php /* Smarty version Smarty-3.1.13, created on 2013-02-23 16:07:04
          compiled from "G:\odds_game\odds_game\templates\login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:24374510a22dd6af652-74032861%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:319885128e928411bc3-59763756%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24374510a22dd6af652-74032861',
+  'nocache_hash' => '319885128e928411bc3-59763756',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_510a22dd797053_96564011',
+  'unifunc' => 'content_5128e92871f634_64253434',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510a22dd797053_96564011')) {function content_510a22dd797053_96564011($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5128e92871f634_64253434')) {function content_5128e92871f634_64253434($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>

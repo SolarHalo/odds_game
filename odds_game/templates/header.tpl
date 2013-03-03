@@ -30,8 +30,10 @@
             
          </div>
          <ul class="nav">
-         	<li><a href="#">首页</a></li>
-            <li class="xz"><a href="#">游戏中心</a></li>
-            <li><a href="#">帮助</a></li>
+         	<li><a href="http://www.ibo123.com">首页</a></li>
+         	
+            <li {{if $mainmenu eq 'gamecenter' }} class="xz" {{/if}}><a href="{{$urlroot}}">游戏中心</a></li>
+            <li {{if $mainmenu eq 'latestupdate' }} class="xz" {{/if}}><a href="{{$urlroot}}/latestupdate.php">最新动态</a></li>
+            <li {{if $mainmenu eq 'help' }} class="xz" {{/if}}><a href="#">帮助</a></li>
          </ul>
     </div>

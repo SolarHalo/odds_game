@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-01-31 07:53:21
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-03 16:37:51
          compiled from "G:\odds_game\odds_game\templates\register.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8297510a22f13819b2-19362823%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2580351337c5f59c9c8-58726421%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9f7eae61e040358732b77d30daf3b1b511f257d3' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\register.tpl',
-      1 => 1359617439,
+      1 => 1362240575,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8297510a22f13819b2-19362823',
+  'nocache_hash' => '2580351337c5f59c9c8-58726421',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_510a22f1474d39_49791843',
+  'unifunc' => 'content_51337c5f688193_24885358',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510a22f1474d39_49791843')) {function content_510a22f1474d39_49791843($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_51337c5f688193_24885358')) {function content_51337c5f688193_24885358($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 
@@ -60,7 +60,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 </tr>
                                 <tr>
                                     <td><input id="checkicon" type="text" class="yanz" /><a href="javascript:void(0)"><img src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/checkNum_session.php" /></a></td>
+/checknum_session.php" /></a></td>
                                 </tr>
                                 <tr style=" height:30px;">
                                     <td style="color:#a0a1a1;"><input id="readNotic" type="checkbox"/>&nbsp;&nbsp;已经阅读并同意<a href="#" style="color:#a0a1a1;text-decoration:underline;"><爱博服务条款></a></td>

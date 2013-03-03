@@ -3,7 +3,7 @@ include "../configs/load.php";
 include BASE_HOME."includes/IboUser.class.php";
 
 
-$smarty->assign("urlroot" , $rooturl);
+$smarty->assign("urlroot" , urlroot);
 if(array_key_exists("email", $_GET) && array_key_exists("password", $_GET)){
 	$email = $_GET['email'];
 	$pass = $_GET['password'];

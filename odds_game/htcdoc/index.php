@@ -11,11 +11,12 @@ $user = $_SESSION['user'];
 if($user){
 	$smarty->assign("ownmoney" , $user->user_vmoney);
 	$smarty->assign("username" , $user->user_email);
+	$smarty->assign("mainmenu" , "gamecenter");
 }else{
 	$smarty->assign("ownmoney" , "未登录");
 }
 
-$smarty->assign("urlroot" , $rooturl);
+$smarty->assign("urlroot" , urlroot);
 $smarty->assign("events", $events);
 $smarty->display("index.tpl");
 

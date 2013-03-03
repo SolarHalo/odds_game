@@ -1,49 +1,70 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-02-18 16:04:20
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-02 15:23:15
          compiled from "G:\odds_game\odds_game\templates\manager.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:9384510f70f87c6407-94750815%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:60555128e9360ea278-35222490%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7ea2385ad6a27a67b559bded58e12812c130bec7' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\manager.tpl',
-      1 => 1361203445,
+      1 => 1362237604,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9384510f70f87c6407-94750815',
+  'nocache_hash' => '60555128e9360ea278-35222490',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_510f70f88858f3_58283911',
+  'unifunc' => 'content_5128e9362fb1e7_56037225',
   'variables' => 
   array (
     'urlroot' => 0,
+    'userid' => 0,
+    'name' => 0,
+    'username' => 0,
+    'ownmoney' => 0,
+    'betsData' => 0,
+    'betsHistoryData' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510f70f88858f3_58283911')) {function content_510f70f88858f3_58283911($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5128e9362fb1e7_56037225')) {function content_5128e9362fb1e7_56037225($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/js/main.js"></script>
+js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
+js/main.js"></script>
+
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
+js/useropt.js"></script>
 <div class="container">  
         <div class="container-left">
         	<div class="user">
-            	<div class="user-imge">
+            	<div id='cccc' class="user-imge">
                 	<img src="images/uerimge.jpg" width="115" height="115" />
-                    <a href="#">修改头像</a>
+                    <a href="javascript:userOpt.modifyPhoto('cccc','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
+');" style='float: left;'>修改头像</a>
                 </div>
                 <ul>
-                	<li>
-                    	王小二<span><a href="#">修改昵称</a></span>
+                	<li id='aaaa'>
+                    	<span > <?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</span>
+                    	<span ><a href="javascript:userOpt.modifyName('aaaa','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
+');">修改昵称</a></span>
+                    </li>
+                    <li id='bbbb'>
+                    	<span ><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+</span>
+                    	<span><a href="javascript:userOpt.modifyPassword('bbbb','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
+');">修改密码</a></span>
                     </li>
                     <li>
-                    	superyuyue@sina.cn<span><a href="#">修改密码</a></span>
-                    </li>
-                    <li>
-                    	帐号余额:<font>800</font>金币
+                    	帐号余额:<font>
+                    	<?php echo $_smarty_tpl->tpl_vars['ownmoney']->value;?>
+
+                    	</font>金币
                     </li>
                 </ul>
                 <div class="user-hr">
@@ -63,42 +84,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <li class="touzje">投注金额</li>
                     <li class="shour">押注正确将收入</li> 
                 </ul>
-                <ul class="list-list bg1">
-                    <li class="sfp"><font class="bold11">胜</font></li>
-                    <li class="yzhud">牛卡尔斯</li>
-                    <li class="yked">曼城</li>
-                    <li class="peil">2.35</li>
-                    <li class="touzje">800</li>
-                    <li class="shour">6000</li>  
-                </ul>
-                <ul class="list-list bg2">
-                    <li class="sfp"><font class="bold12">负</font></li>
-                    <li class="yzhud">牛卡尔斯</li>
-                    <li class="yked">曼城</li>
-                    <li class="peil">2.35</li>
-                    <li class="touzje">800</li>
-                    <li class="shour">6000</li> 
-                </ul> 
-                <ul class="list-list bg1">
-                    <li class="sfp"><font class="bold13">平</font></li>
-                    <li class="yzhud">牛卡尔斯</li>
-                    <li class="yked">曼城</li>
-                    <li class="peil">2.35</li>
-                    <li class="touzje">800</li>
-                    <li class="shour">6000</li>  
-                </ul>
-                <ul class="list-list bg2">
-                    <li class="sfp"><font class="bold11">胜</font></li>
-                    <li class="yzhud">牛卡尔斯</li>
-                    <li class="yked">曼城</li>
-                    <li class="peil">2.35</li>
-                    <li class="touzje">800</li>
-                    <li class="shour">6000</li> 
-                </ul> 
+                <?php $_smarty_tpl->tpl_vars['bets'] = new Smarty_variable($_smarty_tpl->tpl_vars['betsData']->value, null, 0);?>
+               	<?php echo $_smarty_tpl->getSubTemplate ('bettable.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
             </div>
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
-                	正在历史
+                	投注历史
                     <a href="#">更多</a>
                 </span>
                 <ul class="list-title">
@@ -107,9 +99,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <li class="yked">客队</li>
                     <li class="peil">赔率</li>
                     <li class="touzje">投注金额</li>
-                    <li class="shour">押注正确将收入</li> 
+                    <li class="shour">收入</li> 
                 </ul>
-                <ul class="list-list bg1">
+                <?php $_smarty_tpl->tpl_vars['bets'] = new Smarty_variable($_smarty_tpl->tpl_vars['betsHistoryData']->value, null, 0);?>
+                <?php echo $_smarty_tpl->getSubTemplate ('bettable.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+                
+                <!--
+               	<ul class="list-list bg1">
                     <li class="sfp"><font class="bold11">胜</font></li>
                     <li class="yzhud">牛卡尔斯</li>
                     <li class="yked">曼城</li>
@@ -141,6 +138,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <li class="touzje">800</li>
                     <li class="shour">6000</li> 
                 </ul> 
+                -->
             </div>
         </div>
         <!-- left END -->

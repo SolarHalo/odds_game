@@ -712,7 +712,62 @@ a {
 	color:#fff;
 	text-decoration:underline;
 	}
-
+/*===========================2013/03/03==================*/
+.new-touzhu{
+	float:left; 
+	width:540px;
+	line-height:24px;
+	color:#fff;
+	font-size:14px;
+	position:relative;
+	}
+.new-touzhu span,.new-touzhu font{
+	font-size:14px;
+	}
+.new-touzhu a{
+	font-size:14px;  
+	color: #FFFF00; 
+    font-weight: bold;
+	padding:0 3px;
+	}
+.newdt{
+	position:relative;
+	height:95px;
+	border-bottom:1px solid #999;
+	margin:0 0 15px;
+	}
+.user .guanzhu{
+	width:30px;
+	height:19px;
+	display:block;
+	position:absolute;
+	right:0px;
+	top:50px;
+	background-image:url(../images/gzioc.gif);
+	background-position: bottom left;
+	color:#333;
+	padding:3px 0 0 18px;
+	display:none;
+	}
+ 
+.user .guanzhu:hover{
+	background-position:top left;
+	color:#FFF;
+	}
+.newdt:hover .guanzhu{
+	display:block;
+	}
+.newdt-title{
+	float:left;
+	width:640px;
+	margin:10px 0 0 20px;
+	padding-left:21px;
+	height:20px;
+	background:url(../images/ioc02.gif) left 3px no-repeat;
+	line-height:20px;
+	color:#CCC;
+	font-size:14px;
+	}
 
 
 

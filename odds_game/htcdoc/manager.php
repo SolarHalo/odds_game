@@ -22,8 +22,8 @@ if($user){
 	$smarty->assign("name" , "222");
 	$smarty->assign("userid" ,"1");
 }
-$rooturl ="";
-$smarty->assign("urlroot" , $rooturl);
+
+$smarty->assign("urlroot" , rooturl);
 $smarty->assign("betsData", $bets);
 $smarty->assign("betsHistoryData", $betsHistory);
 $smarty->display("manager.tpl");

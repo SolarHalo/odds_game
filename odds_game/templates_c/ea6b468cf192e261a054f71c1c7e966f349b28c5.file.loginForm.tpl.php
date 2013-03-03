@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-01-31 07:53:01
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-03 16:37:28
          compiled from "G:\odds_game\odds_game\templates\loginForm.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:11831510a22dd7e7044-64231589%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:153895128e928787ff5-79662460%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ea6b468cf192e261a054f71c1c7e966f349b28c5' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\loginForm.tpl',
-      1 => 1359617439,
+      1 => 1362240575,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11831510a22dd7e7044-64231589',
+  'nocache_hash' => '153895128e928787ff5-79662460',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_5128e9287c29d3_58566221',
   'variables' => 
   array (
     'loginInfo' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_510a22dd801429_92062835',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510a22dd801429_92062835')) {function content_510a22dd801429_92062835($_smarty_tpl) {?><div class="login">
+<?php if ($_valid && !is_callable('content_5128e9287c29d3_58566221')) {function content_5128e9287c29d3_58566221($_smarty_tpl) {?><div class="login">
              <p class="title-p">登录爱博</p>
              <form onsubmit="return bsubmit();">
              	<div class="loginioc">
@@ -46,7 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             </tr>
                              <tr>
                             	<td><input type="submit" value="登录爱博" class="login-but login-bg1" /><br />
-                                	<a href="#" style="color:#979797; font-size:14px; display:inline-block; margin:10px 0;">快速注册</a>
+                                	<a href="register.php" style="color:#979797; font-size:14px; display:inline-block; margin:10px 0;">快速注册</a>
 								</td>
                             </tr>
                         </table>

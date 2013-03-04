@@ -28,7 +28,7 @@
                         <div class="api">
                         	<hr size="1" style="color:#CCC"/>
                         	<a href="#"><img src="images/QQlogin.gif" /></a>
-                            <a href="#"><img src="images/weibologin.gif" /></a>
+                            <a href="javascript:void(0)" onclick="sinaLogin();"><img src="images/weibologin.gif" /></a>
                         </div>
                     <span class="bordbot2">&nbsp;</span>
                 </div>

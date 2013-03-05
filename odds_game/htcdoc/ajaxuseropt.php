@@ -43,6 +43,7 @@ if($method == "register"){
 		$user = $_SESSION['user'];
 		if($user != null){
 			$user->user_name = $updateValue;
+			$_SESSION['user'] = $user;
 		}
 		echo "yes";
 	}else{
@@ -59,6 +60,7 @@ if($method == "register"){
 		$user = $_SESSION['user'];
 		if($user != null){
 			$user->user_passwd = $pass;
+			$_SESSION['user'] = $user;
 		}
 		echo "yes";
 	}else{
@@ -92,6 +94,7 @@ if($method == "register"){
 				$user = $_SESSION['user'];
 				if($user != null){
 					$user->user_photo = $filename;
+					$_SESSION['user'] = $user;
 				}
 				$arr = array ('result'=>'yes','path'=>$filename);
 				echo json_encode($arr);

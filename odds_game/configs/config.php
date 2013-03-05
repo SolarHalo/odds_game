@@ -1,11 +1,10 @@
-<?php
-ob_start();   //加上就好了。。。
+﻿<?php
 /**
  * 定义数据库连接
  * Enter description here ...
  * @var unknown_type
  */
-define('DB_NAME', 'odds_game'); 
+define('DB_NAME', 'ibodb'); 
 define('DB_USER', 'root'); 
 define('DB_PASSWORD', 'root'); 
 define('DB_HOST', 'localhost'); 
@@ -23,18 +22,19 @@ define("ARRAY_N", "array_n");
 
 // 手动指定Smarty的libs目录位置
  
-define('SMARTY_DIR', 'G:/odds_game/odds_game/lib/Smarty-3.1.13/libs/');
-// define('SMARTY_DIR', 'D:/game/odds_game/lib/Smarty-3.1.13/libs/');
+//define('SMARTY_DIR', 'G:/odds_game/odds_game/lib/Smarty-3.1.13/libs/');
+define('SMARTY_DIR', 'C:/weblib/Smarty-3.1.13/libs/');
+ 
 
 ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.SMARTY_DIR);
 
 //配置程序根目录,非文档根目录
  
-define('BASE_HOME', "G:\odds_game\odds_game/");
-//define('BASE_HOME', "D:\game\odds_game/");
+//define('BASE_HOME', "G:/odds_game/odds_game/");
+define('BASE_HOME', "D:/work/workspace/phpspace/odds_game/odds_game/");
+ 
 //获得http路径的地址
 //define('DOMAIN_HOME', $_SERVER['HTTP_HOST']);
 define('DOMAIN_HOME', "http://localhost/");
-define('urlroot', "http://localhost/");
 
 ?>

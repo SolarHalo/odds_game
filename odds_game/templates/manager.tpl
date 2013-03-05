@@ -2,7 +2,7 @@
 {{include file='header.tpl'}}
 <script type="text/javascript" src="{{$urlroot}}js/ajaxfileupload.js"></script>
 <script type="text/javascript" src="{{$urlroot}}js/main.js"></script>
-
+ 
 <script type="text/javascript" src="{{$urlroot}}js/useropt.js"></script>
 <div class="container">  
         <div class="container-left">

@@ -12,8 +12,8 @@ $betsHistory = $betdb->getAllBetHistory4User($user->user_email);
 
 if($user){
 	$smarty->assign("ownmoney" , $user->user_vmoney);
-	$smarty->assign("username" , $user->user_email);
-	$smarty->assign("name" , $user->user_name);
+	$smarty->assign("username" , $user->user_name);
+	//$smarty->assign("name" , $user->user_email);
 	$smarty->assign("userid" , $user->user_id);
 	$smarty->assign("userphoto" ,$user->user_photo );
 	

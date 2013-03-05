@@ -16,7 +16,9 @@ var userOpt = function(){
 		     	dataType:'json',//返回值类型 一般设置为json
 		     	data:{'method': method,'userKey':userKey},
 		     	success:function (data, status){
-		     		alert(data);
+		     		if("yes" == data.result){
+		     			$("#"+elementid +" img:first").attr('src',data.path);
+		     		}
 		     		$("span").remove('#updateValue');
 					$("span").remove('#updateButton');
 		      	},

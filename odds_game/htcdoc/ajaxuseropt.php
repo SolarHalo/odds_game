@@ -74,21 +74,31 @@ if($method == "register"){
 		$error = 'No file was uploaded..';
 		echo $error;
 	}else{
-		$filenameTmp = $_FILES[$fileElementName]['tmp_name'];
-		$time = str_replace(" ","",microtime());
-		$filename = 'upload/'.$userid."-userPhoto-".$time;
-		move_uploaded_file($filenameTmp, $filename);
-		echo $filename;
-// 		$userdb = new IboUser($dbutil);
-// 		$re = $userdb->updatePhoto($userKey, $filename);
-// 		if($re){
-// 			$user = $_SESSION['user'];
-// 			if($user != null){
-// 				$user->user_photo = $filename;
-// 			}
-// 			echo "yes";
-// 		}else{
-// 			echo "no";
+		
+		$oldName = $_FILES[$fileElementName]["name"];
+		$namePart = explode(".",$oldName);
+		$typeTag = ".".$namePart[count($namePart)-1];
+// 		if('.jpg' == $typeTag || ".png"==$typeTag){
+			$time = str_replace(" ","",microtime());
+			$filename = 'upload/'.$userid."-userPhoto-".$time.$typeTag;
+			
+			$filenameTmp = $_FILES[$fileElementName]['tmp_name'];
+			
+			move_uploaded_file($filenameTmp, $filename);
+			
+			$userdb = new IboUser($dbutil);
+			$re = $userdb->updatePhoto($userid, $filename);
+			if($re==1){
+				$user = $_SESSION['user'];
+				if($user != null){
+					$user->user_photo = $filename;
+				}
+				$arr = array ('result'=>'yes','path'=>$filename);
+				echo json_encode($arr);
+			}else{
+				$arr = array ('result'=>'no','path'=>$filename);
+				echo json_encode($arr);
+			}
 // 		}
 	}
 }

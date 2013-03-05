@@ -58,7 +58,8 @@ class IboUser{
 	}
 	
 	function updatePhoto($userKey,$photoPath){
-		$this->dbutil->update("ibo_user", array("user_photo"=> $photoPath), array("user_id"=>$userKey) );
+		$res = $this->dbutil->update("ibo_user", array("user_photo"=> $photoPath), array("user_id"=>$userKey) );
+		return $res;
 	}
 	
 	function updateUserMoney($user){

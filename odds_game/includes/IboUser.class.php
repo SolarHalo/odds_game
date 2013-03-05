@@ -31,13 +31,15 @@ class IboUser{
 	 * @param unknown_type $email
 	 * @param unknown_type $pass
 	 */
-	function addUser($email, $pass){
+	function addUser($email, $pass, $name, $photo){
 		$user = array("user_email"=>$email,
 					  "user_passwd"=> encodePassword($pass),
 					  "user_exp"=> 0,
 					  "user_vmoney"=>50,
 					  "user_regdate"=> date("c"),
-					  "user_lastdate"=> date("c"));
+					  "user_lastdate"=> date("c"),
+					  "user_name"=> $name, 
+					  "user_photo" => $photo);
 		$this->dbutil->insert("ibo_user", $user);
 		
 		$user = $this->dbutil->get_row("select * from ibo_user where user_email='".$email."'");
@@ -63,6 +65,10 @@ class IboUser{
 	
 	function updateUserMoney($user){
 		$this->dbutil->update("ibo_user", array("user_vmoney"=> $user->user_vmoney), array("user_id"=>$user->user_id) );
+	}
+	
+	function updateUserMessage($user, $id){
+		$this->dbutil->update("ibo_user", $user, array("user_id"=>$id));
 	}
 }
 ?>

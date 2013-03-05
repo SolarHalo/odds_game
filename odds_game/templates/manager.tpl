@@ -1,23 +1,23 @@
 {{* 引入头部文件 *}}
 {{include file='header.tpl'}}
-<script type="text/javascript" src="{{$urlroot}}/js/ajaxfileupload.js"></script>
-<script type="text/javascript" src="{{$urlroot}}/js/main.js"></script>
+<script type="text/javascript" src="{{$urlroot}}js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="{{$urlroot}}js/main.js"></script>
 
-<script type="text/javascript" src="{{$urlroot}}/js/useropt.js"></script>
+<script type="text/javascript" src="{{$urlroot}}js/useropt.js"></script>
 <div class="container">  
         <div class="container-left">
         	<div class="user">
             	<div id='cccc' class="user-imge">
-                	<img src="images/uerimge.jpg" width="115" height="115" />
+                	<img src="{{$userphoto}}" width="115" height="115" />
                     <a href="javascript:userOpt.modifyPhoto('cccc','{{$userid}}');" style='float: left;'>修改头像</a>
                 </div>
                 <ul>
                 	<li id='aaaa'>
-                    	<span > {{$name}}</span>
+                    	<span > {{$username}}</span>
                     	<span ><a href="javascript:userOpt.modifyName('aaaa','{{$userid}}');">修改昵称</a></span>
                     </li>
                     <li id='bbbb'>
-                    	<span >{{$username}}</span>
+                    	<!-- <span >{{$username}}</span> -->
                     	<span><a href="javascript:userOpt.modifyPassword('bbbb','{{$userid}}');">修改密码</a></span>
                     </li>
                     <li>

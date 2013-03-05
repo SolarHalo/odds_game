@@ -15,13 +15,13 @@ if($user){
 	$smarty->assign("username" , $user->user_email);
 	$smarty->assign("name" , $user->user_name);
 	$smarty->assign("userid" , $user->user_id);
+	$smarty->assign("userphoto" ,$user->user_photo );
 	
 }else{
 // 	$smarty->assign("ownmoney" , "未登录");
 // 	$smarty->assign("name" , "222");
 // 	$smarty->assign("userid" ,"1");
 }
-$rooturl ="";
 $smarty->assign("urlroot" , $rooturl);
 $smarty->assign("betsData", $bets);
 $smarty->assign("betsHistoryData", $betsHistory);

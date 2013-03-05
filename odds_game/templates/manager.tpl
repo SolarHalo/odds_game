@@ -8,7 +8,7 @@
         <div class="container-left">
         	<div class="user">
             	<div id='cccc' class="user-imge">
-                	<img src="images/uerimge.jpg" width="115" height="115" />
+                	<img src="{{$userphoto}}" width="115" height="115" />
                     <a href="javascript:userOpt.modifyPhoto('cccc','{{$userid}}');" style='float: left;'>修改头像</a>
                 </div>
                 <ul>

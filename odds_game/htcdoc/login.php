@@ -3,7 +3,11 @@ include "../configs/load.php";
 include BASE_HOME."includes/IboUser.class.php";
 include BASE_HOME.'includes/saetv2.ex.class.php';
 
+<<<<<<< HEAD
 $smarty->assign("urlroot" , $rooturl);
+=======
+$smarty->assign("urlroot" , $urlroot);
+>>>>>>> 069f7594f4b5459ee4a7a36904bad214bca429c4
 if(array_key_exists("email", $_GET) && array_key_exists("password", $_GET)){
 	$email = $_GET['email'];
 	$pass = $_GET['password'];

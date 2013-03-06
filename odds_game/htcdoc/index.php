@@ -16,7 +16,7 @@ if($user){
 	$smarty->assign("ownmoney" , "未登录");
 }
 
-$smarty->assign("urlroot" , urlroot);
+$smarty->assign("urlroot" , $urlroot);
 $smarty->assign("events", $events);
 $smarty->display("index.tpl");
 

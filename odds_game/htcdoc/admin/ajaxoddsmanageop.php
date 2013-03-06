@@ -11,10 +11,10 @@ if($method=='getEventUserBet'){
 	$event = new IboEvent($dbutil);
 	$users = $event->getEventUserBet($event_id);
 	echo $users=json_encode($users);
-}else if($method=='getEventHistoryScore'){
+}else if($method=='getEventOddsHistory'){
 	$event_id = $_GET['event_id'];
 	$event = new IboEvent($dbutil);
-	$historyscores = $event->getEventHistoryScore($event_id);
+	$historyscores = $event->getEventOddsHistory($event_id);
 	echo $historyscores=json_encode($historyscores);
 }else if($method=='getUserHistoryBet'){
 	$username = $_GET['useremail'];

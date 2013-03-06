@@ -79,20 +79,21 @@ class IboEvent{
 	 */
 	function getEventUserBet($event_id){
 //		$event_id = '676';
-		$sql = "select b.user_name, e.sport_subtype_name,e.team_mian_name,e.team_sec_name, b.bet_vmoney,b.bet_odd,b.odds_name,b.bet_time from ibo_event e,ibo_bet b 
-		where e.event_id=b.event_id and e.event_id='".$event_id."'";
+		$sql = "select b.user_name, b.bet_vmoney,b.bet_odd,b.odds_name,b.bet_time from ibo_bet b 
+		where b.event_id='".$event_id."'";
 		return $this->dbutil->get_results($sql);
 	}
 	
 	/**
-	 * 获取赛事历史比分
+	 * 获取历史赔率
+	 * Enter description here ...
 	 * @param unknown_type $event_id
 	 */
-	function getEventHistoryScore($event_id){
-//		$event_id = '474';
-		return $this->dbutil->get_results("select e.event_id, e.team_mian_name, e.team_sec_name, 
-		e.sport_subtype_name,e.event_result,e.event_time from ibo_event_history e 
-		where e.event_id='".$event_id."' and e.event_result is not null and e.event_result!=''");
+	function getEventOddsHistory($event_id){
+		return $this->dbutil->get_results("
+			select victory,planish,fail from ibo_odds_history where event_id='".$event_id."'
+		");
+		
 	}
 	
 	/**
@@ -100,7 +101,7 @@ class IboEvent{
 	 * @param unknown_type $sport_subtype_name 赛事名称
 	 * @param unknown_type $team_name 球队名称
 	 */
-	function getEventSqlCondition($conditionArr){
+function getEventSqlCondition($conditionArr){
 		if(!$conditionArr||count($conditionArr)<1){
 			return null;
 		}
@@ -120,16 +121,15 @@ class IboEvent{
 		
 		if(array_key_exists('starttime',$conditionArr)){
 			$starttime = $conditionArr['starttime'];
+			if($starttime!=null&&$starttime!=''){
+				$starttimeCondition = "event_time >=date_format('".$starttime."', '%Y-%m-%d' )";
+			}
 		}
 		if(array_key_exists('endtime', $conditionArr)){
 			$endtime = $conditionArr['endtime'];
-		}
-		if($starttime!=null&&$endtime!=null){
-			$eventtimeCondition = "event_time between date_format('".$starttime."','%Y-%m-%d') and date_format('".$endtime."','%Y-%m-%d')";
-		}else if($starttime!=null&&$endtime==null){
-			$eventtimeCondition = "event_time >=date_format('".$starttime."', '%Y-%m-%d' )";
-		}else if($starttime==null&&$endtime!=null){
-			$eventtimeCondition = "event_time<=date_format('".$endtime."','%Y-%m-%d')";
+			if($endtime!=null&&$endtime!=''){
+				$endtimeCondition = "event_time<=date_format('".$endtime."','%Y-%m-%d')";
+			}
 		}
 		
 		$expression = " and ";
@@ -141,8 +141,11 @@ class IboEvent{
 		if($teamCondition!=null){
 			array_push($conditionArray, $teamCondition);
 		}
-		if($eventtimeCondition!=null){
-			array_push($conditionArray, $eventtimeCondition);
+		if($starttimeCondition!=null){
+			array_push($conditionArray, $starttimeCondition);
+		}
+		if($endtimeCondition!=null){
+			array_push($conditionArray, $endtimeCondition);
 		}
 		$sqlcondition = implode($expression,$conditionArray);
 		return $sqlcondition;

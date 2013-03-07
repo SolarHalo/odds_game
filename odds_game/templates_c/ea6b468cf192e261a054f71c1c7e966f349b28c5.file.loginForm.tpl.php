@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-05 14:43:56
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-07 14:38:47
          compiled from "G:\odds_game\odds_game\templates\loginForm.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:22507513604ac4f2a43-17088055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ea6b468cf192e261a054f71c1c7e966f349b28c5' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\loginForm.tpl',
-      1 => 1362413126,
+      1 => 1362665326,
       2 => 'file',
     ),
   ),
@@ -15,16 +15,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_513604ac516842_99800034',
   'variables' => 
   array (
+    'othererror' => 0,
+    'tencenturl' => 0,
     'sinaauthurl' => 0,
     'loginInfo' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_513604ac516842_99800034',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_513604ac516842_99800034')) {function content_513604ac516842_99800034($_smarty_tpl) {?><div class="login">
+<p><?php echo $_smarty_tpl->tpl_vars['othererror']->value;?>
+</p>
              <p class="title-p">登录爱博</p>
              <form onsubmit="return bsubmit();">
              	<div class="loginioc">
@@ -53,9 +57,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         </table>
                         <div class="api">
                         	<hr size="1" style="color:#CCC"/>
-                        	<a href="#"><img src="images/QQlogin.gif" /></a>
+                        	<a id="qqLoginBtn" href="<?php echo $_smarty_tpl->tpl_vars['tencenturl']->value;?>
+"><img src="images/QQlogin.gif" /></a>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['sinaauthurl']->value;?>
-" target="_blank"><img src="images/weibologin.gif" /></a>
+" ><img src="images/weibologin.gif" /></a>
                         </div>
                     <span class="bordbot2">&nbsp;</span>
                 </div>

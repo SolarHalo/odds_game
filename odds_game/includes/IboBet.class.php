@@ -27,6 +27,7 @@
 		$sql = "SELECT bet.odds_name odds_name, 	".
 			"	ev.team_mian_name team_mian_name, 	".
 			"	ev.team_sec_name team_sec_name, 	".
+			"	bet.bet_time bet_time, 				".
 			"	bet.bet_odd bet_odd, 				".
 			"	bet.bet_vmoney bet_vmoney 			".
 			"from ibo_bet bet, ibo_event ev 		".
@@ -45,6 +46,7 @@
 		$sql = "SELECT bet.odds_name odds_name, 	".
 			"	ev.team_mian_name team_mian_name, 	".
 			"	ev.team_sec_name team_sec_name, 	".
+			"	bet.bet_time bet_time, 				".
 			"	bet.bet_odd bet_odd, 				".
 			"	bet.bet_vmoney bet_vmoney 			".
 			"from ibo_bet_history bet, ibo_event ev ".

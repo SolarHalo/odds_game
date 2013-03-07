@@ -79,7 +79,7 @@ if($type=='current'){
 	$events = $iboEvent->getAllEvent($conditionArr);
 }else{
 	//查询比赛结束赛事
-	$page = new Page($pageNo,10);
+	$page = new Page($pageNo);
 	$events = $iboEvent->getAllFinishedEvent($conditionArr,$page)->result;
 	$page->result = null;
 }

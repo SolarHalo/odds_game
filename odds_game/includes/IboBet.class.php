@@ -29,6 +29,7 @@
 			"	ev.team_sec_name team_sec_name, 	".
 			"	bet.bet_time bet_time, 				".
 			"	bet.bet_odd bet_odd, 				".
+			"	bet.bet_money bet_money, 			".
 			"	bet.bet_vmoney bet_vmoney 			".
 			"from ibo_bet bet, ibo_event ev 		".
 			"where bet.event_id = ev.event_id 		";
@@ -48,6 +49,7 @@
 			"	ev.team_sec_name team_sec_name, 	".
 			"	bet.bet_time bet_time, 				".
 			"	bet.bet_odd bet_odd, 				".
+			"	bet.bet_money bet_money, 			".
 			"	bet.bet_vmoney bet_vmoney 			".
 			"from ibo_bet_history bet, ibo_event ev ".
 			"where bet.event_id = ev.event_id 		";

@@ -1,6 +1,8 @@
 {{* 引入头部文件 *}}
 {{include file='header.tpl'}}
 <script type="text/javascript" src="{{$urlroot}}/js/login.js"></script>
+</script>
+
 <div class="container"> 
         <div class="tietle">
             <font>登录</font>&nbsp;&or;

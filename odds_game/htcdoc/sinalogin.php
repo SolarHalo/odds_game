@@ -35,7 +35,7 @@ if ($token) {
 		$u = array('user_name'=>$user_message['name'], "user_photo"=>$user_message['profile_image_url']);
 		$userdb->updateUserMessage($u, "sina_".strval($user_message['id']));
 	}else{
-		$userdb->addUser("sina_".strval($user_message['id']), "", $user_message['name'], $user_message['profile_image_url']);
+		$userdb->addUser("sina_".strval($user_message['id']), "", $user_message['name'], $user_message['profile_image_url'], 0);
 	}
 	$user = $userdb->getUser("sina_".strval($user_message['id']));
 	$_SESSION['user'] = $user;

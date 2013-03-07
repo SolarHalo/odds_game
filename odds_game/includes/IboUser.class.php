@@ -31,7 +31,7 @@ class IboUser{
 	 * @param unknown_type $email
 	 * @param unknown_type $pass
 	 */
-	function addUser($email, $pass, $name, $photo){
+	function addUser($email, $pass, $name, $photo, $weiboflag = null){
 		$user = array("user_email"=>$email,
 					  "user_passwd"=> encodePassword($pass),
 					  "user_exp"=> 0,
@@ -39,7 +39,8 @@ class IboUser{
 					  "user_regdate"=> date("c"),
 					  "user_lastdate"=> date("c"),
 					  "user_name"=> $name, 
-					  "user_photo" => $photo);
+					  "user_photo" => $photo,
+					  "weibo_flag" => $weiboflag);
 		$this->dbutil->insert("ibo_user", $user);
 		
 		$user = $this->dbutil->get_row("select * from ibo_user where user_email='".$email."'");

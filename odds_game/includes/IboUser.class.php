@@ -52,12 +52,17 @@ class IboUser{
 		return $user;
 	}
 	
+	function getUserById($id){
+		$user = $this->dbutil->get_row("select * from ibo_user where user_id='".$id."'");
+		return $user;
+	}
+	
 	function updateUsername($userKey,$username){
-		$this->dbutil->update("ibo_user", array("user_name"=> $username), array("user_id"=>$userKey) );
+		return $this->dbutil->update("ibo_user", array("user_name"=> $username), array("user_id"=>$userKey) );
 	}
 	
 	function updatePassword($userKey,$password){
-		$this->dbutil->update("ibo_user", array("user_password"=> $password), array("user_id"=>$userKey) );
+		return $this->dbutil->update("ibo_user", array("user_passwd"=> $password), array("user_id"=>$userKey) );
 	}
 	
 	function updatePhoto($userKey,$photoPath){

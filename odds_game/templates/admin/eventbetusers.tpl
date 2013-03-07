@@ -11,9 +11,6 @@
 				<tr>
 					<th>#</th>
 					<th>用户</th>
-					<th>类别</th>
-					<th>主队</th>
-					<th>客队</th>
 					<th>投注金额</th>
 					<th>赔率</th>
 					<th>投注名称</th>

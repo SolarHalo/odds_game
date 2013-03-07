@@ -2,18 +2,16 @@
 <div class="modal hide fade" id="eventhistoryscoreModal" >
     <div class="modal-header">
       <a class="close" data-dismiss="modal">×</a>
-      <h3 id="wintitle">历史比分</h3>
+      <h3 id="wintitle">赔率历史</h3>
     </div>
 	<div class="modal-body">
 	    <table id="historyscoretable" class="table table-striped table-bordered table-condensed span9" style="font-size: 16px;">
 					<thead>
 						<tr>
 							<th>#</th>
-							<th>类别</th>
-							<th>主队</th>
-							<th>客队</th>
-							<th>开赛时间</th>
-							<th>历史比分</th>
+							<th>胜</th>
+							<th>平</th>
+							<th>负</th>
 						</tr>
 					</thead>
 <!--					<tbody>-->
@@ -32,7 +30,7 @@ $(document).ready(function(){
 		deleteAllRow(table1);
 		$.ajax({
 			'url': 'ajaxoddsmanageop.php',
-			'data': {'method': 'getEventHistoryScore', 'event_id': event_id},
+			'data': {'method': 'getEventOddsHistory', 'event_id': event_id},
 			'success': function(data){
 				if(data!=null){
 					var obj = eval('(' + data + ')');

@@ -1,4 +1,5 @@
 <div class="login">
+<p>{{$othererror}}</p>
              <p class="title-p">登录爱博</p>
              <form onsubmit="return bsubmit();">
              	<div class="loginioc">
@@ -28,7 +29,7 @@
                         <div class="api">
                         	<hr size="1" style="color:#CCC"/>
                         	<a href="#"><img src="images/QQlogin.gif" /></a>
-                            <a href="{{$sinaauthurl}}" target="_blank"><img src="images/weibologin.gif" /></a>
+                            <a href="{{$sinaauthurl}}" ><img src="images/weibologin.gif" /></a>
                         </div>
                     <span class="bordbot2">&nbsp;</span>
                 </div>

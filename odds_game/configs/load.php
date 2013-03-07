@@ -11,6 +11,7 @@ $smarty = new Smarty_Ibo();
 
 $smarty->assign("domainname", DOMAIN_HOME);
 $smarty->assign("urlroot", DOMAIN_HOME);
+$smarty->assign("ownmoney", "");
 
 //开启session
 

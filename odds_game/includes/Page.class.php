@@ -14,7 +14,7 @@
 		var $endIndex;
 		
 		
-		function __construct($pageNo,$pagesize=15){
+		function __construct($pageNo,$pagesize=20){
 			$this->pageNo = $pageNo;
 			$this->pagesize = $pagesize;
 		}
@@ -24,7 +24,7 @@
 		 * @param unknown_type $totalsize 总条数
 		 */
 		function setTotalSize($totalsize){
-			$this->$totalsize = $totalsize;
+			$this->totalsize = $totalsize;
 			$this->setPageProperty($this->pagesize,$totalsize); 
 		}
 		
@@ -42,8 +42,7 @@
 				$this->pre = $this->getPre($this->pageNo);
 				$this->next = $this->getNext($this->pageNo);
 				$this->startIndex = $this->getStartIndex($this->pageNo, $pagesize, $this->totalpage);
-//				$this->endIndex = $this->getEndIndex($this->pageNo, $this->pageSize, $this->totalpage, $totalsize);
-				
+				$this->endIndex = $this->getEndIndex($this->pageNo, $pagesize, $this->totalpage, $totalsize);
 			}
 		}
 		
@@ -106,18 +105,18 @@
 		 * @param unknown_type $pageSize 每页条数
 		 * @param unknown_type $totalPage 总页码
 		 */
-//		function getEndIndex($pageNo,$pageSize,$totalPage,$totalSize){
-//			if($totalPage==0){
-//				$endIndex = 0;
-//			}else{
-//				if($pageNo!=$totalPage){
-//					$endIndex = $pageSize*$pageNo;
-//				}else{
-//					$endIndex = $totalSize;
-//				}
-//			}
-//			return $endIndex;
-//		}
+		function getEndIndex($pageNo,$pageSize,$totalPage,$totalSize){
+			if($totalPage==0){
+				$endIndex = 0;
+			}else{
+				if($pageNo!=$totalPage){
+					$endIndex = $pageSize*$pageNo;
+				}else{
+					$endIndex = $totalSize;
+				}
+			}
+			return $endIndex;
+		}
 		
 		function setResult($result){
 			$this->result = $result;

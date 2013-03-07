@@ -5,7 +5,6 @@ include BASE_HOME.'includes/saetv2.ex.class.php';
 require_once(BASE_HOME."/includes/Tencent.php");
 
 
-$smarty->assign("urlroot" , $rooturl);
 
 if(array_key_exists("email", $_GET) && array_key_exists("password", $_GET)){
 	$email = $_GET['email'];

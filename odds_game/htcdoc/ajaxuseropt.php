@@ -38,34 +38,20 @@ if($method == "register"){
 	$updateValue = $_GET['updateValue'];
 	$userKey = $_GET['userKey'];
 	$userdb = new IboUser($dbutil);
-	$re = $userdb->updateUsername($userKey, $updateValue);
-	if($re){
-		$user = $_SESSION['user'];
-		if($user != null){
-			$user->user_name = $updateValue;
-			$_SESSION['user'] = $user;
-		}
-		echo "yes";
-	}else{
-		echo "no";
-	}
+	$userdb->updateUsername($userKey, $updateValue);
+	$user =  $userdb->getUserById($userKey);
+	$_SESSION['user'] = $user;
+	echo "yes";
 	exit(0);
 }elseif ("updatePassword" == $method){
 	$updateValue = $_GET['updateValue'];
 	$userKey = $_GET['userKey'];
 	$userdb = new IboUser($dbutil);
 	$pass = encodePassword($updateValue);
-	$re = $userdb->updatePassword($userKey, $pass);
-	if($re){
-		$user = $_SESSION['user'];
-		if($user != null){
-			$user->user_passwd = $pass;
-			$_SESSION['user'] = $user;
-		}
-		echo "yes";
-	}else{
-		echo "no";
-	}
+	$userdb->updatePassword($userKey, $pass);
+	$user =  $userdb->getUserById($userKey);
+	$_SESSION['user'] = $user;
+	echo "yes";
 	exit(0);
 }elseif("updatePhoto" == $method){
 	$userid = $_GET['userKey'];
@@ -80,7 +66,8 @@ if($method == "register"){
 		$oldName = $_FILES[$fileElementName]["name"];
 		$namePart = explode(".",$oldName);
 		$typeTag = ".".$namePart[count($namePart)-1];
-// 		if('.jpg' == $typeTag || ".png"==$typeTag){
+		if('.jpg' == $typeTag || ".png"==$typeTag || ".gif"==$typeTag ||
+				".bmp"==$typeTag ){
 			$time = str_replace(" ","",microtime());
 			$filename = 'upload/'.$userid."-userPhoto-".$time.$typeTag;
 			
@@ -91,18 +78,18 @@ if($method == "register"){
 			$userdb = new IboUser($dbutil);
 			$re = $userdb->updatePhoto($userid, $filename);
 			if($re==1){
-				$user = $_SESSION['user'];
-				if($user != null){
-					$user->user_photo = $filename;
-					$_SESSION['user'] = $user;
-				}
+				$user =  $userdb->getUserById($userKey);
+				$_SESSION['user'] = $user;
 				$arr = array ('result'=>'yes','path'=>$filename);
 				echo json_encode($arr);
 			}else{
-				$arr = array ('result'=>'no','path'=>$filename);
+				$arr = array ('result'=>'no');
 				echo json_encode($arr);
 			}
-// 		}
+		} else {
+			$arr = array ('result'=>'no','error'=>" img error !");
+			echo json_encode($arr);
+		}
 	}
 }
 ?>

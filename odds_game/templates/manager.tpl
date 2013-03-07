@@ -12,7 +12,7 @@
                     <a href="javascript:userOpt.modifyPhoto('cccc','{{$userid}}');" style='float: left;'>修改头像</a>
                 </div>
                 <ul>
-                	<li id='aaaa'>
+                	<li id='aaaa'> 
                     	<span > {{$username}}</span>
                     	<span ><a href="javascript:userOpt.modifyName('aaaa','{{$userid}}');">修改昵称</a></span>
                     </li>
@@ -27,13 +27,14 @@
                     </li>
                 </ul>
                 <div class="user-hr">
-                	<a href="#">正在投注</a>|<a href="#">投注历史</a>
+                	<a href="?type=now">正在投注{{$types}}</a>|<a href="?type=his">投注历史</a>
                 </div>
             </div>
+            {{if $type=="now" or $type=="all"}}
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	正在投注
-                    <a href="#">更多</a>
+                    <a href="?type=now">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>
@@ -46,10 +47,12 @@
                 {{$bets=$betsData}}
                	{{include file='bettable.tpl'}}
             </div>
+            {{/if}}
+            {{if $type=="his" or $type=="all"}}
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	投注历史
-                    <a href="#">更多</a>
+                    <a href="?type=his">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>
@@ -97,6 +100,7 @@
                 </ul> 
                 -->
             </div>
+            {{/if}}
         </div>
         <!-- left END -->
         <div class="container-right" style="background:none;">  

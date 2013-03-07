@@ -6,26 +6,34 @@ var userOpt = function(){
 	
 	return{
 		updatePhoto:function(elementid){
-			var tagsInput ="" ;
-			//alert(tagsInput);
-			$.ajaxFileUpload({
-				type:'post',
-				url:'ajaxuseropt.php?method='+method+"&userKey="+userKey,//用于文件上传的服务器端请求地址
-		      	secureuri:false,//一般设置为false
-		      	fileElementId:'tagsInput',//文件上传空间的id属性 
-		     	dataType:'json',//返回值类型 一般设置为json
-		     	data:{'method': method,'userKey':userKey},
-		     	success:function (data, status){
-		     		if("yes" == data.result){
-		     			$("#"+elementid +" img:first").attr('src',data.path);
-		     		}
-		     		$("span").remove('#updateValue');
-					$("span").remove('#updateButton');
-		      	},
-		      	error:function (data, status, e){
-		      		alert("error");
-		        }
-		    });
+			var tagsInput = $("#tagsInput").val();
+			var index = tagsInput.lastIndexOf(".");
+			var typeTag = tagsInput.substr(index);
+			if('.jpg' == typeTag || ".png"==typeTag || ".gif"==typeTag ||
+					".bmp"==typeTag ){	
+				$.ajaxFileUpload({
+					type:'post',
+					url:'ajaxuseropt.php?method='+method+"&userKey="+userKey,//用于文件上传的服务器端请求地址
+			      	secureuri:false,//一般设置为false
+			      	fileElementId:'tagsInput',//文件上传空间的id属性 
+			     	dataType:'json',//返回值类型 一般设置为json
+			     	data:{'method': method,'userKey':userKey},
+			     	success:function (data, status){
+			     		if("yes" == data.result){
+			     			$("#"+elementid +" img:first").attr('src',data.path);
+			     		}else{
+			     			alert("上传失败");
+			     		}
+			     		$("span").remove('#updateValue');
+						$("span").remove('#updateButton');
+			      	},
+			      	error:function (data, status, e){
+			      		alert("error");
+			        }
+			    });
+			} else {
+				alert("只支持jpg、png、gif、bmp格式图片上传！");
+			}
 		},
 		updateName:function(elementid){
 			var tagsInput = $("#tagsInput").val();
@@ -33,6 +41,7 @@ var userOpt = function(){
 				'url': "ajaxuseropt.php",
 				'data': {'method': method, 'updateValue': tagsInput,'userKey':userKey},
 				'success': function( data ){
+					alert(data);
 					if(data == "no"){
 						alert("修改失败！");
 					}else{

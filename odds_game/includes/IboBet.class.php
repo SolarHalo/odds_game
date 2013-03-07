@@ -23,10 +23,11 @@
 	/**
 	 * 获取所有当前投注.
 	 */
-	function getAllBet4User($username){
+	function getAllBet4User($username,$getAll){
 		$sql = "SELECT bet.odds_name odds_name, 	".
 			"	ev.team_mian_name team_mian_name, 	".
 			"	ev.team_sec_name team_sec_name, 	".
+			"	bet.bet_time bet_time, 				".
 			"	bet.bet_odd bet_odd, 				".
 			"	bet.bet_vmoney bet_vmoney 			".
 			"from ibo_bet bet, ibo_event ev 		".
@@ -34,14 +35,18 @@
 		if($username != null){
 			$sql = $sql." and bet.user_name = '".$username."'";
 		}
-		$sql = $sql." ORDER BY bet.bet_time desc LIMIT 5";
+		$sql = $sql." ORDER BY bet.bet_time desc ";
+		if(!$getAll){
+			$sql = $sql."LIMIT 5";
+		}
 		return $this->dbutil->get_results($sql);
 	}
 	
-	function getAllBetHistory4User($username){
+	function getAllBetHistory4User($username,$getAll){
 		$sql = "SELECT bet.odds_name odds_name, 	".
 			"	ev.team_mian_name team_mian_name, 	".
 			"	ev.team_sec_name team_sec_name, 	".
+			"	bet.bet_time bet_time, 				".
 			"	bet.bet_odd bet_odd, 				".
 			"	bet.bet_vmoney bet_vmoney 			".
 			"from ibo_bet_history bet, ibo_event ev ".
@@ -49,8 +54,10 @@
 		if($username != null){
 			$sql = $sql." and bet.user_name = '".$username."'";
 		}
-		$sql = $sql." ORDER BY bet.bet_time desc LIMIT 5";
-		
+		$sql = $sql." ORDER BY bet.bet_time desc ";
+		if(!$getAll){
+			$sql = $sql."LIMIT 5";
+		}
 		return $this->dbutil->get_results($sql);
 	}
 	

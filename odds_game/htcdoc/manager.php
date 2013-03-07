@@ -8,6 +8,12 @@ if($type == null){
 }
 
 $user = $_SESSION['user'];
+if($user==null){
+	echo "<script language='javascript' type='text/javascript'>";
+	echo "window.location.href='$rooturl'";
+	echo "</script>";
+	exit(0);
+}
 
 $betdb = new IboBet($dbutil);
 $bets = null;

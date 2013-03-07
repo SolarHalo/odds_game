@@ -49,5 +49,6 @@ define('BASE_HOME', "G:/odds_game/odds_game/");
 //获得http路径的地址
 //define('DOMAIN_HOME', $_SERVER['HTTP_HOST']);
 define('DOMAIN_HOME', "http://localhost/");
+define('URL_ROOT', "http://localhost/");
 
 ?>

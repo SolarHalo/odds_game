@@ -10,7 +10,7 @@ if($type == null){
 $user = $_SESSION['user'];
 if($user==null){
 	echo "<script language='javascript' type='text/javascript'>";
-	echo "window.location.href='$rooturl'";
+	echo "window.location.href='".URL_ROOT."'";
 	echo "</script>";
 	exit(0);
 }
@@ -36,7 +36,7 @@ if($user){
 // 	$smarty->assign("name" , "222");
 // 	$smarty->assign("userid" ,"1");
 }
-$smarty->assign("urlroot" , $rooturl);
+
 $smarty->assign("betsData", $bets);
 $smarty->assign("betsHistoryData", $betsHistory);
 $smarty->display("manager.tpl");

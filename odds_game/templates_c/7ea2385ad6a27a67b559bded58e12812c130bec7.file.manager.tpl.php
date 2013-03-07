@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-07 15:14:39
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-07 15:54:57
          compiled from "G:\odds_game\odds_game\templates\manager.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:78395136049811b1f1-94538195%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ea2385ad6a27a67b559bded58e12812c130bec7' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\manager.tpl',
-      1 => 1362669137,
+      1 => 1362671636,
       2 => 'file',
     ),
   ),
@@ -27,6 +27,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'types' => 0,
     'type' => 0,
     'betsData' => 0,
+    'bet' => 0,
+    'a' => 0,
     'betsHistoryData' => 0,
   ),
   'has_nocache_code' => false,
@@ -85,14 +87,42 @@ js/useropt.js"></script>
                     <li class="sfp">胜/负/平</li>
                     <li class="yzhud">主队</li>
                     <li class="yked">客队</li>
-                    <li class="shij">时间</li>
+                    <!--
+                    <li class="shij">时间</li>-->
                     <li class="peil">赔率</li>
                     <li class="touzje">投注金额</li>
                     <li class="shour">押注正确将收入</li> 
                 </ul>
-                <?php $_smarty_tpl->tpl_vars['bets'] = new Smarty_variable($_smarty_tpl->tpl_vars['betsData']->value, null, 0);?>
-               	<?php echo $_smarty_tpl->getSubTemplate ('bettable.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
+               	<?php  $_smarty_tpl->tpl_vars['bet'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['bet']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['betsData']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['bet']->key => $_smarty_tpl->tpl_vars['bet']->value){
+$_smarty_tpl->tpl_vars['bet']->_loop = true;
+?>
+					<ul class="list-list bg1">
+						<?php $_smarty_tpl->tpl_vars['a'] = new Smarty_variable(1, null, 0);?>
+						<?php if ($_smarty_tpl->tpl_vars['bet']->value->odds_name=="平"){?>
+						<?php $_smarty_tpl->tpl_vars['a'] = new Smarty_variable(3, null, 0);?>
+						<?php }elseif($_smarty_tpl->tpl_vars['bet']->value->odds_name=="负"||$_smarty_tpl->tpl_vars['bet']->value->odds_name=="主负"){?>
+						<?php $_smarty_tpl->tpl_vars['a'] = new Smarty_variable(2, null, 0);?>
+						<?php }?>
+						<li class="sfp"><font class="bold1<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['bet']->value->odds_name;?>
+</font></li>
+				   		<li class="yzhud"><?php echo $_smarty_tpl->tpl_vars['bet']->value->team_mian_name;?>
+</li>
+				   		<li class="yked"><?php echo $_smarty_tpl->tpl_vars['bet']->value->team_sec_name;?>
+</li>
+				   		<!--
+				   		<li class="shij"><?php echo $_smarty_tpl->tpl_vars['bet']->value->bet_time;?>
+</li>-->
+				 		<li class="peil"><?php echo $_smarty_tpl->tpl_vars['bet']->value->bet_odd;?>
+</li>
+				      	<li class="touzje"><?php echo $_smarty_tpl->tpl_vars['bet']->value->bet_vmoney;?>
+</li>
+				     	<li class="shour"><?php echo $_smarty_tpl->tpl_vars['bet']->value->bet_vmoney*$_smarty_tpl->tpl_vars['bet']->value->bet_odd;?>
+</li>  
+					</ul>
+				<?php } ?>
             </div>
             <?php }?>
             <?php if ($_smarty_tpl->tpl_vars['type']->value=="his"||$_smarty_tpl->tpl_vars['type']->value=="all"){?>
@@ -105,15 +135,42 @@ js/useropt.js"></script>
                     <li class="sfp">胜/负/平</li>
                     <li class="yzhud">主队</li>
                     <li class="yked">客队</li>
-                    <li class="shij">时间</li>
+                    <!--
+                    <li class="shij">时间</li>-->
                     <li class="peil">赔率</li>
                     <li class="touzje">投注金额</li>
                     <li class="shour">收入</li> 
                 </ul>
-                <?php $_smarty_tpl->tpl_vars['bets'] = new Smarty_variable($_smarty_tpl->tpl_vars['betsHistoryData']->value, null, 0);?>
-                <?php echo $_smarty_tpl->getSubTemplate ('bettable.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-                
+                <?php  $_smarty_tpl->tpl_vars['bet'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['bet']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['betsHistoryData']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['bet']->key => $_smarty_tpl->tpl_vars['bet']->value){
+$_smarty_tpl->tpl_vars['bet']->_loop = true;
+?>
+					<ul class="list-list bg1">
+						<?php $_smarty_tpl->tpl_vars['a'] = new Smarty_variable(1, null, 0);?>
+						<?php if ($_smarty_tpl->tpl_vars['bet']->value->odds_name=="平"){?>
+						<?php $_smarty_tpl->tpl_vars['a'] = new Smarty_variable(3, null, 0);?>
+						<?php }elseif($_smarty_tpl->tpl_vars['bet']->value->odds_name=="负"||$_smarty_tpl->tpl_vars['bet']->value->odds_name=="主负"){?>
+						<?php $_smarty_tpl->tpl_vars['a'] = new Smarty_variable(2, null, 0);?>
+						<?php }?>
+						<li class="sfp"><font class="bold1<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['bet']->value->odds_name;?>
+</font></li>
+				   		<li class="yzhud"><?php echo $_smarty_tpl->tpl_vars['bet']->value->team_mian_name;?>
+</li>
+				   		<li class="yked"><?php echo $_smarty_tpl->tpl_vars['bet']->value->team_sec_name;?>
+</li>
+				   		<!--
+				   		<li class="shij"><?php echo $_smarty_tpl->tpl_vars['bet']->value->bet_time;?>
+</li>-->
+				 		<li class="peil"><?php echo $_smarty_tpl->tpl_vars['bet']->value->bet_odd;?>
+</li>
+				      	<li class="touzje"><?php echo $_smarty_tpl->tpl_vars['bet']->value->bet_vmoney;?>
+</li>
+				     	<li class="shour"><?php echo $_smarty_tpl->tpl_vars['bet']->value->bet_money;?>
+</li>  
+					</ul>
+				<?php } ?>
                 <!--
                	<ul class="list-list bg1">
                     <li class="sfp"><font class="bold11">胜</font></li>

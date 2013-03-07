@@ -1,29 +1,30 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-03 16:37:28
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-05 14:43:56
          compiled from "G:\odds_game\odds_game\templates\loginForm.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:153895128e928787ff5-79662460%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:22507513604ac4f2a43-17088055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ea6b468cf192e261a054f71c1c7e966f349b28c5' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\loginForm.tpl',
-      1 => 1362240575,
+      1 => 1362413126,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '153895128e928787ff5-79662460',
+  'nocache_hash' => '22507513604ac4f2a43-17088055',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_5128e9287c29d3_58566221',
   'variables' => 
   array (
+    'sinaauthurl' => 0,
     'loginInfo' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_513604ac516842_99800034',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5128e9287c29d3_58566221')) {function content_5128e9287c29d3_58566221($_smarty_tpl) {?><div class="login">
+<?php if ($_valid && !is_callable('content_513604ac516842_99800034')) {function content_513604ac516842_99800034($_smarty_tpl) {?><div class="login">
              <p class="title-p">登录爱博</p>
              <form onsubmit="return bsubmit();">
              	<div class="loginioc">
@@ -53,7 +54,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <div class="api">
                         	<hr size="1" style="color:#CCC"/>
                         	<a href="#"><img src="images/QQlogin.gif" /></a>
-                            <a href="#"><img src="images/weibologin.gif" /></a>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['sinaauthurl']->value;?>
+" target="_blank"><img src="images/weibologin.gif" /></a>
                         </div>
                     <span class="bordbot2">&nbsp;</span>
                 </div>

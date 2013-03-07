@@ -1,27 +1,27 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-02 15:23:15
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-05 15:49:55
          compiled from "G:\odds_game\odds_game\templates\manager.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:60555128e9360ea278-35222490%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:78395136049811b1f1-94538195%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7ea2385ad6a27a67b559bded58e12812c130bec7' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\manager.tpl',
-      1 => 1362237604,
+      1 => 1362498472,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '60555128e9360ea278-35222490',
+  'nocache_hash' => '78395136049811b1f1-94538195',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_5128e9362fb1e7_56037225',
+  'unifunc' => 'content_513604982b1af6_52852507',
   'variables' => 
   array (
     'urlroot' => 0,
+    'userphoto' => 0,
     'userid' => 0,
-    'name' => 0,
     'username' => 0,
     'ownmoney' => 0,
     'betsData' => 0,
@@ -29,34 +29,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5128e9362fb1e7_56037225')) {function content_5128e9362fb1e7_56037225($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_513604982b1af6_52852507')) {function content_513604982b1af6_52852507($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
 js/ajaxfileupload.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
 js/main.js"></script>
-
+ 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
 js/useropt.js"></script>
 <div class="container">  
         <div class="container-left">
         	<div class="user">
             	<div id='cccc' class="user-imge">
-                	<img src="images/uerimge.jpg" width="115" height="115" />
+                	<img src="<?php echo $_smarty_tpl->tpl_vars['userphoto']->value;?>
+" width="115" height="115" />
                     <a href="javascript:userOpt.modifyPhoto('cccc','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
 ');" style='float: left;'>修改头像</a>
                 </div>
                 <ul>
                 	<li id='aaaa'>
-                    	<span > <?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+                    	<span > <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 </span>
                     	<span ><a href="javascript:userOpt.modifyName('aaaa','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
 ');">修改昵称</a></span>
                     </li>
                     <li id='bbbb'>
-                    	<span ><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
-</span>
+                    	<!-- <span ><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+</span> -->
                     	<span><a href="javascript:userOpt.modifyPassword('bbbb','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
 ');">修改密码</a></span>
                     </li>

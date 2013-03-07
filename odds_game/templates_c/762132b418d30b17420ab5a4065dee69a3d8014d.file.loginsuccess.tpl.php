@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-02-23 16:07:12
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-05 14:44:00
          compiled from "G:\odds_game\odds_game\templates\loginsuccess.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:185345128e930b60c35-91712019%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:14664513604b08b1ef0-73194514%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '185345128e930b60c35-91712019',
+  'nocache_hash' => '14664513604b08b1ef0-73194514',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_5128e930c26d65_83607722',
+  'unifunc' => 'content_513604b0947f83_55843688',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5128e930c26d65_83607722')) {function content_5128e930c26d65_83607722($_smarty_tpl) {?>您已成功登录
+<?php if ($_valid && !is_callable('content_513604b0947f83_55843688')) {function content_513604b0947f83_55843688($_smarty_tpl) {?>您已成功登录
 <script type="text/javascript" >
 setTimeout("location.replace('index.php')", 3000);
 </script><?php }} ?>

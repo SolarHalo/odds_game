@@ -40,7 +40,8 @@
                     <li class="sfp">胜/负/平</li>
                     <li class="yzhud">主队</li>
                     <li class="yked">客队</li>
-                    <li class="shij">时间</li>
+                    <!--
+                    <li class="shij">时间</li>-->
                     <li class="peil">赔率</li>
                     <li class="touzje">投注金额</li>
                     <li class="shour">押注正确将收入</li> 
@@ -59,7 +60,8 @@
                     <li class="sfp">胜/负/平</li>
                     <li class="yzhud">主队</li>
                     <li class="yked">客队</li>
-                    <li class="shij">时间</li>
+                    <!--
+                    <li class="shij">时间</li>-->
                     <li class="peil">赔率</li>
                     <li class="touzje">投注金额</li>
                     <li class="shour">收入</li> 

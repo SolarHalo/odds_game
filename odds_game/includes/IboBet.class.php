@@ -64,6 +64,16 @@
 	function getBetResults($eids){
 		
 	}
+	
+	function getLastBet(){
+		$sql = "select t.odds_name, t.bet_vmoney, t.bet_odd,".
+			   " t.bet_time, e.team_mian_name, e.team_sec_name,".
+ 			   "u.user_email, u.user_name, u.user_photo from ibo_bet t, ibo_event e".
+ 			   " , ibo_user u where t.event_id = e.event_id and".
+ 			   " t.user_name = u.user_email,u.user_id order by t.bet_time desc limit 15";
+		
+		return $this->dbutil->get_results($sql);
+	}
 	}
 
 ?>

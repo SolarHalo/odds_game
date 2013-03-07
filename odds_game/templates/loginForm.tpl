@@ -28,7 +28,7 @@
                         </table>
                         <div class="api">
                         	<hr size="1" style="color:#CCC"/>
-                        	<a href="#"><img src="images/QQlogin.gif" /></a>
+                        	<a id="qqLoginBtn" href="{{$tencenturl}}"><img src="images/QQlogin.gif" /></a>
                             <a href="{{$sinaauthurl}}" ><img src="images/weibologin.gif" /></a>
                         </div>
                     <span class="bordbot2">&nbsp;</span>

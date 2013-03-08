@@ -15,6 +15,7 @@ $smarty->assign("urlroot", URL_ROOT);
 if($user){
 	$smarty->assign("ownmoney" , $user->user_vmoney);
 	$smarty->assign("username" , $user->user_email); 
+	$smarty->assign("userid",$user->user_id);
 }else{
 	$smarty->assign("ownmoney" , "未登录");
 }

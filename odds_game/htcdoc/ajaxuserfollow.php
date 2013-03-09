@@ -8,15 +8,14 @@ if($method == 'followUser'){
 	$fans = $_GET['fans'];
 	$superStar = $_GET['superStar'];
 	$latestupdate = new Latestupdate($dbutil);
-	echo $fans."xxxxxxxxx".$superStar;
 	$watch = $latestupdate->userFollow($fans,$superStar);
 	if($watch){
-		echo "error";
-	}else{
-		$admindb->addAdmin(array('admin_name'=>$username, 'admin_passwd'=>encodePassword($password)));
 		echo "success";
+		exit(0);
+	}else{
+		echo "error";
+		exit(0);
 	}
-	
 }
 
 ?>

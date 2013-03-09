@@ -32,8 +32,9 @@
 		
 	function userFollow($fans,$superStar){
 			$data = array("user_id"=>$fans,
-					  "watch_user_id"=> $superStar);
-			$this->dbutil->insert('ibo_watch_user', $data);
+					  	  "watch_user_id"=> $superStar,
+					      "watch_time"=>time());
+			return $this->dbutil->insert('ibo_watch_user', $data);
 		}
 	}
 ?>

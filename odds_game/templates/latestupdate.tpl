@@ -13,7 +13,9 @@
 							'data': {'method': 'followUser', 'fans': fans,'superStar':superStar},
 							'success': function(data){
 								if(data == 'error'){
+									alert("error");
 								}else if(data == 'success'){
+									alert("success");
 									$(this).replaceWith("<div class='alert'>  <button type='button' class='close' data-dismiss='alert'>&times;</button>  <strong>Warning!</strong> 关注成功.</div>");
 								}
 							}

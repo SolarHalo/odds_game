@@ -29,6 +29,7 @@
 			"	ev.team_sec_name team_sec_name, 	".
 			"	bet.bet_time bet_time, 				".
 			"	bet.bet_odd bet_odd, 				".
+			"	bet.bet_money bet_money, 			".
 			"	bet.bet_vmoney bet_vmoney 			".
 			"from ibo_bet bet, ibo_event ev 		".
 			"where bet.event_id = ev.event_id 		";
@@ -48,6 +49,7 @@
 			"	ev.team_sec_name team_sec_name, 	".
 			"	bet.bet_time bet_time, 				".
 			"	bet.bet_odd bet_odd, 				".
+			"	bet.bet_money bet_money, 			".
 			"	bet.bet_vmoney bet_vmoney 			".
 			"from ibo_bet_history bet, ibo_event ev ".
 			"where bet.event_id = ev.event_id 		";
@@ -68,9 +70,9 @@
 	function getLastBet(){
 		$sql = "select t.odds_name, t.bet_vmoney, t.bet_odd,".
 			   " t.bet_time, e.team_mian_name, e.team_sec_name,".
- 			   "u.user_email, u.user_name, u.user_photo from ibo_bet t, ibo_event e".
+ 			   "u.user_email, u.user_name, u.user_photo,u.user_id  from ibo_bet t, ibo_event e".
  			   " , ibo_user u where t.event_id = e.event_id and".
- 			   " t.user_name = u.user_email,u.user_id order by t.bet_time desc limit 15";
+ 			   " t.user_name = u.user_email order by t.bet_time desc limit 15";
 		
 		return $this->dbutil->get_results($sql);
 	}

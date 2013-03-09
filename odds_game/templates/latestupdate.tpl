@@ -7,7 +7,7 @@
         	{{foreach $lastbets as $lastbet}}
             	<div class="newdt">
                     <div class="user-imge">
-                        <img src="{{if $lastbet->user_photo}}{{$lastbet->user_photo}}{{else}}images/uerimge.jpg{{/if}}" width="80" height="80" /> 
+                        <img src="{{if $lastbet->user_photo}}{{$urlroot}}{{$lastbet->user_photo}}{{else}}images/uerimge.jpg{{/if}}" width="80" height="80" /> 
                     </div>
                     <div class="new-touzhu">
                             <font>{{if $lastbet->user_name}}{{$lastbet->user_name}}{{else}}{{$lastbet->user_email}}</font> {{$lastbet->bet_time}}{{/if}}<br />

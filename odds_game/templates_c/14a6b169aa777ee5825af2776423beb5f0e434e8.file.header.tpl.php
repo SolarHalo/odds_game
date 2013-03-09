@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-05 14:43:36
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-07 16:14:56
          compiled from "G:\odds_game\odds_game\templates\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11244513604982d4697-02519157%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '14a6b169aa777ee5825af2776423beb5f0e434e8' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\header.tpl',
-      1 => 1362329021,
+      1 => 1362672894,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_5136049845d199_69276126',
   'variables' => 
   array (
     'urlroot' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'mainmenu' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_5136049845d199_69276126',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5136049845d199_69276126')) {function content_5136049845d199_69276126($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -52,7 +52,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           
           <?php if ($_smarty_tpl->tpl_vars['ownmoney']->value=='未登录'){?>
 		    <a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/login.php" class="sw-but">
+login.php" class="sw-but">
             	立即试玩
             </a>
             <?php }else{ ?> 
@@ -60,7 +60,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             	欢迎你 : <font><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 </font><br />
 				<a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">退出</a>
+manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">退出</a>
             </div>
           <?php }?>
 	     

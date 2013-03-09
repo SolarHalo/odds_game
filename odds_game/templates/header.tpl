@@ -17,13 +17,13 @@
             </a>
           
           {{if $ownmoney eq '未登录' }}
-		    <a href="{{$urlroot}}/login.php" class="sw-but">
+		    <a href="{{$urlroot}}login.php" class="sw-but">
             	立即试玩
             </a>
             {{else}} 
             <div class="user_colum">
             	欢迎你 : <font>{{$username}}</font><br />
-				<a href="{{$urlroot}}/manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">退出</a>
+				<a href="{{$urlroot}}manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">退出</a>
             </div>
           {{/if}}
 	     

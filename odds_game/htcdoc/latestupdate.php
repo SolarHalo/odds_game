@@ -2,7 +2,7 @@
 include "../configs/load.php";
 include BASE_HOME.'includes/IboBet.class.php';
  
-$smarty->assign("urlroot" , $urlroot);
+
 $smarty->assign("mainmenu" , "latestupdate");
 
 $betdb = new IboBet($dbutil);

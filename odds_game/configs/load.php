@@ -10,8 +10,15 @@ $dbutil = new DbUtil(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $smarty = new Smarty_Ibo();
 
 $smarty->assign("domainname", DOMAIN_HOME);
-$smarty->assign("urlroot", DOMAIN_HOME);
-$smarty->assign("ownmoney", "");
+$smarty->assign("urlroot", URL_ROOT); 
+//add user for header start
+if($user){
+	$smarty->assign("ownmoney" , $user->user_vmoney);
+	$smarty->assign("username" , $user->user_email); 
+}else{
+	$smarty->assign("ownmoney" , "未登录");
+}
+//end
 
 //开启session
 

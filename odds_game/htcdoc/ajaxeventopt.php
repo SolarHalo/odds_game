@@ -46,10 +46,11 @@ if($method == 'betevent'){
 			}
 		}
 	}
-	$user->user_vmoney = (int)$user->user_vmoney - $betmoneyC + 1;
+	$user->user_vmoney = (int)$user->user_vmoney - $betmoneyC;
 	$_SESSION['user'] = $user;
 	$userdb = new IboUser($dbutil);
-	$userdb->updateUserMoney($user);
+	$u = array("user_vmoney"=>$user->user_vmoney, "user_exp" => $user->user_exp + 1);
+	$userdb->updateUserMessage($u, $user->user_id);
 	echo "投注已保存成功！";
 	exit(0);
 }

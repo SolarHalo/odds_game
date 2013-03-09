@@ -12,6 +12,7 @@ $smarty = new Smarty_Ibo();
 $smarty->assign("domainname", DOMAIN_HOME);
 $smarty->assign("urlroot", URL_ROOT); 
 //add user for header start
+$user = $_SESSION['user'];
 if($user){
 	$smarty->assign("ownmoney" , $user->user_vmoney);
 	$smarty->assign("username" , $user->user_email); 

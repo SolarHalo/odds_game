@@ -8,7 +8,7 @@
 		<ul id="eventid_{{$event->event_id}}" class="list-list bg1"> 
 			<li class="sais">{{$event->sport_subtype_name}}</li>
 			<li class="changc">{{$event->event_id}}</li>
-			<li class="shij">{{$event->event_time}}</li>
+			<li class="shij">{{$event->event_time|truncate:16:"":TRUE}}</li>
 			<li class="zhud">{{$event->team_mian_name}}</li>
 			<li class="ked">{{$event->team_sec_name}}</li>
 			<li class="zhus betbutton"><font class="bold2">{{$event->victory}}</font></li>
@@ -19,7 +19,7 @@
 		 <ul id="eventid_{{$event->event_id}}" class="list-list bg1"> 
 			<li class="sais">{{$event->sport_subtype_name}}</li>
 			<li class="changc">{{$event->event_id}}</li>
-			<li class="shij">{{$event->event_time}}</li>
+			<li class="shij">{{$event->event_time|truncate:16:"":TRUE}}</li>
 			<li class="zhud">{{$event->team_mian_name}}</li>
 			<li class="ked">{{$event->team_sec_name}}</li>
 			<li class="zhus betbutton"><font class="bold2">{{$event->victory}}</font></li>

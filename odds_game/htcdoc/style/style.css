@@ -331,6 +331,7 @@ a {
 	font-size:12px;
 	color:#333;
 	line-height:23px;
+	margin-right:16px;
 	}	
 .q-delt{
 	color:#CCC;
@@ -338,6 +339,7 @@ a {
 	font-size:10px;
 	float:left;
 	width:50px;
+	margin-left:16px;
 	}	
 .touz-bot:hover{
 	color:#852225;
@@ -802,12 +804,14 @@ a {
 	font-size:14px;
 	}
 
-.container-r{
-	width:281px;
-	position:fixed;
-	margin-left:694px;
-    top:152px;
+.fudong{ 
+	position:fixed; 
+    top:148px;
 	z-index:1;
+	border-bottom:10px solid #484848;
+	border-top:5px solid #484848;
 	}
-
+.mt50{
+	margin-top:85px;
+	}
 

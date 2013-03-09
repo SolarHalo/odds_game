@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-09 16:00:27
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-09 17:00:26
          compiled from "G:\odds_game\odds_game\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:292905136049ab7cbc8-06298140%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4cb9971e16f873fae861d7c164afa011f2588d64' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\index.tpl',
-      1 => 1362844823,
+      1 => 1362848402,
       2 => 'file',
     ),
   ),
@@ -55,13 +55,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             </div>
         </div>
         <!-- left END -->
-      <div class="container-r">
-      
+       
         <div class="container-right">
-        	<span class="cont-r-title-l">
+        	<span class="cont-r-title-l mt50">
             	&nbsp;投注项
             </span>
-            <span class="cont-r-title-r">
+            <span class="cont-r-title-r mt50">
             	赔率&nbsp;&nbsp;赢/位置&nbsp;
             </span>
             <span id="ownmoney" style="display: none;"><?php echo $_smarty_tpl->tpl_vars['ownmoney']->value;?>
@@ -99,10 +98,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <p id="beterror" class="tis">如选项被加亮显示，则此项不能串成过关投注</p>
                 <span class="bordbot">&nbsp;</span>
             </div>
-            <div class="zongje">总投注金额:<font id="rmoneycount">000.00</font></div> 
-            <div class="touz">
-            	<a id="deleteAll" href="javascript:void(0);" class="q-delt">全部删除</a>
-                <a id="betnow" href="javascript:void(0);" class="touz-bot">投注</a>
+            <div class="clumu fudong">
+                <span class="bordtop" >&nbsp;</span>
+	            <div class="zongje">总投注金额:<font id="rmoneycount">000.00</font></div> 
+	            <div class="touz">
+	            	<a id="deleteAll" href="javascript:void(0);" class="q-delt">全部删除</a>
+	                <a id="betnow" href="javascript:void(0);" class="touz-bot">投注</a>
+	            </div>
             </div>
         </div>
         <div class="container-right" style="margin-top:5px; padding-top:8px;">
@@ -127,8 +129,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <span class="bordbot">&nbsp;</span>
             </div>
         </div>
-       </div>
-    </div>
+     </div>
 </div>
 
 

@@ -12,11 +12,18 @@ $smarty = new Smarty_Ibo();
 $smarty->assign("domainname", DOMAIN_HOME);
 $smarty->assign("urlroot", URL_ROOT); 
 //add user for header start
-if($user){
+if(array_key_exists("user", $_SESSION)){
+	$user = $_SESSION['user'];
+	$username = "";
+	if($user->user_name){
+		$username = $user->user_name;
+	}else{
+		$username = $user->user_email;
+	}
 	$smarty->assign("ownmoney" , $user->user_vmoney);
-	$smarty->assign("username" , $user->user_email); 
-	$smarty->assign("userid",$user->user_id);
-}else{
+	$smarty->assign("username" , $username); 
+}
+else{
 	$smarty->assign("ownmoney" , "未登录");
 }
 //end

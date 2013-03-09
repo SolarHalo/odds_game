@@ -25,6 +25,8 @@
             </div>
         </div>
         <!-- left END -->
+      <div class="container-r">
+      
         <div class="container-right">
         	<span class="cont-r-title-l">
             	&nbsp;投注项
@@ -94,6 +96,7 @@
                 <span class="bordbot">&nbsp;</span>
             </div>
         </div>
+       </div>
     </div>
 </div>
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-05 14:43:38
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-09 16:00:27
          compiled from "G:\odds_game\odds_game\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:292905136049ab7cbc8-06298140%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4cb9971e16f873fae861d7c164afa011f2588d64' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\index.tpl',
-      1 => 1359617439,
+      1 => 1362844823,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_5136049acf3c30_56127326',
   'variables' => 
   array (
     'urlroot' => 0,
     'ownmoney' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_5136049acf3c30_56127326',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5136049acf3c30_56127326')) {function content_5136049acf3c30_56127326($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
@@ -55,6 +55,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             </div>
         </div>
         <!-- left END -->
+      <div class="container-r">
+      
         <div class="container-right">
         	<span class="cont-r-title-l">
             	&nbsp;投注项
@@ -125,6 +127,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <span class="bordbot">&nbsp;</span>
             </div>
         </div>
+       </div>
     </div>
 </div>
 

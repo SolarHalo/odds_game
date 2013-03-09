@@ -1,5 +1,5 @@
 <?php
-include '../../configs/load.php';
+include '../configs/load.php';
 include BASE_HOME."/includes/Latestupdate.class.php";
 
 $method = $_GET['method'];

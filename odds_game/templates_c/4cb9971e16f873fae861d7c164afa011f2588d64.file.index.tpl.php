@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-09 17:00:26
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-09 17:50:16
          compiled from "G:\odds_game\odds_game\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:292905136049ab7cbc8-06298140%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4cb9971e16f873fae861d7c164afa011f2588d64' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\index.tpl',
-      1 => 1362848402,
+      1 => 1362851403,
       2 => 'file',
     ),
   ),
@@ -93,18 +93,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             
             </div>
             
-            <div id="msgPanel" class="clumu" style="display: none;">
-            	<span class="bordtop">&nbsp;</span>
-                <p id="beterror" class="tis">如选项被加亮显示，则此项不能串成过关投注</p>
-                <span class="bordbot">&nbsp;</span>
-            </div>
+          
             <div class="clumu fudong">
+           
                 <span class="bordtop" >&nbsp;</span>
 	            <div class="zongje">总投注金额:<font id="rmoneycount">000.00</font></div> 
 	            <div class="touz">
 	            	<a id="deleteAll" href="javascript:void(0);" class="q-delt">全部删除</a>
 	                <a id="betnow" href="javascript:void(0);" class="touz-bot">投注</a>
+	            
 	            </div>
+	            <div id="msgPanel"   style="display: none;"> 
+                  <p id="beterror" class="tis">如选项被加亮显示，则此项不能串成过关投注</p> 
+                </div>
+	             <span class="bordbot" >&nbsp;</span> 
             </div>
         </div>
         <div class="container-right" style="margin-top:5px; padding-top:8px;">

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-07 16:14:56
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-09 17:49:42
          compiled from "G:\odds_game\odds_game\templates\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11244513604982d4697-02519157%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '14a6b169aa777ee5825af2776423beb5f0e434e8' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\header.tpl',
-      1 => 1362672894,
+      1 => 1362851378,
       2 => 'file',
     ),
   ),
@@ -31,23 +31,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/style/style.css" type="text/css" rel="stylesheet" />
+style/style.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/js/jquery-1.8.0.min.js"></script> 
-<title>iBo123</title>
+js/jquery-1.8.0.min.js"></script> 
+<title>IBo123 博彩模拟游戏中心</title>
 </head>
+<BODY>
 <div id="box">
 	<div id="head">
     	 <div class="toplogo">
          	<a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
 ">
             	<img src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/images/logo_ibo123.gif" class="fl"  title="IBO123.COM"/>
+images/logo_ibo123.gif" class="fl"  title="IBO123.COM"/>
             </a>
             <a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
 ">
             	<img src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/images/text-logo.gif" class="fl"  title="爱博游戏中心" style="padding:5px 0 0 125px;"/>
+images/text-logo.gif" class="fl"  title="爱博游戏中心" style="padding:5px 0 0 125px;"/>
             </a>
           
           <?php if ($_smarty_tpl->tpl_vars['ownmoney']->value=='未登录'){?>
@@ -72,7 +73,7 @@ manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">退�
             <li <?php if ($_smarty_tpl->tpl_vars['mainmenu']->value=='gamecenter'){?> class="xz" <?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
 ">游戏中心</a></li>
             <li <?php if ($_smarty_tpl->tpl_vars['mainmenu']->value=='latestupdate'){?> class="xz" <?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
-/latestupdate.php">最新动态</a></li>
+latestupdate.php">最新动态</a></li>
             <li <?php if ($_smarty_tpl->tpl_vars['mainmenu']->value=='help'){?> class="xz" <?php }?>><a href="#">帮助</a></li>
          </ul>
     </div><?php }} ?>

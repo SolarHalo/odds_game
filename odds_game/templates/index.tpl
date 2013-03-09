@@ -62,18 +62,20 @@
             
             </div>
             
-            <div id="msgPanel" class="clumu" style="display: none;">
-            	<span class="bordtop">&nbsp;</span>
-                <p id="beterror" class="tis">如选项被加亮显示，则此项不能串成过关投注</p>
-                <span class="bordbot">&nbsp;</span>
-            </div>
+          
             <div class="clumu fudong">
+           
                 <span class="bordtop" >&nbsp;</span>
 	            <div class="zongje">总投注金额:<font id="rmoneycount">000.00</font></div> 
 	            <div class="touz">
 	            	<a id="deleteAll" href="javascript:void(0);" class="q-delt">全部删除</a>
 	                <a id="betnow" href="javascript:void(0);" class="touz-bot">投注</a>
+	            
 	            </div>
+	            <div id="msgPanel"   style="display: none;"> 
+                  <p id="beterror" class="tis">如选项被加亮显示，则此项不能串成过关投注</p> 
+                </div>
+	             <span class="bordbot" >&nbsp;</span> 
             </div>
         </div>
         <div class="container-right" style="margin-top:5px; padding-top:8px;">

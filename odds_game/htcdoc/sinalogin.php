@@ -32,7 +32,7 @@ if ($token) {
 	$userdb = new IboUser($dbutil);
 	$user = $userdb->getUser("sina_".strval($user_message['id']));
 	if($user){
-		$u = array('user_name'=>$user_message['name'], "user_photo"=>$user_message['profile_image_url']);
+		$u = array('user_name'=>$user_message['name'], "user_photo"=>$user_message['profile_image_url'], "user_vmoney"=>intval($user->user_vmoney)+5);
 		$userdb->updateUserMessage($u, "sina_".strval($user_message['id']));
 	}else{
 		$userdb->addUser("sina_".strval($user_message['id']), "", $user_message['name'], $user_message['profile_image_url'], 0);

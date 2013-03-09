@@ -35,7 +35,7 @@ class IboUser{
 		$user = array("user_email"=>$email,
 					  "user_passwd"=> encodePassword($pass),
 					  "user_exp"=> 0,
-					  "user_vmoney"=>50,
+					  "user_vmoney"=>100,
 					  "user_regdate"=> date("c"),
 					  "user_lastdate"=> date("c"),
 					  "user_name"=> $name, 

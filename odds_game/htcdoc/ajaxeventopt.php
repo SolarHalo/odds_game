@@ -46,7 +46,7 @@ if($method == 'betevent'){
 			}
 		}
 	}
-	$user->user_vmoney = (int)$user->user_vmoney - $betmoneyC;
+	$user->user_vmoney = (int)$user->user_vmoney - $betmoneyC + 1;
 	$_SESSION['user'] = $user;
 	$userdb = new IboUser($dbutil);
 	$userdb->updateUserMoney($user);

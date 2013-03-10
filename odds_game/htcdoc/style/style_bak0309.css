@@ -89,14 +89,10 @@ a {
 	float:left;
 	background:#575757;
 	width:100%;
-	padding-bottom:4px;
-	position: relative;
-	}
+	padding-bottom:4px;}
 .container-left{
 	float:left;
-	position: relative;
-    width: 694px;
-    z-index: 50;
+	width:694px;
 	}	
 .tietle{
 	float:left;
@@ -197,10 +193,7 @@ a {
 .bold2{
 	background-position:top left;
 	}	
-.bold1:hover,.bold2:hover{
-	background-image:url(../images/bold-hover_bg.gif);
-	cursor:pointer;
-	}	
+		
 .container-right{
 	float:left;
 	background: url(../images/conttainer-r-bg.gif);
@@ -243,7 +236,7 @@ a {
 .bordtop2,.bordbot2{
 	height:5px;
 	background-repeat:no-repeat;
-	}	 
+	}	f
 .benj,.duim{
 	float:left;
 	width:246px;
@@ -288,24 +281,15 @@ a {
 	}	
 .benj{
 	color:#ddd;
-	padding-left:12px;
 	}	
 .tis{ 
-	background:url(../images/ioc.gif) 10px -80px no-repeat;
+	background:url(../images/ioc.gif) 10px -70px no-repeat;
 	padding:0 8px 8px 35px;
 	margin-top:8px;
 	color:#ddd;
 	line-height:18px;
 	float:left;
 	}	
-.tis-G{
-	background:url(../images/ioc.gif) 10px -150px no-repeat;
-	padding:0 8px 8px 35px;
-	margin-top:8px;
-	color:#ddd;
-	line-height:18px;
-	float:left;
-	}
 .zongje{
 	float:left;
 	text-align:center;
@@ -331,7 +315,6 @@ a {
 	font-size:12px;
 	color:#333;
 	line-height:23px;
-	margin-right:16px;
 	}	
 .q-delt{
 	color:#CCC;
@@ -339,7 +322,6 @@ a {
 	font-size:10px;
 	float:left;
 	width:50px;
-	margin-left:16px;
 	}	
 .touz-bot:hover{
 	color:#852225;
@@ -767,29 +749,12 @@ a {
 	padding:3px 0 0 18px;
 	display:none;
 	}
-.user .guanzhu-Y{
-	width:43px;
-	height:19px;
-	display:block;
-	position:absolute;
-	right:0;
-	top:50px;
-	background-image:url(../images/gz-yioc.gif);
-	padding:3px 0 0 37px;
-	color:#333;
-	display:none;
-	text-decoration:none;
-	}
-	
-.user .guanzhu-Y:hover{
-	text-decoration:underline;
-	color:#999;
-	} 
+ 
 .user .guanzhu:hover{
 	background-position:top left;
 	color:#FFF;
 	}
-.newdt:hover .guanzhu,.newdt:hover .guanzhu-Y{
+.newdt:hover .guanzhu{
 	display:block;
 	}
 .newdt-title{
@@ -804,14 +769,6 @@ a {
 	font-size:14px;
 	}
 
-.fudong{ 
-	position:fixed; 
-    top:148px;
-	z-index:1;
-	border-bottom:10px solid #484848;
-	border-top:5px solid #484848;
-	}
-.mt50{
-	margin-top:85px;
-	}
+
+
 

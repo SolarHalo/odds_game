@@ -24,7 +24,7 @@
             {{else}} 
             <div class="user_colum">
             	欢迎你 : <font>{{$username}}</font><br />
-				<a href="{{$urlroot}}manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">退出</a>
+				{{if $ownmoney != ""}}当前金币： {{$ownmoney}}{{/if}} &nbsp <a href="{{$urlroot}}manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">退出</a>
             </div>
           {{/if}}
 	     

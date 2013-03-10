@@ -28,7 +28,6 @@ if (array_key_exists("user", $_SESSION)){
 	$watchid = $user->watchid;
 	$lastbets = $latestupdate->LoginGetLatestBets($watchid);
 }else{
-	$userid = 4;
 	$lastbets = $latestupdate->noLoginGetLatestBets();
 }
 $smarty->assign("userid" , $userid); 

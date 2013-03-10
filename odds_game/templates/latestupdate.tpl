@@ -8,7 +8,7 @@
 				$(".guanzhu").live('click',function(){
 					var superStar = $(this).attr("superStar");
 					var fans = $(this).attr("fans");
-					if(fans!=-1){
+					if(fans){
 						$.ajax({
 							'url': 'ajaxuserfollow.php',
 							'data': {'method': 'followUser', 'fans': fans,'superStar':superStar},
@@ -22,7 +22,7 @@
 							}
 							});
 					}else{
-						window.location.href= window.location.host+"/login.php";
+						window.location.href="/login.php";
 					}
 				});
 

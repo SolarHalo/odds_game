@@ -105,6 +105,7 @@ function caculateMoney(event){
 	if(om == "未登录"){
 		$("#beterror").html("您还未登录，请先登录！<br /><a href='login.php'>登录</a>");
 		$("#msgPanel").css("display", "block");
+		$("#beterror").removeClass("tis tis-G").addClass("tis");
 		$(this).val("");
 		return ;
 	}
@@ -127,6 +128,7 @@ function caculateMoney(event){
 		$("#beterror").html("您投注的本金超过你的所有积分，不能进行投注！");
 		v = String(v).substr(0, String(v).length -1);
 		$("#msgPanel").css("display", "block");
+		$("#beterror").removeClass("tis tis-G").addClass("tis");
 		el.val(v);
 		return;
 	}
@@ -155,6 +157,7 @@ function betNow(){
 	if(om == "未登录"){
 		$("#beterror").html("您还未登录，请先登录！<br /><a href='login.php'>登录</a>");
 		$("#msgPanel").css("display", "block");
+		$("#beterror").removeClass("tis tis-G").addClass("tis");
 		$(this).val("");
 		return ;
 	}
@@ -162,6 +165,7 @@ function betNow(){
 	if($("#betpanel").children().length == 0){
 		$("#beterror").html("您先选择投注项！");
 		$("#msgPanel").css("display", "block");
+		$("#beterror").removeClass("tis tis-G").addClass("tis");
 	}else{
 		var noneM = false;
 		var betodd = {};
@@ -201,6 +205,9 @@ function betNow(){
 					om = Number(om) - betm;
 					$("#ownmoney").html(om);
 					$("#betpanel").children().remove();
+					$("#beterror").removeClass("tis tis-G").addClass("tis");
+				}else{
+					$("#beterror").removeClass("tis tis-G").addClass("tis-G");
 				}
 				$("#beterror").html(data);
 				$("#msgPanel").css("display", "block");

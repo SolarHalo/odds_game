@@ -26,7 +26,7 @@
 		}
 		
 	function noLoginGetLatestBets(){
-			$sql = "select b.user_id,b.user_name,a.bet_time,a.bet_vmoney,b.user_photo,c.team_mian_name,c.team_sec_name,a.odds_name,a.bet_odd,-1 as watchid 
+			$sql = "select b.user_id,b.user_name,a.bet_time,a.bet_vmoney,b.user_photo,c.team_mian_name,c.team_sec_name,a.odds_name,a.bet_odd,NULL as watchid 
 						from 
 							(select user_name,event_id,bet_time,bet_vmoney,odds_name,bet_odd from ibo_bet order by bet_time desc limit 15) a,
 							ibo_user b,

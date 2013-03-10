@@ -13,11 +13,11 @@
 							'url': 'ajaxuserfollow.php',
 							'data': {'method': 'followUser', 'fans': fans,'superStar':superStar},
 							'success': function(data){
-								if(data == "error"){
-									alert("error");
-								}else if(data == "success"){
+								if(data == "success"){
 									alert("success");
 									$(this).attr("class")="guanzhu-Y";
+								}else if(data == "error"){
+									alert("error");
 								}
 							}
 							});
@@ -39,6 +39,7 @@
 								}else if(data == "success"){
 									alert("success");
 									$(this).attr("class")="guanzhu";
+									$(this)
 								}
 							}
 							});

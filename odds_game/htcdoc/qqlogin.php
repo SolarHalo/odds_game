@@ -47,7 +47,7 @@ if ($_GET['code']) {//已获得code
 		$userdb = new IboUser($dbutil);
 		$user = $userdb->getUser("tencent_".strval($r['data']['openid']));
 		if($user){
-			$u = array('user_name'=>$r['data']['nick'], "user_photo"=>$r['data']['head']);
+			$u = array('user_name'=>$r['data']['nick'], "user_photo"=>$r['data']['head'],"user_exp"=>intval($user->user_exp)+5);
 			$userdb->updateUserMessage($u, "tencent_".strval($r['data']['openid']));
 		}else{
 			$userdb->addUser("tencent_".strval($r['data']['openid']), "", $r['data']['nick'], $r['data']['head'], 1);

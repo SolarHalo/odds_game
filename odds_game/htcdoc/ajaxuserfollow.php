@@ -18,4 +18,12 @@ if($method == 'followUser'){
 	}
 }
 
+if($method == 'unFollowUser'){
+	$fans = $_GET['fans'];
+	$superStar = $_GET['superStar'];
+	$latestupdate = new Latestupdate($dbutil);
+	$latestupdate->userUnFollow($fans,$superStar);
+	echo "success";
+}
+
 ?>

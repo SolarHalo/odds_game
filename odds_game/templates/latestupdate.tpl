@@ -13,11 +13,11 @@
 							'url': 'ajaxuserfollow.php',
 							'data': {'method': 'followUser', 'fans': fans,'superStar':superStar},
 							'success': function(data){
-								if(data == "success"){
-									alert("success");
-									$(this).attr("class")="guanzhu-Y";
-								}else if(data == "error"){
-									alert("error");
+								if(data.trim()  == "success"){
+									$(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").attr("class","guanzhu-Y");
+									//alert($(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").text());
+									$(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").text("取消关注");
+								}else if(data.trim() == "error"){
 								}
 							}
 							});
@@ -34,12 +34,10 @@
 							'url': 'ajaxuserfollow.php',
 							'data': {'method': 'unFollowUser', 'fans': fans,'superStar':superStar},
 							'success': function(data){
-								if(data == "error"){
-									alert("error");
-								}else if(data == "success"){
-									alert("success");
-									$(this).attr("class")="guanzhu";
-									$(this)
+								if(data.trim() == "error"){
+								}else if(data.trim() == "success"){
+									$(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").attr("class","guanzhu");
+									$(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").text("关注");
 								}
 							}
 							});

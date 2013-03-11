@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-06 23:32:10
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-11 12:19:52
          compiled from "D:\gitspace\odds_game\odds_game\templates\admin\normalusermanage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115745101e6d414fde9-61416497%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee95347f094ad59c45c8662ba6b4c978ebc65bd5' => 
     array (
       0 => 'D:\\gitspace\\odds_game\\odds_game\\templates\\admin\\normalusermanage.tpl',
-      1 => 1362487070,
+      1 => 1362722221,
       2 => 'file',
     ),
   ),

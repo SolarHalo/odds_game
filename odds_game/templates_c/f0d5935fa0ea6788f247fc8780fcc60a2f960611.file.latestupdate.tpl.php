@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-11 10:24:45
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-11 17:03:24
          compiled from "D:\gitspace\odds_game\odds_game\templates\latestupdate.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1217151375e20228667-29411485%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f0d5935fa0ea6788f247fc8780fcc60a2f960611' => 
     array (
       0 => 'D:\\gitspace\\odds_game\\odds_game\\templates\\latestupdate.tpl',
-      1 => 1362968679,
+      1 => 1362992601,
       2 => 'file',
     ),
   ),
@@ -40,16 +40,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					if(fans){
 						$.ajax({
 							'url': 'ajaxuserfollow.php',
-							'dataType':'text',
 							'data': {'method': 'followUser', 'fans': fans,'superStar':superStar},
-							'success': function(text){
-								console.log(text);
-								if(text == 'success'){
-									alert("success");
-									$(this).attr("class")="guanzhu-Y";
-								}else if(text == "error"){
-									alert("error");
-								}else{
+							'success': function(data){
+								if(data.trim()  == "success"){
+									$(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").attr("class","guanzhu-Y");
+									//alert($(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").text());
+									$(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").text("取消关注");
+								}else if(data.trim() == "error"){
 								}
 							}
 							});
@@ -66,12 +63,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							'url': 'ajaxuserfollow.php',
 							'data': {'method': 'unFollowUser', 'fans': fans,'superStar':superStar},
 							'success': function(data){
-								if(data == "error"){
-									alert("error");
-								}else if(data == "success"){
-									alert("success");
-									$(this).attr("class")="guanzhu";
-									$(this)
+								if(data.trim() == "error"){
+								}else if(data.trim() == "success"){
+									$(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").attr("class","guanzhu");
+									$(".newdt a[superStar='"+superStar+"'][fans='"+fans+"']").text("关注");
 								}
 							}
 							});

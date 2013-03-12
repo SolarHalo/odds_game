@@ -22,7 +22,7 @@
 							}
 							});
 					}else{
-						window.location.href="/login.php";
+						window.location.href="{{$urlroot}}login.php";
 					}
 				});
 

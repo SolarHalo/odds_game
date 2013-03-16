@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-11 17:03:24
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-16 21:01:22
          compiled from "D:\gitspace\odds_game\odds_game\templates\latestupdate.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1217151375e20228667-29411485%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f0d5935fa0ea6788f247fc8780fcc60a2f960611' => 
     array (
       0 => 'D:\\gitspace\\odds_game\\odds_game\\templates\\latestupdate.tpl',
-      1 => 1362992601,
+      1 => 1363438876,
       2 => 'file',
     ),
   ),
@@ -51,7 +51,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							}
 							});
 					}else{
-						window.location.href="/login.php";
+						window.location.href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
+login.php";
 					}
 				});
 
@@ -99,9 +100,11 @@ $_smarty_tpl->tpl_vars['latestBet']->_loop = true;
 						width="80" height="80" />
 				</div>
 				<div class="new-touzhu">
-					<font color="#FEF10D"><?php if ($_smarty_tpl->tpl_vars['latestBet']->value->user_name){?><?php echo $_smarty_tpl->tpl_vars['latestBet']->value->user_name;?>
+				<a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
+space.php?uid=<?php echo $_smarty_tpl->tpl_vars['latestBet']->value->user_id;?>
+"><font color="#FEF10D"><?php if ($_smarty_tpl->tpl_vars['latestBet']->value->user_name){?><?php echo $_smarty_tpl->tpl_vars['latestBet']->value->user_name;?>
 <?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['latestBet']->value->user_email;?>
-<?php }?></font>于<?php echo $_smarty_tpl->tpl_vars['latestBet']->value->bet_time;?>
+<?php }?></font></a>于<?php echo $_smarty_tpl->tpl_vars['latestBet']->value->bet_time;?>
 <br />
 					<span>投注了<font color="#FEF10D"><?php echo $_smarty_tpl->tpl_vars['latestBet']->value->bet_vmoney;?>
 </font>金币

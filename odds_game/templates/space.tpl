@@ -8,33 +8,33 @@
         <div class="container-left">
         	<div class="user">
             	<div id='cccc' class="user-imge">
-                	<img src="{{$userphoto}}" width="115" height="115" />
-                    <a href="javascript:userOpt.modifyPhoto('cccc','{{$userid}}');" style='float: left;'>修改头像</a>
+                	<img src="{{$spaceuserphoto}}" width="115" height="115" />
+                    
                 </div>
                 <ul>
                 	<li id='aaaa'> 
-                    	<span > {{$username}}</span>
-                    	<span ><a href="javascript:userOpt.modifyName('aaaa','{{$userid}}');">修改昵称</a></span>
+                    	<span > {{$spaceusername}}</span>
+                    	
                     </li>
                     <li id='bbbb'>
                     	<!-- <span >{{$username}}</span> -->
-                    	<span><a href="javascript:userOpt.modifyPassword('bbbb','{{$userid}}');">修改密码</a></span>
+                    	
                     </li>
                     <li>
                     	帐号余额:<font>
-                    	{{$ownmoney}}
+                    	{{$spaceownmoney}}
                     	</font>金币
                     </li>
                 </ul>
                 <div class="user-hr">
-                	<a href="?type=now">正在投注{{$types}}</a>|<a href="?type=his">投注历史</a>
+                	<a href="?type=now">正在投注{{$spacetypes}}</a>|<a href="?type=his">投注历史</a>
                 </div>
             </div>
-            {{if $type=="now" or $type=="all"}}
+            {{if $spacetype=="now" or $spacetype=="all"}}
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	正在投注
-                    <a href="?type=now">更多</a>
+                    <a href="?spacetype=now">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>
@@ -46,7 +46,7 @@
                     <li class="touzje">投注金额</li>
                     <li class="shour">押注正确将收入</li> 
                 </ul>
-               	{{foreach $betsData as $bet}}
+               	{{foreach $spacebetsData as $bet}}
 					<ul class="list-list bg1">
 						{{$a=1}}
 						{{if $bet->odds_name=="平"}}
@@ -70,7 +70,7 @@
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	投注历史
-                    <a href="?type=his">更多</a>
+                    <a href="?spacetype=his">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>
@@ -82,7 +82,7 @@
                     <li class="touzje">投注金额</li>
                     <li class="shour">收入</li> 
                 </ul>
-                {{foreach $betsHistoryData as $bet}}
+                {{foreach $spacebetsHistoryData as $bet}}
 					<ul class="list-list bg1">
 						{{$a=1}}
 						{{if $bet->odds_name=="平"}}
@@ -142,12 +142,12 @@
             <div class="guanz">
             	<span>
                 	关注了<br />
-					<font>{{$superStars[0]->total}}</font>人
+					<font>{{$spacesuperStars[0]->total}}</font>人
                 </span>
                 <div style="height:40px; border-left:1px solid #c1c1c1; width:20px;float:left;">&nbsp;</div>
                 <span>
                 	关注者<br />
-					<font>{{$fans[0]->total}}</font>人
+					<font>{{$spacefans[0]->total}}</font>人
                 </span>
             </div>
             <div class="top-guanz">

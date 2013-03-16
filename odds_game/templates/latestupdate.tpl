@@ -61,8 +61,8 @@
 						width="80" height="80" />
 				</div>
 				<div class="new-touzhu">
-					<font color="#FEF10D">{{if
-						$latestBet->user_name}}{{$latestBet->user_name}}{{else}}{{$latestBet->user_email}}{{/if}}</font>于{{$latestBet->bet_time}}<br />
+				<a href="{{$urlroot}}space.php?uid={{$latestBet->user_id}}"><font color="#FEF10D">{{if
+						$latestBet->user_name}}{{$latestBet->user_name}}{{else}}{{$latestBet->user_email}}{{/if}}</font></a>于{{$latestBet->bet_time}}<br />
 					<span>投注了<font color="#FEF10D">{{$latestBet->bet_vmoney}}</font>金币
 						购买<a href="#">{{$latestBet->team_mian_name}} VS
 							{{$latestBet->team_sec_name}}</a>{{$latestBet->odds_name}}</span>

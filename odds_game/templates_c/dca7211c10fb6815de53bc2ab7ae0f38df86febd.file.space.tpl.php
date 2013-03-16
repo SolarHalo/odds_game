@@ -1,41 +1,42 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-16 20:19:41
-         compiled from "D:\gitspace\odds_game\odds_game\templates\manager.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1899451376016a46895-75028105%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-16 21:17:45
+         compiled from "D:\gitspace\odds_game\odds_game\templates\space.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:619751446c582a3044-20495560%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'e892d2c7dd685c69b59788f84f7220c2a5b6c2f9' => 
+    'dca7211c10fb6815de53bc2ab7ae0f38df86febd' => 
     array (
-      0 => 'D:\\gitspace\\odds_game\\odds_game\\templates\\manager.tpl',
-      1 => 1363436377,
+      0 => 'D:\\gitspace\\odds_game\\odds_game\\templates\\space.tpl',
+      1 => 1363439856,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1899451376016a46895-75028105',
+  'nocache_hash' => '619751446c582a3044-20495560',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_51376016cdb292_14595255',
+  'unifunc' => 'content_51446c588697b7_17483133',
   'variables' => 
   array (
     'urlroot' => 0,
-    'userphoto' => 0,
-    'userid' => 0,
+    'spaceuserphoto' => 0,
+    'spaceusername' => 0,
     'username' => 0,
-    'ownmoney' => 0,
-    'types' => 0,
-    'type' => 0,
-    'betsData' => 0,
+    'spaceownmoney' => 0,
+    'spacetypes' => 0,
+    'spacetype' => 0,
+    'spacebetsData' => 0,
     'bet' => 0,
     'a' => 0,
-    'betsHistoryData' => 0,
-    'superStars' => 0,
-    'fans' => 0,
+    'type' => 0,
+    'spacebetsHistoryData' => 0,
+    'spacesuperStars' => 0,
+    'spacefans' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51376016cdb292_14595255')) {function content_51376016cdb292_14595255($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_51446c588697b7_17483133')) {function content_51446c588697b7_17483133($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
@@ -49,41 +50,38 @@ js/useropt.js"></script>
         <div class="container-left">
         	<div class="user">
             	<div id='cccc' class="user-imge">
-                	<img src="<?php echo $_smarty_tpl->tpl_vars['userphoto']->value;?>
+                	<img src="<?php echo $_smarty_tpl->tpl_vars['spaceuserphoto']->value;?>
 " width="115" height="115" />
-                    <a href="javascript:userOpt.modifyPhoto('cccc','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
-');" style='float: left;'>修改头像</a>
+                    
                 </div>
                 <ul>
                 	<li id='aaaa'> 
-                    	<span > <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+                    	<span > <?php echo $_smarty_tpl->tpl_vars['spaceusername']->value;?>
 </span>
-                    	<span ><a href="javascript:userOpt.modifyName('aaaa','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
-');">修改昵称</a></span>
+                    	
                     </li>
                     <li id='bbbb'>
                     	<!-- <span ><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 </span> -->
-                    	<span><a href="javascript:userOpt.modifyPassword('bbbb','<?php echo $_smarty_tpl->tpl_vars['userid']->value;?>
-');">修改密码</a></span>
+                    	
                     </li>
                     <li>
                     	帐号余额:<font>
-                    	<?php echo $_smarty_tpl->tpl_vars['ownmoney']->value;?>
+                    	<?php echo $_smarty_tpl->tpl_vars['spaceownmoney']->value;?>
 
                     	</font>金币
                     </li>
                 </ul>
                 <div class="user-hr">
-                	<a href="?type=now">正在投注<?php echo $_smarty_tpl->tpl_vars['types']->value;?>
+                	<a href="?type=now">正在投注<?php echo $_smarty_tpl->tpl_vars['spacetypes']->value;?>
 </a>|<a href="?type=his">投注历史</a>
                 </div>
             </div>
-            <?php if ($_smarty_tpl->tpl_vars['type']->value=="now"||$_smarty_tpl->tpl_vars['type']->value=="all"){?>
+            <?php if ($_smarty_tpl->tpl_vars['spacetype']->value=="now"||$_smarty_tpl->tpl_vars['spacetype']->value=="all"){?>
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	正在投注
-                    <a href="?type=now">更多</a>
+                    <a href="?spacetype=now">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>
@@ -96,7 +94,7 @@ js/useropt.js"></script>
                     <li class="shour">押注正确将收入</li> 
                 </ul>
                	<?php  $_smarty_tpl->tpl_vars['bet'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['bet']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['betsData']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['spacebetsData']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['bet']->key => $_smarty_tpl->tpl_vars['bet']->value){
 $_smarty_tpl->tpl_vars['bet']->_loop = true;
 ?>
@@ -131,7 +129,7 @@ $_smarty_tpl->tpl_vars['bet']->_loop = true;
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	投注历史
-                    <a href="?type=his">更多</a>
+                    <a href="?spacetype=his">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>
@@ -144,7 +142,7 @@ $_smarty_tpl->tpl_vars['bet']->_loop = true;
                     <li class="shour">收入</li> 
                 </ul>
                 <?php  $_smarty_tpl->tpl_vars['bet'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['bet']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['betsHistoryData']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['spacebetsHistoryData']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['bet']->key => $_smarty_tpl->tpl_vars['bet']->value){
 $_smarty_tpl->tpl_vars['bet']->_loop = true;
 ?>
@@ -215,13 +213,13 @@ $_smarty_tpl->tpl_vars['bet']->_loop = true;
             <div class="guanz">
             	<span>
                 	关注了<br />
-					<font><?php echo $_smarty_tpl->tpl_vars['superStars']->value[0]->total;?>
+					<font><?php echo $_smarty_tpl->tpl_vars['spacesuperStars']->value[0]->total;?>
 </font>人
                 </span>
                 <div style="height:40px; border-left:1px solid #c1c1c1; width:20px;float:left;">&nbsp;</div>
                 <span>
                 	关注者<br />
-					<font><?php echo $_smarty_tpl->tpl_vars['fans']->value[0]->total;?>
+					<font><?php echo $_smarty_tpl->tpl_vars['spacefans']->value[0]->total;?>
 </font>人
                 </span>
             </div>

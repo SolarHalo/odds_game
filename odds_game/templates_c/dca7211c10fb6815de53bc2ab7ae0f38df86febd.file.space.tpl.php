@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-16 21:17:45
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-16 21:53:30
          compiled from "D:\gitspace\odds_game\odds_game\templates\space.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:619751446c582a3044-20495560%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dca7211c10fb6815de53bc2ab7ae0f38df86febd' => 
     array (
       0 => 'D:\\gitspace\\odds_game\\odds_game\\templates\\space.tpl',
-      1 => 1363439856,
+      1 => 1363442000,
       2 => 'file',
     ),
   ),
@@ -24,12 +24,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'spaceusername' => 0,
     'username' => 0,
     'spaceownmoney' => 0,
+    'spaceuserid' => 0,
     'spacetypes' => 0,
     'spacetype' => 0,
     'spacebetsData' => 0,
     'bet' => 0,
     'a' => 0,
-    'type' => 0,
     'spacebetsHistoryData' => 0,
     'spacesuperStars' => 0,
     'spacefans' => 0,
@@ -73,15 +73,18 @@ js/useropt.js"></script>
                     </li>
                 </ul>
                 <div class="user-hr">
-                	<a href="?type=now">正在投注<?php echo $_smarty_tpl->tpl_vars['spacetypes']->value;?>
-</a>|<a href="?type=his">投注历史</a>
+                	<a href="?spacetype=now&uid=<?php echo $_smarty_tpl->tpl_vars['spaceuserid']->value;?>
+">正在投注<?php echo $_smarty_tpl->tpl_vars['spacetypes']->value;?>
+</a>|<a href="?spacetype=his&uid=<?php echo $_smarty_tpl->tpl_vars['spaceuserid']->value;?>
+">投注历史</a>
                 </div>
             </div>
             <?php if ($_smarty_tpl->tpl_vars['spacetype']->value=="now"||$_smarty_tpl->tpl_vars['spacetype']->value=="all"){?>
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	正在投注
-                    <a href="?spacetype=now">更多</a>
+                    <a href="?spacetype=now&uid=<?php echo $_smarty_tpl->tpl_vars['spaceuserid']->value;?>
+">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>
@@ -125,11 +128,12 @@ $_smarty_tpl->tpl_vars['bet']->_loop = true;
 				<?php } ?>
             </div>
             <?php }?>
-            <?php if ($_smarty_tpl->tpl_vars['type']->value=="his"||$_smarty_tpl->tpl_vars['type']->value=="all"){?>
+            <?php if ($_smarty_tpl->tpl_vars['spacetype']->value=="his"||$_smarty_tpl->tpl_vars['spacetype']->value=="all"){?>
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	投注历史
-                    <a href="?spacetype=his">更多</a>
+                    <a href="?spacetype=his&uid=<?php echo $_smarty_tpl->tpl_vars['spaceuserid']->value;?>
+">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>

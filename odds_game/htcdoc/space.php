@@ -8,7 +8,7 @@ $spaceuid = $_GET['uid'];
 $userdb = new IboUser($dbutil);
 $spaceuser = $userdb->getUserById($spaceuid);
 $spaceemail = $spaceuser->user_email;
-$spacetype = $_GET['type'];
+$spacetype = $_GET['spacetype'];
 if($spacetype == null){
 	$spacetype = "all";
 }

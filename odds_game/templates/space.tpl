@@ -27,14 +27,14 @@
                     </li>
                 </ul>
                 <div class="user-hr">
-                	<a href="?type=now">正在投注{{$spacetypes}}</a>|<a href="?type=his">投注历史</a>
+                	<a href="?spacetype=now&uid={{$spaceuserid}}">正在投注{{$spacetypes}}</a>|<a href="?spacetype=his&uid={{$spaceuserid}}">投注历史</a>
                 </div>
             </div>
             {{if $spacetype=="now" or $spacetype=="all"}}
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	正在投注
-                    <a href="?spacetype=now">更多</a>
+                    <a href="?spacetype=now&uid={{$spaceuserid}}">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>
@@ -66,11 +66,11 @@
 				{{/foreach}}
             </div>
             {{/if}}
-            {{if $type=="his" or $type=="all"}}
+            {{if $spacetype=="his" or $spacetype=="all"}}
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	投注历史
-                    <a href="?spacetype=his">更多</a>
+                    <a href="?spacetype=his&uid={{$spaceuserid}}">更多</a>
                 </span>
                 <ul class="list-title">
                     <li class="sfp">胜/负/平</li>

@@ -142,12 +142,12 @@
             <div class="guanz">
             	<span>
                 	关注了<br />
-					<font>216</font>人
+					<font>{{$superStars[0]->total}}</font>人
                 </span>
                 <div style="height:40px; border-left:1px solid #c1c1c1; width:20px;float:left;">&nbsp;</div>
                 <span>
                 	关注者<br />
-					<font>216</font>人
+					<font>{{$fans[0]->total}}</font>人
                 </span>
             </div>
             <div class="top-guanz">

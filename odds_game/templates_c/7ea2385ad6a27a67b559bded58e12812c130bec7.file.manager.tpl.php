@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-07 15:54:57
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-12 13:41:07
          compiled from "G:\odds_game\odds_game\templates\manager.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:78395136049811b1f1-94538195%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21154513f30735f42a9-16789328%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '78395136049811b1f1-94538195',
+  'nocache_hash' => '21154513f30735f42a9-16789328',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_513604982b1af6_52852507',
   'variables' => 
   array (
     'urlroot' => 0,
@@ -32,8 +30,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'betsHistoryData' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.13',
+  'unifunc' => 'content_513f3073a3ea59_40366152',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_513604982b1af6_52852507')) {function content_513604982b1af6_52852507($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_513f3073a3ea59_40366152')) {function content_513f3073a3ea59_40366152($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>

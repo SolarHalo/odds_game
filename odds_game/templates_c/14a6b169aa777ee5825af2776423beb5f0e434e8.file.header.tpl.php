@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2013-03-09 17:49:42
+<?php /* Smarty version Smarty-3.1.13, created on 2013-03-12 12:55:30
          compiled from "G:\odds_game\odds_game\templates\header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:11244513604982d4697-02519157%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:15530513b7c9d108456-44283980%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '14a6b169aa777ee5825af2776423beb5f0e434e8' => 
     array (
       0 => 'G:\\odds_game\\odds_game\\templates\\header.tpl',
-      1 => 1362851378,
+      1 => 1363060184,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11244513604982d4697-02519157',
+  'nocache_hash' => '15530513b7c9d108456-44283980',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_5136049845d199_69276126',
+  'unifunc' => 'content_513b7c9d1f67d9_72929115',
   'variables' => 
   array (
     'urlroot' => 0,
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5136049845d199_69276126')) {function content_5136049845d199_69276126($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if ($_valid && !is_callable('content_513b7c9d1f67d9_72929115')) {function content_513b7c9d1f67d9_72929115($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -60,7 +60,8 @@ login.php" class="sw-but">
             <div class="user_colum">
             	欢迎你 : <font><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 </font><br />
-				<a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
+				<?php if ($_smarty_tpl->tpl_vars['ownmoney']->value!=''){?>当前金币： <?php echo $_smarty_tpl->tpl_vars['ownmoney']->value;?>
+<?php }?> &nbsp <a href="<?php echo $_smarty_tpl->tpl_vars['urlroot']->value;?>
 manager.php">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="logout.php">退出</a>
             </div>
           <?php }?>

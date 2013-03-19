@@ -15,11 +15,11 @@ class IboEvent{
 		if($sqlcondition){
 			$sql = "SELECT e.event_id, e.team_mian_name, e.team_sec_name, e.sport_subtype_name, e.event_time, o.victory, o.planish, o.fail ". 
 											"FROM ibo_event e, ibo_odds o ".
-											"WHERE e.event_id = o.event_id AND e.event_time > date_format(curdate(), '%Y-%m-%d' ) and e.event_result='' and (".$sqlcondition.") order by e.event_time asc";
+											"WHERE e.event_id = o.event_id AND e.event_time > now() and e.event_result='' and (".$sqlcondition.") order by e.event_time asc";
 		}else{
 			$sql = "SELECT e.event_id, e.team_mian_name, e.team_sec_name, e.sport_subtype_name, e.event_time, o.victory, o.planish, o.fail ". 
 											"FROM ibo_event e, ibo_odds o ".
-											"WHERE e.event_id = o.event_id AND e.event_time > date_format(curdate(), '%Y-%m-%d' ) and e.event_result='' order by e.event_time asc";
+											"WHERE e.event_id = o.event_id AND e.event_time > now() and e.event_result='' order by e.event_time asc";
 			
 		}
 		return $this->dbutil->get_results($sql);

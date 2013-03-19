@@ -1,6 +1,7 @@
 <?php
 include "../configs/load.php";
 include BASE_HOME."/includes/IboBet.class.php";
+include BASE_HOME.'includes/Latestupdate.class.php';
 
 $type = $_GET['type'];
 if($type == null){
@@ -31,6 +32,12 @@ if($user){
 	$smarty->assign("userid" , $user->user_id);
 	$smarty->assign("userphoto" ,$user->user_photo );
 	$smarty->assign("type" ,$type );
+	$latestupdate = new Latestupdate($dbutil);
+	$fans = $latestupdate->getUersFans($user->user_id);
+	$superStars = $latestupdate->getUersSuperStar($user->user_id);
+	$smarty->assign("fans",$fans);
+	$smarty->assign("superStars",$superStars);
+	
 }else{
 // 	$smarty->assign("ownmoney" , "未登录");
 // 	$smarty->assign("name" , "222");

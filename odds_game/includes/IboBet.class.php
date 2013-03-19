@@ -68,7 +68,7 @@
 	}
 	
 	function getLastBet(){
-		$sql = "select t.odds_name, t.bet_vmoney, t.bet_odd,".
+		$sql = "select u.user_id, t.odds_name, t.bet_vmoney, t.bet_odd,".
 			   " t.bet_time, e.team_mian_name, e.team_sec_name,".
  			   "u.user_email, u.user_name, u.user_photo,u.user_id  from ibo_bet t, ibo_event e".
  			   " , ibo_user u where t.event_id = e.event_id and".

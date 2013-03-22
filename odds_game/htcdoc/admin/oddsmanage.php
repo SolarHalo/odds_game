@@ -77,11 +77,13 @@ if($type=='current'){
 	//查询当前赛事
 //	$events = $iboEvent->getAllEvent($sport_subtype_name,$team_name,$starttime,$endtime);
 	$events = $iboEvent->getAllEvent($conditionArr);
-}else{
+}elseif ($type=='history'){
 	//查询比赛结束赛事
 	$page = new Page($pageNo);
 	$events = $iboEvent->getAllFinishedEvent($conditionArr,$page)->result;
 	$page->result = null;
+}else{
+	$events = $iboEvent->getHistoryeventWithNoScore();
 }
 $smarty->assign("eventcurrentnav",$type);
 $smarty->assign("currentnav" , "oddsmanage");

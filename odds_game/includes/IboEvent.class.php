@@ -101,7 +101,7 @@ class IboEvent{
 	 * @param unknown_type $sport_subtype_name 赛事名称
 	 * @param unknown_type $team_name 球队名称
 	 */
-function getEventSqlCondition($conditionArr){
+	function getEventSqlCondition($conditionArr){
 		if(!$conditionArr||count($conditionArr)<1){
 			return null;
 		}
@@ -149,6 +149,26 @@ function getEventSqlCondition($conditionArr){
 		}
 		$sqlcondition = implode($expression,$conditionArray);
 		return $sqlcondition;
+	}
+	
+	/**
+	 * 修改没有比分的已结束赛事，并将result_type 设置为1
+	 * @param unknown_type $score 修改后的比分
+	 * @param unknown_type $event_id 赛事id
+	 */
+	function upadteHistoryeventScore($score,$event_id){
+		$sql = "update ibo_event set event_result='".$score."',result_type=1 where event_id='".$event_id."'";
+		return $this->dbutil->query($sql);
+	}
+	
+	/**
+	 * 查询所有没有比分的已结束赛事
+	 */
+	function getHistoryeventWithNoScore(){
+		$sql = "SELECT e.event_id, e.team_mian_name, e.team_sec_name, e.sport_subtype_name, e.event_time,e.event_result ". 
+											"FROM ibo_event e ".
+											"WHERE e.event_time < date_format(curdate(), '%Y-%m-%d' ) and (e.event_result is null or e.event_result='') order by e.event_time asc";
+		return $this->dbutil->get_results($sql);
 	}
 }
 ?>

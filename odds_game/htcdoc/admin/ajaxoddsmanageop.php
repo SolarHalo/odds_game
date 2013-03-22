@@ -21,5 +21,10 @@ if($method=='getEventUserBet'){
 	$IboBet = new IboBet($dbutil);
 	$userHistoryBets = $IboBet->getUserHistoryBet($username);
 	echo $userHistoryBets=json_encode($userHistoryBets);
+}elseif ($method=='updateHistoryEventBet'){
+	$event_id = $_GET['event_id'];
+	$event_result = $_GET['event_result'];
+	$event = new IboEvent($dbutil);
+	echo $event->upadteHistoryeventScore($event_result, $event_id);
 }
 ?>

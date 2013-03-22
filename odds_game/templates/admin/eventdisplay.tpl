@@ -22,11 +22,13 @@
 							<td>{{$event->team_mian_name}}</td>
 							<td>{{$event->team_sec_name}}</td>
 							<td>{{$event->event_time}}</td>
-							<td>{{$event->event_result}}</td>
+							<td class="event_score">{{$event->event_result}}</td>
 							<td>
-<!--								<a href="#deladminModal" data-toggle="modal" class="btn btn-danger deladmin" un="{{$event->team_main_name}}"><i class="icon-trash icon-white"></i> 删除</a>-->
   								<a  href="#eventbetusersModal" data-toggle="modal" class="btn btn-info eventbetusers" un="{{$event->event_id}}"><i class="icon-user icon-white"></i> 投注用户</a>
 								<a  href="#eventhistoryscoreModal" data-toggle="modal" class="btn btn-info eventhistoryscore" un="{{$event->event_id}}"><i class="icon-th-list icon-white"></i> 赔率历史</a>
+								{{if $eventcurrentnav=='updatescore'}}
+								<a  href="#sethistoryscoreModal" data-toggle="modal" class="btn btn-warning sethistoryeventScore" un="{{$event->event_id}}"><i class="icon-edit icon-white"></i> 设置比分</a>
+								{{/if}}
   							</td>
   							<td>
   							</td>
@@ -51,7 +53,7 @@
 					    <li {{if $page->hasnext}}class="active"{{else}}class="disabled"{{/if}}><a href="oddsmanage.php?pageNo={{$page->next}}&&type=history" class="active">Next</a></li>
 					  </ul>
 					</div>
-	    			{{/if}}
+	    			
 					
 				  </div>
 				  <div class="span2" style="padding:20px 0 0 0">
@@ -66,6 +68,7 @@
 					 显示{{$page->startIndex+1}}到{{$page->endIndex}}条记录，共{{$page->totalsize}}条记录
 				  
 				  </div>
+				  {{/if}}
 				</div>
    		</div>
 	</div> 
@@ -78,6 +81,28 @@
 
 <!-- 历史比分窗口 -->
 {{include 'admin/eventhistoryscore.tpl'}}
+
+<div class="modal hide fade" id="sethistoryscoreModal" >
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3 id="wintitle">修改比分</h3>
+    </div>
+	<div class="modal-body">
+		<form class="form-horizontal">
+		  <div class="control-group">
+		    <label class="control-label" >设置比分：</label>
+		    <div class="controls">
+		      <input type="text" id="event_result" name="event_result" >
+		    </div>
+		  </div>
+		</form>
+	</div>
+	<div class="modal-footer">
+	    <a href="#" class="btn"  data-dismiss="modal">关闭</a>
+	    <button id="saveEventScoreBtn"  class="btn btn-primary">保存</button>
+	  </div>
+</div>
+
 
 <script type="text/javascript">
 
@@ -101,7 +126,36 @@ $(document).ready(function(){
 	$("#gotoBtn").click(function(){
 		var page = $("#pageto").attr("value");
 		window.location.href = "oddsmanage.php?pageNo="+page+"&&type=history";
-		});
+	});
+
+	$(".sethistoryeventScore").live('click',function(){
+		var event_id = $(this).attr('un');
+		$("#saveEventScoreBtn").attr('un',event_id);
+	});
+
+	$("#saveEventScoreBtn").click(function(){
+		var event_id = $(this).attr('un');
+		var event_score = $("#event_result").val();
+		if(event_score==undefined||event_score==null||event_score.trim().length<1){
+			alert("您没有设置比分");
+			return;
+		}
+		$.ajax({
+			'url': 'ajaxoddsmanageop.php',
+			'data': {'method': 'updateHistoryEventBet', 'event_id': event_id, 'event_result': event_score},
+			'success': function(data){
+				if(data !=-1){
+					$("#usertable >tbody >tr >td").children("a[un='"+event_id+"']").parents("tr").remove();
+					$("#sethistoryscoreModal").modal('hide');
+					$("#saveEventScoreBtn").attr('data-dismiss','modal');
+//					var updatedRow = $("#usertable >tbody >tr >td").children("a[un='"+event_id+"']").parents("tr");
+//					updatedRow.children(".event_score").html(event_score);
+				}else {
+					alert("设置比分失败");
+				}
+			}
+			});
+	});
 
 });
 

@@ -29,7 +29,7 @@ if($spacetype =="now"||$spacetype =="all"){
 if($spacetype =="his"||$spacetype =="all"){
 	$spacebetsHistory = $betdb->getAllBetHistory4User($spaceuser->user_email,$spacetype == "his");
 }
-if($user){
+//if($user){
 	$smarty->assign("spaceownmoney" , $spaceuser->user_vmoney);
 	$smarty->assign("spaceusername" , $spaceuser->user_name);
 	//$smarty->assign("name" , $user->user_email);
@@ -42,11 +42,11 @@ if($user){
 	$smarty->assign("spacefans",$spacefans);
 	$smarty->assign("spacesuperStars",$spacesuperStars);
 	
-}else{
+//}else{
 // 	$smarty->assign("ownmoney" , "未登录");
 // 	$smarty->assign("name" , "222");
 // 	$smarty->assign("userid" ,"1");
-}
+//}
 
 $smarty->assign("spacebetsData", $spacebets);
 $smarty->assign("spacebetsHistoryData", $spacebetsHistory);

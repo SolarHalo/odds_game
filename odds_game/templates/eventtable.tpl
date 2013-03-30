@@ -2,7 +2,7 @@
 {{foreach $events as $event}}
 	{{if $a==0 or $a!=substr($event->event_time,0,10)}} 
 		{{$a={{substr($event->event_time,0,10)}}}}
-			<ul>
+			<ul class="bg1">
 			 <li><font color="white"> {{substr($event->event_time,0,10)}}</font></li>
 			</ul>
 		<ul id="eventid_{{$event->event_id}}" class="list-list bg1"> 

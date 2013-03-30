@@ -78,28 +78,9 @@
 	             <span class="bordbot" >&nbsp;</span> 
             </div>
         </div>
-        <div class="container-right" style="margin-top:5px; padding-top:8px;">
-            <span class="toptitle">排行榜</span>
-            <ul class="top-tabl">
-                <li><a href="#">周榜</a></li>
-                <li class="xzbg"><a href="#">月榜</a></li>
-                <li><a href="#">总榜</a></li>
-            </ul>
-            <div class="clumu" style="margin-top:0;">
-                <span class="bordtop">&nbsp;</span>
-                <ul class="top-list">
-                    <li>1.<span>张三</span><font>1800</font>分</li>
-                    <li>2.<span>张三</span><font>1800</font>分</li>
-                    <li>3.<span>张三</span><font>1800</font>分</li>
-                    <li>4.<span>张三</span><font>1800</font>分</li>
-                    <li>5.<span>张三</span><font>1800</font>分</li>
-                    <li>6.<span>张三</span><font>1800</font>分</li>
-                    <li>7.<span>张三</span><font>1800</font>分</li>
-                    <li>8.<span>张三</span><font>1800</font>分</li>
-                </ul>
-                <span class="bordbot">&nbsp;</span>
-            </div>
-        </div>
+        
+            {{include file='ranking.tpl'}}
+        
      </div>
 </div>
 

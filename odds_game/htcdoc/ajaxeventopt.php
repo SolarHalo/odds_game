@@ -16,7 +16,7 @@ if($method == 'getAllEvent'){
 
 if($method == 'betevent'){
 	if(!$user){
-		echo "您还未登录，请先登录！";
+		echo "error:您还未登录，请先登录！";
 		exit(0);
 	}
 	$mybets = $_GET['betodd'];
@@ -29,7 +29,7 @@ if($method == 'betevent'){
 	$eventresult = $eventdb->getEventResults($eids);
 	foreach ($eventresult as $res){
 		if($res->event_result != '' && $res->event_result != null){
-			echo "部分赛事已结束，请刷新页面后重新投注！";
+			echo "error:部分赛事已结束，请刷新页面后重新投注！";
 				exit(0);
 		}
 	}
@@ -41,7 +41,7 @@ if($method == 'betevent'){
 			$re = $eventdb->setBet($data);
 			$betmoneyC = $betmoneyC + (int)$bet['betmoney'];
 			if($re !=0){
-				echo "数据库错误，请重试！";
+				echo "error:数据库错误，请重试！";
 				exit(0);
 			}
 		}
@@ -51,7 +51,7 @@ if($method == 'betevent'){
 	$userdb = new IboUser($dbutil);
 	$u = array("user_vmoney"=>$user->user_vmoney, "user_exp" => $user->user_exp + 1);
 	$userdb->updateUserMessage($u, $user->user_id);
-	echo "投注已保存成功！";
+	echo "success:投注已保存成功！";
 	exit(0);
 }
 ?>

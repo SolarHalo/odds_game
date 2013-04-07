@@ -196,7 +196,9 @@ function betNow(){
 			'url': 'ajaxeventopt.php',
 			'data': {'method': 'betevent', 'betodd' :betodd},
 			'success': function(data){
-				if(data == "投注已保存成功！"){
+				data = data.split(":");
+				
+				if(data[0].trim() == "success"){
 					var betm = 0;
 					$(".betmoney").each(function(){
 						betm += Number($(this).val());
@@ -204,12 +206,14 @@ function betNow(){
 					var om = $("#ownmoney").html();
 					om = Number(om) - betm;
 					$("#ownmoney").html(om);
-					$("#betpanel").children().remove();
-					$("#beterror").removeClass("tis tis-G").addClass("tis");
-				}else{
+					$("#betpanel").html("");
+					
 					$("#beterror").removeClass("tis tis-G").addClass("tis-G");
+					deleteAllBet();
+				}else{
+					$("#beterror").removeClass("tis tis-G").addClass("tis");
 				}
-				$("#beterror").html(data);
+				$("#beterror").html(data[1]);
 				$("#msgPanel").css("display", "block");
 			}
 		});
@@ -217,4 +221,11 @@ function betNow(){
 		
 		
 	}
+}
+
+
+String.prototype.trim= function(){  
+    // 用正则表达式将前后空格  
+    // 用空字符串替代。  
+    return this.replace(/(^\s*)|(\s*$)/g, "");  
 }

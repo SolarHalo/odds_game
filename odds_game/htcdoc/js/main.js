@@ -196,7 +196,7 @@ function betNow(){
 			'url': 'ajaxeventopt.php',
 			'data': {'method': 'betevent', 'betodd' :betodd},
 			'success': function(data){
-				data = data.split(":");
+				data = data.split(":::");
 				
 				if(data[0].trim() == "success"){
 					var betm = 0;

@@ -29,7 +29,7 @@ if($method == 'betevent'){
 	$eventresult = $eventdb->getEventResults($eids);
 	foreach ($eventresult as $res){
 		if($res->event_result != '' && $res->event_result != null){
-			echo "error:部分赛事已结束，请刷新页面后重新投注！";
+			echo "error:::部分赛事已结束，请刷新页面后重新投注！";
 				exit(0);
 		}
 	}
@@ -41,7 +41,7 @@ if($method == 'betevent'){
 			$re = $eventdb->setBet($data);
 			$betmoneyC = $betmoneyC + (int)$bet['betmoney'];
 			if($re !=0){
-				echo "error:数据库错误，请重试！";
+				echo "error:::数据库错误，请重试！";
 				exit(0);
 			}
 		}
@@ -51,7 +51,7 @@ if($method == 'betevent'){
 	$userdb = new IboUser($dbutil);
 	$u = array("user_vmoney"=>$user->user_vmoney, "user_exp" => $user->user_exp + 1);
 	$userdb->updateUserMessage($u, $user->user_id);
-	echo "success:投注已保存成功！";
+	echo "success:::投注已保存成功！<a href='".URL_ROOT."manager.php' >查看投注单</a>";
 	exit(0);
 }
 ?>

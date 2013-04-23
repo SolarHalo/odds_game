@@ -815,3 +815,260 @@ a {
 	margin-top:85px;
 	}
 
+
+
+/*===========================2013/03/03==================*/
+.new-touzhu{
+	float:left; 
+	width:540px;
+	line-height:24px;
+	color:#fff;
+	font-size:14px;
+	position:relative;
+	}
+.new-touzhu span,.new-touzhu font{
+	font-size:14px;
+	}
+.new-touzhu a{
+	font-size:14px;  
+	color: #FFFF00; 
+    font-weight: bold;
+	padding:0 3px;
+	}
+.newdt{
+	position:relative;
+	height:95px;
+	border-bottom:1px solid #999;
+	margin:0 0 15px;
+	}
+.user .guanzhu{
+	width:30px;
+	height:19px;
+	display:block;
+	position:absolute;
+	right:0px;
+	top:50px;
+	background-image:url(../images/gzioc.gif);
+	background-position: bottom left;
+	color:#333;
+	padding:3px 0 0 18px;
+	display:none;
+	}
+.user .guanzhu-Y{
+	width:56px;
+	height:19px;
+	display:block;
+	position:absolute;
+	right:0;
+	top:50px;
+	background-image:url(../images/gz-yioc.gif);
+	padding:3px 0 0 37px;
+	color:#333;
+	display:none;
+	text-decoration:none;
+	}
+	
+.user .guanzhu-Y:hover{
+	text-decoration:underline;
+	color:#999;
+	} 
+.user .guanzhu:hover{
+	background-position:top left;
+	color:#FFF;
+	}
+.newdt:hover .guanzhu,.newdt:hover .guanzhu-Y{
+	display:block;
+	}
+.newdt-title{
+	float:left;
+	width:640px;
+	margin:10px 0 0 20px;
+	padding-left:21px;
+	height:20px;
+	background:url(../images/ioc02.gif) left 3px no-repeat;
+	line-height:20px;
+	color:#CCC;
+	font-size:14px;
+	}
+
+.fudong{ 
+	position:fixed; 
+    top:148px;
+	z-index:1;
+	border-bottom:10px solid #484848;
+	border-top:5px solid #484848;
+	}
+.mt50{
+	margin-top:85px;
+	}
+/*===============================20130422====================*/
+.ckcolum{
+	width:320px;
+	height:140px;
+	border:3px solid #999;
+	display:block;
+	z-index:5;
+	background:#f5f5f5;
+	position:relative;
+	padding:20px;
+	color:#333;
+	top:-220px;
+	}
+.ckcolum span{
+	font-size:16px;
+	font-weight:bold;
+	}
+.ckcolum li p{
+	color:#333;
+	display: inline-table;
+	font-size:14px;
+	}
+.list-list .ckcolum  li{
+	border:none;
+	}
+.ckcolum img{
+	position:relative; 
+	bottom: -122px;
+    left: -248px;
+	}
+.tcbox01{
+	position:absolute;
+	width:625px;
+	height:350px;
+	border:3px solid #999;
+	display:block;
+	z-index:100;
+	background:#575757;
+	margin:-195px 0 0 -332px;
+	top:50%;
+	left:50%;
+	padding:20px;
+	}
+.tcbox01 .login{
+	padding:0;
+	width:605px;
+	}
+
+.tcbox01 .api{
+	float:left;
+	width:280px;
+	margin:60px 0 0 20px; 
+	}
+.tcbox01 .api p{
+	width:100%;
+	padding:5px 0 0; 
+	}
+.clos{
+	float:right;
+	color:#999;
+	font-size:16px;
+	color:#CCC;
+	}
+.clos:hover{
+	color:#FEF10D;
+	}
+.tcbox02{
+	position:absolute;
+	width:380px;
+	height:190px;
+	border:3px solid #999;
+	display:block;
+	z-index:100;
+	background:#eee;
+	margin:-115px 0 0 -210px;
+	top:50%;
+	left:50%;
+	padding:20px;
+	text-align:center;
+	}
+.tcbox02 span{
+	color:#666;
+	font-size:16px;
+	}
+.tcbox02 p{
+	color:#000;
+	font-size:16px;
+	margin:8px 0;
+	}
+.tcinput{
+	width:85px;
+	border:1px solid #666;
+	}
+.tcbox02 table{
+	margin:20px 0 0 40px;
+	width:270px;
+	}
+.tcbox02 table td{
+	height:30px;
+	}
+.tcbox02 table td a{
+	margin-top:15px;
+	}
+.quxiao-but{    
+	background:#ccc;
+    color: #333333;
+    float: right;
+    font-size: 12px;
+    height:20px;
+    line-height: 21px; 
+    text-align: center;
+    width:59px;
+	border:1px solid #666;
+	float:left;
+}
+.tcbox03{
+	position:absolute;
+	width:230px; 
+	border:3px solid #999;
+	display:block;
+	z-index:100;
+	background:#eee;
+	margin:-115px 0 0 -140px; 
+	top:50%;
+	left:50%;
+	padding:20px 20px 20px 70px;
+	text-align:left;
+	background:#eee url(../images/iconY.gif) 10px 50% no-repeat;
+	}
+.peilvtitle{
+	float:left;
+	padding:10px;
+	margin-top:10px;
+	width:674px
+	}
+.peilvtitle span{
+	font-size:22px;
+	color:#bfbfbf;
+	float:left;
+	width:100%;
+	margin-top:10px;
+	}
+.peilvtitle span p{
+	float:right;
+	font-size:12px;
+	line-height:35px;
+	}
+.w1{
+	width:100px;
+	}
+.list-list li.w2{
+	width:200px;
+	text-align:left;
+	padding-left:5px;
+	}
+.w3{
+	width:186px;
+	} 
+.list-list li.w4{
+	width:180px;
+	padding-left:6px;
+	text-align:left;
+	}  
+.list-list li.w4 a{
+	float:right;
+	margin:5px 5px 0 0;
+	visibility:hidden;
+	}
+.list-list li.w4:hover a{
+	visibility:inherit;
+	}

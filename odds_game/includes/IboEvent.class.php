@@ -170,5 +170,14 @@ class IboEvent{
 											"WHERE e.event_time < date_format(curdate(), '%Y-%m-%d' ) and (e.event_result is null or e.event_result='') order by e.event_time asc";
 		return $this->dbutil->get_results($sql);
 	}
+	
+	/**
+	 * 根据id获取赛事
+	 * @param $event_id
+	 */
+	function getEventById($event_id){
+		$sql = "select * from ibo_event where event_id='".$event_id."'";
+		return $this->dbutil->get_row($sql);
+	}
 }
 ?>

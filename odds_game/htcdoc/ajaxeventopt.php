@@ -37,7 +37,7 @@ if($method == 'betevent'){
 	foreach ($mybets as $key => $mybet){
 		foreach ($mybet as $bet){
 			$data = array('event_id'=> $key, 'odds_name'=>$bet['oddname'], 'user_name'=> $user->user_email,
-							'bet_time'=>date("c"), 'bet_vmoney'=> $bet['betmoney'], 'bet_odd'=> $bet['odd']);
+							'bet_time'=>date("Y-m-d H:i:s"), 'bet_vmoney'=> $bet['betmoney'], 'bet_odd'=> $bet['odd']);
 			$re = $eventdb->setBet($data);
 			$betmoneyC = $betmoneyC + (int)$bet['betmoney'];
 			if($re !=0){

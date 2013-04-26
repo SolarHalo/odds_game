@@ -296,7 +296,10 @@ class DbUtil{
 			$formatted_fields[] = $form;
 		}
 		$sql = "{$type} INTO `$table` (`" . implode( '`,`', $fields ) . "`) VALUES ('" . implode( "','", $formatted_fields ) . "')";
+		$inserSql = $this->prepare( $sql, $data );
 		return $this->query( $this->prepare( $sql, $data ) );
+//echo $inserSql;
+//return $this->query( $inserSql );
 	}
 	
 	

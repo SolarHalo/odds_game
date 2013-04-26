@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include "../configs/load.php";
 include BASE_HOME."includes/IboUser.class.php";
 require_once(BASE_HOME."/includes/Tencent.php");
@@ -57,4 +58,5 @@ if ($_GET['code']) {//已获得code
 		header("Location: index.php");
 	}	
 }
+ob_end_flush();
 ?>

@@ -1,144 +1,107 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="style/style.css" type="text/css" rel="stylesheet" />
-<title>iBo123</title>
-</head>
+{{* 引入头部文件 *}}
+{{include file='header.tpl'}}
+<link href="style/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{{$urlroot}}/js/ajaxsingleevent.js"></script>
+<script type="text/javascript" src="{{$urlroot}}/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="{{$urlroot}}/js/jscharts.js"></script>
 
-<body>
 <div id="box">
-	<div id="head">
-    	 <div class="toplogo">
-         	<a href="#">
-            	<img src="images/logo_ibo123.gif" class="fl"  title="IBO123.COM"/>
-            </a>
-            <a href="#">
-            	<img src="images/text-logo.gif" class="fl"  title="爱博游戏中心" style="padding:5px 0 0 125px;"/>
-            </a>
-            <div class="user_colum">
-            	欢迎你 : <font>superyuyue@126.com</font><br />
-				<a href="#">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">退出</a>
-            </div>
-         </div>
-         <ul class="nav">
-         	<li><a href="#">首页</a></li>
-            <li class="xz"><a href="#">游戏中心</a></li>
-            <li><a href="#">帮助</a></li>
-         </ul>
-    </div>
     <div class="container">  
         <div class="container-left">
         	<div class="peilvtitle">
-            	<span>赛事：西甲</span>
-                <span>皇家马德里 VS 巴萨罗纳
-                	<p class="saishitime">开赛时间：2013年4月19日23:22</p>
+            	<span>赛事：{{$event->sport_subtype_name}}</span>
+                <span>{{$event->team_mian_name}} VS {{$event->team_sec_name}}
+                	<p class="saishitime">开赛时间：{{$event->event_time}}</p>
                 </span>
             </div>
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	当前赔率 
                 </span> 
+                <span id="ownmoney" style="display:none;">{{$ownmoney}}</span>
+                {{foreach $betStatistics as $key=>$betStatistic}}
                 <ul class="list-list bg1">
-                    <li class="w1"><font class="bold11">胜</font>&nbsp;&nbsp;2.35</li>
-                    <li class="w2"> <p>共 8888 人购买&nbsp;&nbsp;总金额666</p></li>
+                    <li class="w1"><font class="bold11">{{$betStatistic->odds_name}}</font>&nbsp;&nbsp;<span class="bet_odd">{{$betStatistic->bet_odd}}</span></li>
+                    <li class="w2"> <p>共 {{$betStatistic->sumUser}} 人购买&nbsp;&nbsp;总金额{{$betStatistic->sumVmoney}}</p></li>
                     <li class="w3">输入本金&nbsp;<input type="text" class="tcinput" /></li>
-                    <li class="w4">预计返还本金： <font>0</font> <a href="#" class="touz-bot">投注</a></li>  
+                    <li class="w4">
+	                                                     预计返还本金： <font class="rmoney">0</font> 
+	                    <a href="javascript:void(0);"  class="touz-bot" un="{{$event->event_id}}">投注</a>
+                    </li>  
                 </ul>
-                <ul class="list-list bg2">
-                    <li class="w1"><font class="bold12">胜</font>&nbsp;&nbsp;2.35</li>
-                    <li class="w2"> <p>共 8888 人购买&nbsp;&nbsp;总金额666</p></li>
-                    <li class="w3">输入本金&nbsp;<input type="text" class="tcinput" /></li>
-                    <li class="w4">预计返还本金： <font>0</font> <a href="#" class="touz-bot">投注</a></li>  
-                </ul>
-                <ul class="list-list bg1">
-                    <li class="w1"><font class="bold13">胜</font>&nbsp;&nbsp;2.35</li>
-                    <li class="w2"> <p>共 8888 人购买&nbsp;&nbsp;总金额666</p></li>
-                    <li class="w3">输入本金&nbsp;<input type="text" class="tcinput" /></li>
-                    <li class="w4">预计返还本金： <font>0</font> <a href="#" class="touz-bot">投注</a></li>  
-                </ul> 
+                {{/foreach}}
             </div>
             <div class="sais-list" id="user-list">
             	<span class="tietle-sub">
                 	赔率走势图 
                 </span>
-                <img src="images/photo01.gif" />
+                <div id="graph"></div>
             </div>
         </div>
         <!-- left END --> 
     </div>
 </div>
-</body>
-</html>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="style/style.css" type="text/css" rel="stylesheet" />
-<title>iBo123</title>
-</head>
 
-<body>
-<div id="box">
-	<div id="head">
-    	 <div class="toplogo">
-         	<a href="#">
-            	<img src="images/logo_ibo123.gif" class="fl"  title="IBO123.COM"/>
-            </a>
-            <a href="#">
-            	<img src="images/text-logo.gif" class="fl"  title="爱博游戏中心" style="padding:5px 0 0 125px;"/>
-            </a>
-            <div class="user_colum">
-            	欢迎你 : <font>superyuyue@126.com</font><br />
-				<a href="#">管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">退出</a>
-            </div>
-         </div>
-         <ul class="nav">
-         	<li><a href="#">首页</a></li>
-            <li class="xz"><a href="#">游戏中心</a></li>
-            <li><a href="#">帮助</a></li>
-         </ul>
+<div class="modal hide fade" id="MsgModal" >
+	<div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3 id="wintitle">友情提醒</h3>
     </div>
-    <div class="container">  
-        <div class="container-left">
-        	<div class="peilvtitle">
-            	<span>赛事：西甲</span>
-                <span>皇家马德里 VS 巴萨罗纳
-                	<p class="saishitime">开赛时间：2013年4月19日23:22</p>
-                </span>
-            </div>
-            <div class="sais-list" id="user-list">
-            	<span class="tietle-sub">
-                	当前赔率 
-                </span> 
-                <ul class="list-list bg1">
-                    <li class="w1"><font class="bold11">胜</font>&nbsp;&nbsp;2.35</li>
-                    <li class="w2"> <p>共 8888 人购买&nbsp;&nbsp;总金额666</p></li>
-                    <li class="w3">输入本金&nbsp;<input type="text" class="tcinput" /></li>
-                    <li class="w4">预计返还本金： <font>0</font> <a href="#" class="touz-bot">投注</a></li>  
-                </ul>
-                <ul class="list-list bg2">
-                    <li class="w1"><font class="bold12">胜</font>&nbsp;&nbsp;2.35</li>
-                    <li class="w2"> <p>共 8888 人购买&nbsp;&nbsp;总金额666</p></li>
-                    <li class="w3">输入本金&nbsp;<input type="text" class="tcinput" /></li>
-                    <li class="w4">预计返还本金： <font>0</font> <a href="#" class="touz-bot">投注</a></li>  
-                </ul>
-                <ul class="list-list bg1">
-                    <li class="w1"><font class="bold13">胜</font>&nbsp;&nbsp;2.35</li>
-                    <li class="w2"> <p>共 8888 人购买&nbsp;&nbsp;总金额666</p></li>
-                    <li class="w3">输入本金&nbsp;<input type="text" class="tcinput" /></li>
-                    <li class="w4">预计返还本金： <font>0</font> <a href="#" class="touz-bot">投注</a></li>  
-                </ul> 
-            </div>
-            <div class="sais-list" id="user-list">
-            	<span class="tietle-sub">
-                	赔率走势图 
-                </span>
-                <img src="images/photo01.gif" />
-            </div>
-        </div>
-        <!-- left END --> 
-    </div>
+	<div class="modal-body">
+		 <p id="beterror4s"></p>
+	</div>
 </div>
-</body>
-</html>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	var data = {{$oddsdata}};
+	
+	var voods = new Array();
+	var poods = new Array();
+	var foods = new Array();
+	
+	var v = 0;
+	var p = 0;
+	var f = 0;
+
+	for (var d in data){
+		for(var k in data[d]){
+			if(k=="victory"){
+				voods[v] = [v,parseFloat(data[d][k])];
+				v++;
+			}
+			else if(k=="planish"){
+				
+				poods[p] = [p,parseFloat(data[d][k])];
+				p++;
+			}
+			else if(k=="fail"){
+				foods[f] = [f,parseFloat(data[d][k])];
+				f++;
+			}
+		}
+	}
+
+	var myChart = new JSChart('graph', 'line');
+	var flag = false;
+	if(voods.length>1){
+		myChart.setDataArray(voods,'line_1');
+		myChart.setLabelY([voods[0][1], '主胜']);
+		flag = true;
+	}
+	if(poods.length>1){
+		myChart.setDataArray(poods,'line_2');
+		myChart.setLabelY([poods[0][1], '平']);
+		flag = true;
+	}
+	if(foods.length>1){
+		myChart.setDataArray(foods,'line_3');
+		myChart.setLabelY([foods[0][1], '主负']);
+		flag = true;
+	}
+	if(flag){
+		myChart.draw();
+	}
+});
+</script>
+

@@ -913,6 +913,10 @@ a {
 	padding:20px;
 	color:#333;
 	top:-220px;
+	visibility:hidden;
+	}
+.list-list .changc:hover .ckcolum{
+	visibility:inherit;
 	}
 .ckcolum span{
 	font-size:16px;
@@ -970,12 +974,12 @@ a {
 .tcbox02{
 	position:absolute;
 	width:380px;
-	height:190px;
+	height:160px;
 	border:3px solid #999;
 	display:block;
 	z-index:100;
 	background:#eee;
-	margin:-115px 0 0 -210px;
+	margin:-140px 0 0 -210px;
 	top:50%;
 	left:50%;
 	padding:20px;
@@ -984,11 +988,35 @@ a {
 .tcbox02 span{
 	color:#666;
 	font-size:16px;
+	width:100%;
+	text-align:left;
+	float:left;
+	}
+.tcbox02 span a{
+	float:right;
+	font-size:18px;
+	color:#999;
+	position:relative;
+	top:-10px;
+	}
+.tcbox02 span a:hover{ 
+	color:#333;
 	}
 .tcbox02 p{
 	color:#000;
 	font-size:16px;
 	margin:8px 0;
+	float:left;
+	width:80%;
+	padding-left:45px;
+	text-align:left;
+	}
+.tcbox02 p font{
+	line-height:33px;
+	text-align:center;
+	color:#fff;
+	font-size:11px;
+	margin-left:15px;
 	}
 .tcinput{
 	width:85px;
@@ -1004,17 +1032,18 @@ a {
 .tcbox02 table td a{
 	margin-top:15px;
 	}
+.tcbox02 table td a.touz-bot{
+	margin-right:38px;
+	}
 .quxiao-but{    
-	background:#ccc;
-    color: #333333;
-    float: right;
+	  color: #333333;
+    float: left;
     font-size: 12px;
-    height:20px;
-    line-height: 21px; 
-    text-align: center;
-    width:59px;
-	border:1px solid #666;
-	float:left;
+    height: 20px;
+    line-height: 21px;
+    text-align: right;
+    text-decoration: underline;
+    width: 59px;
 }
 .tcbox03{
 	position:absolute;
@@ -1066,9 +1095,5 @@ a {
 	}  
 .list-list li.w4 a{
 	float:right;
-	margin:5px 5px 0 0;
-	visibility:hidden;
-	}
-.list-list li.w4:hover a{
-	visibility:inherit;
-	}
+	margin:5px 5px 0 0; 
+	} 

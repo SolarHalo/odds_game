@@ -9,7 +9,7 @@
                 <span class="bordtop">&nbsp;</span>
                 <ul class="top-list" data="week">
                 {{foreach $weekranks as $rank}}
-                    <li>{{$rank->rank}}.<span>{{if $rank->user_name != ''}}{{$rank->user_name}}{{else}}{{$rank->user_email}}{{/if}}</span>
+                    <li>{{$rank->rank}}.<span><a href="{{$urlroot}}space.php?uid={{$rank->user_id}}">{{if $rank->user_name != ''}}{{$rank->user_name}}{{else}}{{$rank->user_email}}{{/if}}</a></span>
                     <font>{{$rank->user_vmoney}}</font>分</li>
                 {{/foreach}}
                 </ul>

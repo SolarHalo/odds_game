@@ -1,9 +1,15 @@
 {{* 引入头部文件 *}}
 {{include file='header.tpl'}}
+<script type="text/javascript" src="{{$urlroot}}/js/cluetip.min.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/main.js"></script>
+<script type="text/javascript">
+var islogin = {{if $ownmoney eq '未登录' }}false {{else}} true {{/if}};
+var fastbet = true;
+</script>
 <div class="container"> 
         <div class="tietle">
             <font>足球</font>&nbsp;&or;
+            <input id="fastbetbt" type="checkbox" checked/>快速投注
         </div>
         <div class="container-left">
             <div class="sais-list">
@@ -82,6 +88,27 @@
             {{include file='ranking.tpl'}}
         
      </div>
+</div>
+
+<div id="fastbetpanel" class="tcbox02" style="display:none;">
+	<span>投注<a href="javascript:void(0);" onclick="closeFBP();">x</a></span> 
+	<p id="betteamp">皇家马德里 VS 巴萨罗纳<font class="bold11">主胜</font> </p>
+	<input id="fbetodd" type="hidden" />
+	<input id="fbeteid" type="hidden" />
+	<input id="fbettype" type="hidden" />
+    <table>
+    	<tr>
+        	<td><font style="font-size:16px; color:#333;">本金</font>：</td><td width="100" align="left">
+        	<input id="fbetmoney" type="text" class="tcinput" /></td><td>预计返还：</td><td id="freturnmoeny">0</td>
+        </tr>
+        <tr>
+        	<td align="left"><a href="javascript:void(0);" onclick="closeFBP();" class="quxiao-but">取消</a></td><td><a id="fbetbtn" onclick="fastbetOpt();" href="javascript:void(0);" class="touz-bot">投注</a></td><td colspan="2">&nbsp;</td>
+        </tr>
+    </table> 
+</div>
+
+<div id="msgbox" class="tcbox03" style="display:none;">
+	 <p>该投注已经加入到投注单，请稍后填写本金进行投注!</p>
 </div>
 
 {{* 引入底部文件 *}}

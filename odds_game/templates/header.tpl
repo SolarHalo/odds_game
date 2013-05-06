@@ -18,7 +18,7 @@
             </a>
           
           {{if $ownmoney eq '未登录' }}
-		    <a href="{{$urlroot}}login.php" class="sw-but">
+		    <a id="trybutton" href="{{$urlroot}}login.php" class="sw-but">
             	立即试玩
             </a>
             {{else}} 

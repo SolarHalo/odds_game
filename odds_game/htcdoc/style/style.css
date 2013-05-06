@@ -912,9 +912,17 @@ a {
 	position:relative;
 	padding:20px;
 	color:#333;
-	top:-220px;
-	visibility:hidden;
+	
+	
 	}
+.ckcolum li{	
+	float:left;
+	height:33px;
+	line-height:33px;
+	color:#fff;
+	text-align:center;
+}
+	
 .list-list .changc:hover .ckcolum{
 	visibility:inherit;
 	}
@@ -932,8 +940,8 @@ a {
 	}
 .ckcolum img{
 	position:relative; 
-	bottom: -122px;
-    left: -248px;
+	bottom: -135px;
+    left: -60px;
 	}
 .tcbox01{
 	position:absolute;

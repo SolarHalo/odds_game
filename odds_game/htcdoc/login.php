@@ -13,7 +13,7 @@ if(array_key_exists("email", $_GET) && array_key_exists("password", $_GET)){
 	$user = $userdb->getUser($email);
 	if($user){
 		if(encodePassword($pass) == $user->user_passwd){
-			$user->user_exp = $user->user->exp + 5;
+			$user->user_exp = $user->user_exp + 5;
 			$userdb->updateUserMessage(array('user_exp'=>$user->user_exp), $user->user_id);
 			$_SESSION['user'] = $user;
 			

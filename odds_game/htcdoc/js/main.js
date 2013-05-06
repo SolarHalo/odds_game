@@ -23,6 +23,17 @@ $(document).ready(function(){
 	
 	$("#betnow").click(betNow);
 	
+	$("#fastbetbt").click(function(){
+		fastbet = !!($(this).attr("checked"));
+	});
+	
+	$("#fbetmoney").keyup(calculateFastMoney);
+	
+	//$(".eventicon").mouseenter(showsingleeventmsg);
+	
+	//$(".eventicon").mouseleave(removesingleeventmsg);
+	$(".eventicon").cluetip({arrows: true, dropShadow: false, ajaxCache: false, positionBy: 'bottomTop', topOffset: -240, mouseOutClose: false, delayedClose: 500});
+	
 });
 
 function refreashEvents(){
@@ -59,11 +70,24 @@ function getAllEvents(){
  * 点击赔率
  */
 function betevent(){
+	
+	if(!islogin){
+		showLoginWindow();
+		return;
+	}
 	var el = $(this);
+	if(fastbet){
+		showFastBetWindow(el);
+		return;
+	}
+	
+	
 	var nodd = el.children("font").html();
 	var nteam = el.prevAll(".zhud").html() + " VS " + el.prevAll(".ked").html();
 	var bettype = el.hasClass("zhus") ? "主胜" : (el.hasClass("ping") ? "平" : "主负");
 	var eventid = el.parent("ul").attr("id").split("_")[1];
+	
+	
 	
 	if(mybet[eventid]){
 		if(mybet[eventid][bettype])
@@ -82,6 +106,8 @@ function betevent(){
 	cl.find(".bettype").html(bettype);
 	cl.find(".gail").html(nodd);
 	$("#betpanel").append(cl);
+	
+	showMsg("该投注已经加入到投注单，请稍后填写本金进行投注!");
 }
 
 /**
@@ -223,9 +249,134 @@ function betNow(){
 	}
 }
 
+/**
+ * 显示登录窗口
+ */
+function showLoginWindow(){
+	$.ajax({
+		'url': 'windowlogin.php',
+		'success': function(data){
+			$("body").append(data);
+		}
+	});
+}
+
+/**
+ * 显示快速投注窗口
+ */
+function showFastBetWindow(el){
+	var nodd = el.children("font").html();
+	var nteam = el.prevAll(".zhud").html() + " VS " + el.prevAll(".ked").html();
+	var bettype = el.hasClass("zhus") ? "主胜" : (el.hasClass("ping") ? "平" : "主负");
+	var bettypebg = el.hasClass("zhus") ? "bold11" : (el.hasClass("ping") ? "bold12" : "bold13");
+	var eventid = el.parent("ul").attr("id").split("_")[1];
+	
+	$("#betteamp").html(nteam + "<font class='"+bettypebg+"'>" + bettype + "</font>");
+	$("#fbetodd").val(nodd);
+	$("#fbeteid").val(eventid);
+	$("#fbettype").val(bettype);
+	
+	$("#fastbetpanel").show();
+	
+}
+
+/**
+ * 快速投注本金返回计算
+ */
+function calculateFastMoney(){
+	var el = $(this);
+	var v = el.val();
+	v = v.replace(/\D/gi,"");
+	v = Number(v);
+	el.val(v);
+	if(v < 0){
+		return;
+	}
+	
+	var odd = $("#fbetodd").val();
+	var rm = parseFloat(Number(v) * Number(odd)).toFixed(2);
+	
+	var om = $("#ownmoney").html();
+	om = Number(om);
+	if(v > om){
+		$("#freturnmoeny").html("金币不足!");
+	}else{
+		$("#freturnmoeny").html(rm);
+	}
+}
+
+/**
+ * 快速投注
+ */
+function fastbetOpt(){
+	var eid = $("#fbeteid").val();
+	var odd = $("#fbetodd").val();
+	var bmoney = $("#fbetmoney").val();
+	var bettype = $("#fbettype").val();
+	
+	if(bmoney == '' || bmoney == '0'){
+		alert("请输入本金！");
+		return;
+	}
+	
+	var beto = {};
+	beto[eid] = {};
+	beto[eid][bettype] = {'odd': odd, 'oddname': bettype, 'betmoney': bmoney};
+	
+	$.ajax({
+		'url': 'ajaxeventopt.php',
+		'data': {'method': 'betevent', 'betodd': beto},
+		'success': function(data){
+			data = data.split(":::");
+			if(data[0].trim().cleanc() == "﻿﻿success" || data[0] == "﻿﻿success" ){
+				closeFBP();
+				showMsg("投注已保存成功！");
+			}else{
+				alert(data[1]);
+			}
+		}
+	});
+}
+
+
+function closeFBP(){
+	$("#fastbetpanel").hide();
+}
+
+function showMsg(msg){
+	$("#msgbox").html("<p>"+msg+"</p>");
+	$("#msgbox").fadeIn().delay(3000).fadeOut();
+}
+
+/**
+ * 显示单赛事简要信息
+ */
+function showsingleeventmsg(){
+	var el = $(this);
+	var eventid = el.html();
+	$.ajax({
+		'url': 'singleeventmsg.php',
+		'data': {'eventid': eventid},
+		'success': function(data){
+			el.after(data);
+		}
+	})
+	
+}
+
+function removesingleeventmsg(){
+	$(this).nextAll().remove();
+}
+
 
 String.prototype.trim= function(){  
     // 用正则表达式将前后空格  
     // 用空字符串替代。  
     return this.replace(/(^\s*)|(\s*$)/g, "");  
+}
+
+String.prototype.cleanc= function(){  
+    // 用正则表达式将前后空格  
+    // 用空字符串替代。  
+    return this.replace(/(^\W*)|(\W*$)/g, "");  
 }

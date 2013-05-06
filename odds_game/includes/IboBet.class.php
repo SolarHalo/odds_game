@@ -76,6 +76,15 @@
 		
 		return $this->dbutil->get_results($sql);
 	}
+	
+	/**
+	 * 统计赛事投注统计情况  ：统计赛事投掷用户数，投掷总金额
+	 * @param $event_id
+	 */
+	function getBetStatisticByEventId($event_id){
+		$sql = "select t.odds_name,t.bet_odd ,count(t.user_name) sumUser,sum(t.bet_vmoney) sumVmoney from ibo_bet t where t.event_id='".$event_id."' group by t.odds_name,t.bet_odd";
+		return $this->dbutil->get_results($sql);
 	}
+}
 
 ?>

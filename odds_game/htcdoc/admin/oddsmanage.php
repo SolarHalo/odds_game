@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include "../../configs/load.php";
 //include BASE_HOME."includes/EventsDBUtil.php";
 
@@ -119,5 +120,5 @@ $smarty->assign("endPage",$endPage);
 $smarty->assign("modulename","赛事管理首页");
 $smarty->display("admin/oddsmanage.tpl");
 
-
+ob_end_flush();
 ?>

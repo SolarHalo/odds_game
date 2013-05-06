@@ -8,6 +8,31 @@
  * betodd为二维数组，eid为eventid，oddname为主胜或负，内容为odd倍率，betmoney投注金额
  */
 include "../configs/load.php";
+include BASE_HOME."/includes/IboEvent.class.php";
+include BASE_HOME."/includes/IboBet.class.php";
+include BASE_HOME."/includes/IboOdds.class.php";
+
+$eventid = $_GET['eventid'];
+
+$eventDb = new IboEvent($dbutil);
+$betDb = new IboBet($dbutil);
+$oddsDb = new IboOdds($dbutil);
+
+$event = $eventDb->getEventById($eventid);
+$betStatistics = $betDb->getBetStatisticByEventId($eventid);
+
+
+$historyOdds = $oddsDb->getHistoryOddsByEventId($eventid);
+$currentOdd = $oddsDb->getOddsByEventId($eventid);
+
+array_push($historyOdds,$currentOdd);
+
+
+$historyOdds = json_encode($historyOdds);
+
+$smarty->assign('event',$event);
+$smarty->assign('betStatistics',$betStatistics);
+$smarty->assign('oddsdata',$historyOdds);
 
 $smarty->display("singleevent.tpl");
 

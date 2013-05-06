@@ -3,7 +3,6 @@ include "../configs/load.php";
 include BASE_HOME."/includes/IboEvent.class.php";
 include BASE_HOME."/includes/Ranking.class.php";
 
-
 $eventdb = new IboEvent($dbutil);
 $rankdb = new IboRanking($dbutil);
 

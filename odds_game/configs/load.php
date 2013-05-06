@@ -1,6 +1,7 @@
 <?php
-require 'config.php';
 session_start(); 
+require 'config.php';
+
 require BASE_HOME.'includes/DBUtil.class.php';
 include BASE_HOME.'includes/setup.php';
 include BASE_HOME.'includes/CommonUtil.php';

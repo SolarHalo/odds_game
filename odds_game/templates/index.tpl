@@ -9,7 +9,7 @@ var fastbet = true;
 <div class="container"> 
         <div class="tietle">
             <font>足球</font>&nbsp;&or;
-            <input id="fastbetbt" type="checkbox" checked/>快速投注
+            <span class="kstz fr"><input id="fastbetbt" type="checkbox" checked/>快速投注</span>
         </div>
         <div class="container-left">
             <div class="sais-list">
@@ -33,10 +33,10 @@ var fastbet = true;
         <!-- left END -->
        
         <div class="container-right">
-        	<span class="cont-r-title-l mt50">
+        	<span class="cont-r-title-l">
             	&nbsp;投注项
             </span>
-            <span class="cont-r-title-r mt50">
+            <span class="cont-r-title-r">
             	赔率&nbsp;&nbsp;赢/位置&nbsp;
             </span>
             <span id="ownmoney" style="display: none;">{{$ownmoney}}</span>
@@ -75,7 +75,8 @@ var fastbet = true;
 	            <div class="zongje">总投注金额:<font id="rmoneycount">000.00</font></div> 
 	            <div class="touz">
 	            	<a id="deleteAll" href="javascript:void(0);" class="q-delt">全部删除</a>
-	                <a id="betnow" href="javascript:void(0);" class="touz-bot">投注</a>
+<!--	                <a id="betnow" href="javascript:void(0);" class="touz-bot">投注</a>-->
+	                <input id="betnow" type="button" class="touz-bot" value="投注"/>
 	            
 	            </div>
 	            <div id="msgPanel"   style="display: none;"> 
@@ -102,7 +103,14 @@ var fastbet = true;
         	<input id="fbetmoney" type="text" class="tcinput" /></td><td>预计返还：</td><td id="freturnmoeny">0</td>
         </tr>
         <tr>
-        	<td align="left"><a href="javascript:void(0);" onclick="closeFBP();" class="quxiao-but">取消</a></td><td><a id="fbetbtn" onclick="fastbetOpt();" href="javascript:void(0);" class="touz-bot">投注</a></td><td colspan="2">&nbsp;</td>
+        	<td width="40">&nbsp;</td>
+        	<td colspan="3" align="left"><font id="fastbetmsg" color="#FF0000"></font></td>
+        </tr>
+        <tr>
+        	<td align="left"><a href="javascript:void(0);" onclick="closeFBP();" class="quxiao-but">取消</a></td><td>
+<!--        	<a id="fbetbtn" onclick="fastbetOpt();" href="javascript:void(0);" class="touz-bot">投注</a>-->
+        	<input id="fbetbtn" onclick="fastbetOpt();" type="button" class="touz-bot" value="投注"/>
+        	</td><td colspan="2">&nbsp;</td>
         </tr>
     </table> 
 </div>

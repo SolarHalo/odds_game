@@ -136,7 +136,15 @@ a {
 	}
 .list-list,.sais-list{
 	float:left;
-	width:693px;
+	width:693px;   
+	}
+.changc .eventicon{
+	color: #FFFFFF;
+    float: left;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+	width:67px;
 	}	
 .sais{
 	width:69px;
@@ -332,6 +340,18 @@ a {
 	color:#333;
 	line-height:23px;
 	margin-right:16px;
+	cursor:pointer;
+	}
+.touz-bot2{
+	float:right;
+	width:80px;
+	height:23px;
+	background:#c1c1c1;
+	text-align:center;
+	font-size:12px;
+	color:#666;
+	line-height:23px;
+	margin-right:16px; 
 	}	
 .q-delt{
 	color:#CCC;
@@ -389,6 +409,12 @@ a {
 	padding:0 10px;
 	width:93px;
 	display:inline-table;
+	}
+.top-list li span a{
+	color:#fff;
+	}
+.top-list li span a:hover{
+	color:#FFFF00;
 	}
 .login{
 	float:left;
@@ -576,7 +602,7 @@ a {
 .user ul li{
 	width:540px;
 	font-size:14px;
-	padding-bottom:15px;
+	padding-bottom:5px;
 	}
 
 .user ul li span{ 
@@ -705,6 +731,8 @@ a {
 	width:35px;
 	float:left;
 	margin:0 7px 5px 0;
+	height:35px;
+	overflow:hidden; 
 	}
 .top-guanz ul li img{
     border-radius: 3px 3px 3px 3px;
@@ -804,13 +832,13 @@ a {
 	font-size:14px;
 	}
 
-.fudong{ 
+/*.fudong{ 
 	position:fixed; 
     top:148px;
 	z-index:1;
 	border-bottom:10px solid #484848;
 	border-top:5px solid #484848;
-	}
+	}*/
 .mt50{
 	margin-top:85px;
 	}
@@ -891,13 +919,13 @@ a {
 	font-size:14px;
 	}
 
-.fudong{ 
+/*.fudong{ 
 	position:fixed; 
     top:148px;
 	z-index:1;
 	border-bottom:10px solid #484848;
 	border-top:5px solid #484848;
-	}
+	}*/
 .mt50{
 	margin-top:85px;
 	}
@@ -982,7 +1010,6 @@ a {
 .tcbox02{
 	position:absolute;
 	width:380px;
-	height:160px;
 	border:3px solid #999;
 	display:block;
 	z-index:100;
@@ -990,7 +1017,7 @@ a {
 	margin:-140px 0 0 -210px;
 	top:50%;
 	left:50%;
-	padding:20px;
+	padding:20px 20px 30px;
 	text-align:center;
 	}
 .tcbox02 span{
@@ -1029,13 +1056,15 @@ a {
 .tcinput{
 	width:85px;
 	border:1px solid #666;
+	vertical-align:inherit!important;
+	padding:0!important;
 	}
 .tcbox02 table{
 	margin:20px 0 0 40px;
-	width:270px;
+	width:330px;
 	}
 .tcbox02 table td{
-	height:30px;
+	height:27px;
 	}
 .tcbox02 table td a{
 	margin-top:15px;
@@ -1105,3 +1134,62 @@ a {
 	float:right;
 	margin:5px 5px 0 0; 
 	} 
+/*==========================20130507====================*/  
+ 
+#loginwindow .login-but{
+	background: url(../images/but-bg.gif) no-repeat scroll 0 0 transparent;
+    color: #FEF10D;
+    cursor: pointer;
+	}
+#user-list ul{
+	margin:0;
+	}
+.kstz{
+	width:350px;
+	float:right;
+}
+.kstz input{
+	vertical-align: middle;
+	margin-right:5px;
+	}
+	
+/*==========================20130507====================*/  
+.top-guanz ul{
+	position: relative;
+	}	
+.top-guanz ul li:hover span{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
+    height: 100px;
+    line-height: 20px;
+    padding: 3px 5px;
+    position: relative;
+    text-align: center;
+    width: 75px;
+    display: block;
+    left: -16px;
+    top: -15px;
+	}
+.top-guanz ul li:hover span img{
+	width:75px;
+	height:75px;
+	}
+.top-guanz ul li:hover{
+	overflow:inherit;
+	}
+.top-guanz ul li a{
+	color:#852225;
+	}
+.user ul li a.guanzhu{
+	background-image: url("../images/gzioc.gif");
+    background-position: left bottom;
+    color: #333333; 
+    height: 19px;
+    padding: 3px 0 0 18px;
+	display:block;  
+    width: 30px;
+	position:relative;
+	top:2px;
+	left:0;
+	}

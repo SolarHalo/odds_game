@@ -180,11 +180,16 @@ function deleteAllBet(){
 
 function betNow(){
 	var om = $("#ownmoney").html();
+	$("#betnow").removeClass("touz-bot").addClass("touz-bot2");
+	$("#betnow").attr("disabled", "disabled");
 	if(om == "未登录"){
 		$("#beterror").html("您还未登录，请先登录！<br /><a href='login.php'>登录</a>");
 		$("#msgPanel").css("display", "block");
 		$("#beterror").removeClass("tis tis-G").addClass("tis");
 		$(this).val("");
+		
+		$("#betnow").removeClass("touz-bot2").addClass("touz-bot");
+		$("#betnow").removeAttr("disabled");
 		return ;
 	}
 	
@@ -192,6 +197,9 @@ function betNow(){
 		$("#beterror").html("您先选择投注项！");
 		$("#msgPanel").css("display", "block");
 		$("#beterror").removeClass("tis tis-G").addClass("tis");
+		
+		$("#betnow").removeClass("touz-bot2").addClass("touz-bot");
+		$("#betnow").removeAttr("disabled");
 	}else{
 		var noneM = false;
 		var betodd = {};
@@ -215,16 +223,19 @@ function betNow(){
 		if(noneM){
 			$("#beterror").html("请为要投注的赛事填写本金！");
 			$("#msgPanel").css("display", "block");
+			$("#betnow").removeClass("touz-bot2").addClass("touz-bot");
+			$("#betnow").removeAttr("disabled");
 			return ;
 		}
 		
 		$.ajax({
 			'url': 'ajaxeventopt.php',
 			'data': {'method': 'betevent', 'betodd' :betodd},
+			'dataType': 'json',
 			'success': function(data){
-				data = data.split(":::");
 				
-				if(data[0].trim() == "success"){
+				
+				if(data.code == "success"){
 					var betm = 0;
 					$(".betmoney").each(function(){
 						betm += Number($(this).val());
@@ -232,6 +243,7 @@ function betNow(){
 					var om = $("#ownmoney").html();
 					om = Number(om) - betm;
 					$("#ownmoney").html(om);
+					$("#nowmoney").html(om);
 					$("#betpanel").html("");
 					
 					$("#beterror").removeClass("tis tis-G").addClass("tis-G");
@@ -239,8 +251,12 @@ function betNow(){
 				}else{
 					$("#beterror").removeClass("tis tis-G").addClass("tis");
 				}
-				$("#beterror").html(data[1]);
+				$("#beterror").html(data.msg);
 				$("#msgPanel").css("display", "block");
+				
+				
+				$("#betnow").removeClass("touz-bot2").addClass("touz-bot");
+				$("#betnow").removeAttr("disabled");
 			}
 		});
 		
@@ -309,13 +325,27 @@ function calculateFastMoney(){
  * 快速投注
  */
 function fastbetOpt(){
+	$("#fbetbtn").removeClass("touz-bot").addClass("touz-bot2");
+	$("#fbetbtn").attr("disabled", "disabled");
+	var om = $("#ownmoney").html();
+	om = Number(om);
+	
 	var eid = $("#fbeteid").val();
 	var odd = $("#fbetodd").val();
 	var bmoney = $("#fbetmoney").val();
 	var bettype = $("#fbettype").val();
 	
 	if(bmoney == '' || bmoney == '0'){
-		alert("请输入本金！");
+		$("#fastbetmsg").html("请输入本金！");
+		$("#fbetbtn").removeClass("touz-bot2").addClass("touz-bot");
+		$("#fbetbtn").removeAttr("disabled");
+		return;
+	}
+	
+	if(Number(bmoney) > om){
+		$("#fastbetmsg").html("超过总本金！");
+		$("#fbetbtn").removeClass("touz-bot2").addClass("touz-bot");
+		$("#fbetbtn").removeAttr("disabled");
 		return;
 	}
 	
@@ -326,14 +356,18 @@ function fastbetOpt(){
 	$.ajax({
 		'url': 'ajaxeventopt.php',
 		'data': {'method': 'betevent', 'betodd': beto},
+		'dataType': 'json',
 		'success': function(data){
-			data = data.split(":::");
-			if(data[0].trim().cleanc() == "﻿﻿success" || data[0] == "﻿﻿success" ){
+			if(data.code == "success" ){
 				closeFBP();
 				showMsg("投注已保存成功！");
+				$("#ownmoney").html(om- Number(bmoney));
+				$("#nowmoney").html(om- Number(bmoney));
 			}else{
-				alert(data[1]);
+				$("#fastbetmsg").html(data.msg);
 			}
+			$("#fbetbtn").removeClass("touz-bot2").addClass("touz-bot");
+			$("#fbetbtn").removeAttr("disabled");
 		}
 	});
 }

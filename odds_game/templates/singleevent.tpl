@@ -69,7 +69,6 @@ $(document).ready(function(){
 			if(k=="victory"){
 				voods[v] = [v,parseFloat(data[d][k])];
 				v++;
-				alert(data[d][k]);
 			}
 			else if(k=="planish"){
 				
@@ -105,7 +104,7 @@ $(document).ready(function(){
 //	}
 	
 
-	$.plot("#graph",[{label:"主胜",data:voods},{label:"主平",data:poods},{label:"主负",data:foods}]);
+	$.plot("#graph",[{label:"胜",data:voods},{label:"平",data:poods},{label:"负",data:foods}]);
 
 		
 	

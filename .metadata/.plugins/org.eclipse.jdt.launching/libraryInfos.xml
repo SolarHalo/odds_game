@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <libraryInfos>
 <libraryInfo home="C:\Program Files\Java\jre6" version="1.6.0_20">
 <bootpath>
@@ -18,7 +18,24 @@
 <entry path="C:\Program Files\Java\jre6\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="D:\WorkProgrameFile\MyEclipse 6.5\jre" version="1.5.0_11">
+<libraryInfo home="D:\install\php\zendstudio" version="1.5.0_11">
+<bootpath>
+<entry path="D:\install\php\zendstudio\jre\lib\rt.jar"/>
+<entry path="D:\install\php\zendstudio\jre\lib\i18n.jar"/>
+<entry path="D:\install\php\zendstudio\jre\lib\sunrsasign.jar"/>
+<entry path="D:\install\php\zendstudio\jre\lib\jsse.jar"/>
+<entry path="D:\install\php\zendstudio\jre\lib\jce.jar"/>
+<entry path="D:\install\php\zendstudio\jre\lib\charsets.jar"/>
+<entry path="D:\install\php\zendstudio\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\install\php\zendstudio\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\install\php\zendstudio\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="D:\WorkProgrameFile\MyEclipse 6.5" version="1.5.0_11">
 <bootpath>
 <entry path="D:\WorkProgrameFile\MyEclipse 6.5\jre\lib\rt.jar"/>
 <entry path="D:\WorkProgrameFile\MyEclipse 6.5\jre\lib\i18n.jar"/>
@@ -35,7 +52,7 @@
 <entry path="D:\WorkProgrameFile\MyEclipse 6.5\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="D:\WorkProgrameFile\MyEclipse 6.5" version="1.5.0_11">
+<libraryInfo home="D:\WorkProgrameFile\MyEclipse 6.5\jre" version="1.5.0_11">
 <bootpath>
 <entry path="D:\WorkProgrameFile\MyEclipse 6.5\jre\lib\rt.jar"/>
 <entry path="D:\WorkProgrameFile\MyEclipse 6.5\jre\lib\i18n.jar"/>

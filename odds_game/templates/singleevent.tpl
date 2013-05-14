@@ -3,8 +3,8 @@
 <link href="style/bootstrap.min.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="{{$urlroot}}/js/ajaxsingleevent.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/bootstrap.min.js" ></script>
-<script type="text/javascript" src="{{$urlroot}}/js/jscharts.js"></script>
-
+<script type="text/javascript" src="{{$urlroot}}/js/excanvas.min.js"></script>
+<script type="text/javascript" src="{{$urlroot}}/js/jquery.flot.js"></script>
 <div id="box">
     <div class="container">  
         <div class="container-left">
@@ -35,7 +35,7 @@
             	<span class="tietle-sub">
                 	赔率走势图 
                 </span>
-                <div id="graph"></div>
+	            <div id="graph" style="width: 600px;height:150px; text-align: center; margin:0 auto;"></div>
             </div>
         </div>
         <!-- left END --> 
@@ -69,6 +69,7 @@ $(document).ready(function(){
 			if(k=="victory"){
 				voods[v] = [v,parseFloat(data[d][k])];
 				v++;
+				alert(data[d][k]);
 			}
 			else if(k=="planish"){
 				
@@ -82,26 +83,32 @@ $(document).ready(function(){
 		}
 	}
 
-	var myChart = new JSChart('graph', 'line');
-	var flag = false;
-	if(voods.length>1){
-		myChart.setDataArray(voods,'line_1');
-		myChart.setLabelY([voods[0][1], '主胜']);
-		flag = true;
-	}
-	if(poods.length>1){
-		myChart.setDataArray(poods,'line_2');
-		myChart.setLabelY([poods[0][1], '平']);
-		flag = true;
-	}
-	if(foods.length>1){
-		myChart.setDataArray(foods,'line_3');
-		myChart.setLabelY([foods[0][1], '主负']);
-		flag = true;
-	}
-	if(flag){
-		myChart.draw();
-	}
+//	var myChart = new JSChart('graph', 'line');
+//	var flag = false;
+//	if(voods.length>1){
+//		myChart.setDataArray(voods,'line_1');
+//		myChart.setLabelY([voods[0][1], '主胜']);
+//		flag = true;
+//	}
+//	if(poods.length>1){
+//		myChart.setDataArray(poods,'line_2');
+//		myChart.setLabelY([poods[0][1], '平']);
+//		flag = true;
+//	}
+//	if(foods.length>1){
+//		myChart.setDataArray(foods,'line_3');
+//		myChart.setLabelY([foods[0][1], '主负']);
+//		flag = true;
+//	}
+//	if(flag){
+//		myChart.draw();
+//	}
+	
+
+	$.plot("#graph",[{label:"主胜",data:voods},{label:"主平",data:poods},{label:"主负",data:foods}]);
+
+		
+	
 });
 </script>
 

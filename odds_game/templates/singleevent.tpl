@@ -1,10 +1,12 @@
 {{* 引入头部文件 *}}
 {{include file='header.tpl'}}
 <link href="style/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="style/jquery-impromptu.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="{{$urlroot}}/js/ajaxsingleevent.js"></script>
-<script type="text/javascript" src="{{$urlroot}}/js/bootstrap.min.js" ></script>
+<!--<script type="text/javascript" src="{{$urlroot}}/js/bootstrap.min.js" ></script>-->
 <script type="text/javascript" src="{{$urlroot}}/js/excanvas.min.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/jquery.flot.js"></script>
+<script type="text/javascript" src="{{$urlroot}}/js/jquery-impromptu.js"></script>
 <div id="box">
     <div class="container">  
         <div class="container-left">
@@ -40,16 +42,6 @@
         </div>
         <!-- left END --> 
     </div>
-</div>
-
-<div class="modal hide fade" id="MsgModal" >
-	<div class="modal-header">
-      <a class="close" data-dismiss="modal">×</a>
-      <h3 id="wintitle">友情提醒</h3>
-    </div>
-	<div class="modal-body">
-		 <p id="beterror4s"></p>
-	</div>
 </div>
 
 <script type="text/javascript">
@@ -102,12 +94,14 @@ $(document).ready(function(){
 //	if(flag){
 //		myChart.draw();
 //	}
+
+	$.plot("#graph",[{label:"胜",data:voods},{label:"平",data:poods},{label:"负",data:foods}],{'legend':{'backgroundColor':'#FFFFFF'}});
 	
-
-	$.plot("#graph",[{label:"胜",data:voods},{label:"平",data:poods},{label:"负",data:foods}]);
-
 		
 	
 });
 </script>
+
+{{* 引入底部文件 *}}
+{{include file='footer.tpl'}}
 

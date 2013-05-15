@@ -1,9 +1,7 @@
 {{* 引入头部文件 *}}
 {{include file='header.tpl'}}
-<link href="style/bootstrap.min.css" type="text/css" rel="stylesheet" />
 <link href="style/jquery-impromptu.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="{{$urlroot}}/js/ajaxsingleevent.js"></script>
-<!--<script type="text/javascript" src="{{$urlroot}}/js/bootstrap.min.js" ></script>-->
 <script type="text/javascript" src="{{$urlroot}}/js/excanvas.min.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/jquery.flot.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/jquery-impromptu.js"></script>

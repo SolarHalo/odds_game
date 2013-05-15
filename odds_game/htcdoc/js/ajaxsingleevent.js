@@ -101,7 +101,9 @@ function locateToLogin(){
 		title: "跳转到登录页面?",
 		buttons: { "是": true, "否": false },
 		submit: function(e,v,m,f){
-			window.location = "login.php";
+			if(v){
+				window.location = "login.php";
+			}
 		}
 	});
 }

@@ -215,6 +215,7 @@ a {
 	width:267px;
 	margin:0 4px;
 	padding:3px;
+	overflow:hidden;
 	}	
 .cont-r-title-l,.cont-r-title-r{
 	float:left; 
@@ -1193,3 +1194,60 @@ a {
 	top:2px;
 	left:0;
 	}
+
+
+/*===================================20130512==========================*/
+.guanzhu_yonhu{
+	width:256px;
+	padding:0 5px;
+	}
+.guanzhu_yonhu div img{
+	width:100px;
+	height:100px;   
+	border: 1px solid #353535;
+    border-radius: 5px 5px 5px 5px;
+	float:left;
+	}
+.guanzhu_yonhu div span{
+	display: inherit;
+    margin-left: 110px;
+    width: 130px;
+	font-size:13px;
+	color:#fff;
+	line-height:26px;
+	}
+.guanzhu_touzhu-list{
+	float:left;
+	width:256px;
+	margin-top:5px;
+	}
+.guanzhu_touzhu-list p{
+	display:inline-table;
+	}
+
+.guanzhu_touzhu-list li{
+	margin-left:0;
+	height:35px;
+	}
+.guanzhu_touzhu-list li font{
+	line-height:33px;
+	text-align:center;
+	}
+
+
+.changc a img{
+	vertical-align:middle;
+	}
+	
+/*===================================20130514==========================*/
+
+.guanzhu_yonhu_index-list{
+	display:inline-table;
+	margin-right:4px;
+	}
+.guanzhu_index-list_box{ 
+	width:810px;
+	float:left;
+}
+
+

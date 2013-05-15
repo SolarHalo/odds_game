@@ -34,6 +34,8 @@ $(document).ready(function(){
 	//$(".eventicon").mouseleave(removesingleeventmsg);
 	$(".eventicon").cluetip({arrows: true, dropShadow: false, ajaxCache: false, positionBy: 'bottomTop', topOffset: -240, mouseOutClose: false, delayedClose: 500});
 	
+	
+	getWatchedUserbets();
 });
 
 function refreashEvents(){
@@ -273,6 +275,7 @@ function showLoginWindow(){
 		'url': 'windowlogin.php',
 		'success': function(data){
 			$("body").append(data);
+			$("#loginwindow").css("top", $(window).height() /2  + $("body").scrollTop() );
 		}
 	});
 }
@@ -379,6 +382,7 @@ function closeFBP(){
 
 function showMsg(msg){
 	$("#msgbox").html("<p>"+msg+"</p>");
+	$("#msgbox").css("top", $(window).height() /2  + $("body").scrollTop() );
 	$("#msgbox").fadeIn().delay(3000).fadeOut();
 }
 
@@ -400,6 +404,16 @@ function showsingleeventmsg(){
 
 function removesingleeventmsg(){
 	$(this).nextAll().remove();
+}
+
+
+function getWatchedUserbets(){
+	$.ajax({
+		'url': 'getWathedUserbet.php',
+		'success': function(data){
+			$("#watcheduserbet").html(data);
+		}
+	})
 }
 
 

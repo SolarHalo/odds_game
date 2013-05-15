@@ -77,5 +77,17 @@ class IboUser{
 	function updateUserMessage($user, $id){
 		$this->dbutil->update("ibo_user", $user, array("user_id"=>$id));
 	}
+	
+	function getLastThreeBetWathedUser($userid){
+		$sql = "select a.* from ("
+				."select u.user_id, u.user_name,u.user_email,u.user_exp, u.user_vmoney, u.user_photo, b.event_id, b.bet_vmoney, b.odds_name, b.bet_time , e.team_mian_name, e.team_sec_name "
+				."from ibo_watch_user i, ibo_user u, ibo_bet b, ibo_event e "
+				."where e.event_id = b.event_id and  u.user_email = b.user_name and u.user_id = i.watch_user_id and i.user_id = $userid "
+				.") a "
+				."where 3 > ( "
+				."select count(*) from ibo_bet be where a.user_email = be.user_name and be.bet_time > a.bet_time )";
+
+		return $this->dbutil->get_results($sql);
+	}
 }
 ?>

@@ -87,6 +87,12 @@ var fastbet = true;
         </div>
         
             {{include file='ranking.tpl'}}
+            
+            <div class="container-right" style="margin-top:5px; padding-top:8px;">
+            <span class="cont-r-title-l">我关注的用户</span> 
+            <div id="watcheduserbet" class="guanzhu_index-list_box" style="position:relative;">
+            </div>
+        </div>
         
      </div>
 </div>

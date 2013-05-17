@@ -19,7 +19,7 @@
                             <td><input id="password" type="password" class="login-inp" /></td>
                         </tr>
                         <tr>
-                            <td style="color:#a0a1a1;"><input type="checkbox"/>&nbsp;&nbsp;记住登录状态<a href="#" style="color:#a0a1a1; float:right; text-decoration:underline;">忘记密码</a></td>
+                            <td style="color:#a0a1a1;"><input id="holdlogin" type="checkbox"/>&nbsp;&nbsp;记住登录状态<a href="#" style="color:#a0a1a1; float:right; text-decoration:underline;">忘记密码</a></td>
                         </tr>
                          <tr>
                             <td><input id="loginbt" type="button" value="登录爱博" class="login-but" /><br />
@@ -58,6 +58,7 @@ $("#wclosebt").click(function(){$("#loginwindow").remove();});
 function ajaxlogin(){
 	var email = $("#email").val();
 	var passwd = $("#password").val();
+	var holdl = !!($("#holdlogin").attr("checked"))
 
 	if(email == '' || passwd == ''){
 		$("#loginmsg").html("请输入用户名密码！");
@@ -65,18 +66,19 @@ function ajaxlogin(){
 
 	$.ajax({
 		'url': 'ajaxlogin.php',
-		'data': {'email':email,'password':passwd},
-		'dataType':'text',
+		'data': {'email':email,'password':passwd, 'holdlogin': holdl},
+		'type': 'post',
+		'dataType':'json',
 		'success': function(data){
-			data = data.split(":::");
-			if(data[0].trim().cleanc() == "success" || data[0] == "success"){
+		
+			if(data.code == "success"){
 				$("#loginwindow").remove();
-				$("#trybutton").after(data[1]);
+				$("#trybutton").after(data.msg);
 				$("#trybutton").remove();
 				islogin = true;
-				 $("#ownmoney").html(data[2]);
+				 $("#ownmoney").html(data.money);
 			}else{
-				$("#loginmsg").html(data[1]);
+				$("#loginmsg").html(data.msg);
 			}
 		}
 	});

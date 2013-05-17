@@ -275,7 +275,7 @@ function showLoginWindow(){
 		'url': 'windowlogin.php',
 		'success': function(data){
 			$("body").append(data);
-			$("#loginwindow").css("top", $(window).height() /2  + $("body").scrollTop() );
+			$("#loginwindow").css("top", (window.innerHeight - 350) /2 + $(window).scrollTop() + 195 );
 		}
 	});
 }
@@ -284,6 +284,7 @@ function showLoginWindow(){
  * 显示快速投注窗口
  */
 function showFastBetWindow(el){
+	var p = el.offset();
 	var nodd = el.children("font").html();
 	var nteam = el.prevAll(".zhud").html() + " VS " + el.prevAll(".ked").html();
 	var bettype = el.hasClass("zhus") ? "主胜" : (el.hasClass("ping") ? "平" : "主负");
@@ -295,6 +296,10 @@ function showFastBetWindow(el){
 	$("#fbeteid").val(eventid);
 	$("#fbettype").val(bettype);
 	
+	$("#fastbetpanel").css({
+		'left': p.left ,
+		'top' : p.top -90
+	});
 	$("#fastbetpanel").show();
 	
 }
@@ -382,7 +387,7 @@ function closeFBP(){
 
 function showMsg(msg){
 	$("#msgbox").html("<p>"+msg+"</p>");
-	$("#msgbox").css("top", $(window).height() /2  + $("body").scrollTop() );
+	$("#msgbox").css("top", (window.innerHeight - 350) /2 + $(window).scrollTop() + 195 );
 	$("#msgbox").fadeIn().delay(3000).fadeOut();
 }
 

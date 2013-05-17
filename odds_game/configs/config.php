@@ -5,9 +5,9 @@ ob_start();
  * Enter description here ...
  * @var unknown_type
  */
-define('DB_NAME', 'ibo'); 
+define('DB_NAME', 'odds_game'); 
 define('DB_USER', 'root'); 
-define('DB_PASSWORD', ''); 
+define('DB_PASSWORD', 'iboroot'); 
 define('DB_HOST', 'localhost'); 
 define('DB_CHARSET', 'utf8'); 
 
@@ -21,13 +21,16 @@ define("OBJECT_K", "object_k");
 define("ARRAY_A", "array_a");
 define("ARRAY_N", "array_n");
 
+//定义cookie保持登录用户加密密码的key
+define("COOKIEENCRYPTKEY", "iboencryptcookiepassword");
+
 // 手动指定Smarty的libs目录位置
  
  
 
 //define('SMARTY_DIR', 'G:/odds_game/odds_game/lib/Smarty-3.1.13/libs/');
  
-define('SMARTY_DIR', 'E:/gisrespository/personal/php/php/odds_game/odds_game/lib/Smarty-3.1.13/libs/');
+define('SMARTY_DIR', '/var/www/odds_game/lib/Smarty-3.1.13/libs/');
 
 //define('SMARTY_DIR', 'D:/gitspace/odds_game/odds_game/lib/Smarty-3.1.13/libs/');
 // define('SMARTY_DIR', 'D:/workspace4php/odds_game/odds_game/lib/Smarty-3.1.13/libs/');
@@ -48,7 +51,7 @@ ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.SMARTY_DIR);
 //define('BASE_HOME', "D:/gitspace/odds_game/odds_game/");
 //define('BASE_HOME', "G:/odds_game/odds_game/");
  
-define('BASE_HOME', "E:/gisrespository/personal/php/php/odds_game/odds_game/");
+define('BASE_HOME', "/var/www/odds_game/");
 //define('BASE_HOME', "D:/workspace4php/odds_game/odds_game/");
 //define('BASE_HOME', "G:/odds_game/odds_game/");
 //define('BASE_HOME', "D:/work/workspace/phpspace/odds_game/odds_game/");
@@ -56,7 +59,7 @@ define('BASE_HOME', "E:/gisrespository/personal/php/php/odds_game/odds_game/");
  
 //获得http路径的地址
 //define('DOMAIN_HOME', $_SERVER['HTTP_HOST']);
-define('DOMAIN_HOME', "http://localhost/");
-define('URL_ROOT', "http://localhost/");
+define('DOMAIN_HOME', "http://ibo123.com/odds_game/htcdoc/");
+define('URL_ROOT', "http://ibo123.com/odds_game/htcdoc/");
 
 ?>

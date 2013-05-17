@@ -1,6 +1,5 @@
 <?php
 include "../configs/load.php";
-include BASE_HOME."includes/IboUser.class.php";
 include BASE_HOME.'includes/saetv2.ex.class.php';
 require_once(BASE_HOME."/includes/Tencent.php");
 

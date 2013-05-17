@@ -1,32 +1,32 @@
 <?php
 include "../configs/load.php";
-include BASE_HOME."includes/IboUser.class.php";
 include BASE_HOME.'includes/saetv2.ex.class.php';
 require_once(BASE_HOME."/includes/Tencent.php");
 
 
 
-if(array_key_exists("email", $_GET) && array_key_exists("password", $_GET)){
-	$email = $_GET['email'];
-	$pass = $_GET['password'];
-	$userdb = new IboUser($dbutil);
-	$user = $userdb->getUser($email);
-	if($user){
-		if(encodePassword($pass) == $user->user_passwd){
-			$user->user_exp = $user->user_exp + 5;
-			$userdb->updateUserMessage(array('user_exp'=>$user->user_exp), $user->user_id);
-			$_SESSION['user'] = $user;
-			
-			$smarty->assign("logintem", "loginsuccess.tpl");
-		}else{
-			$smarty->assign("logintem", "loginForm.tpl");
-			$smarty->assign("loginInfo", "用户名密码不正确!");
+
+if(array_key_exists("email", $_POST) && array_key_exists("password", $_POST)){
+	$email = $_POST['email'];
+	$pass = $_POST['password'];
+	$checks = checkLoginState($email, encodePassword($pass), $dbutil);
+	if(!is_int($checks)){
+		if(isset($_POST['holdlogin'])){
+				$cookiemsg = array();
+				$cookiemsg['email'] = $email;
+				$cookiemsg['key'] = passport_encrypt(encodePassword($pass) , COOKIEENCRYPTKEY);
+				setcookie("usermsg", json_encode($cookiemsg), time() + 3600 * 24 * 30);
 		}
-	}
-	else{
+			
+		$smarty->assign("logintem", "loginsuccess.tpl");
+	}else if($checks == 2){
+		$smarty->assign("logintem", "loginForm.tpl");
+		$smarty->assign("loginInfo", "用户名密码不正确!");
+	}else{
 		$smarty->assign("logintem", "loginForm.tpl");
 		$smarty->assign("loginInfo", "用户名不存在!");
 	}
+	
 	
 }else{
 	define( "WB_AKEY" , '995123813' );

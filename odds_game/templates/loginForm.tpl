@@ -1,7 +1,7 @@
 <div class="login">
 <p>{{$othererror}}</p>
              <p class="title-p">登录爱博</p>
-             <form onsubmit="return bsubmit();">
+             <form onsubmit="return bsubmit();" method="post">
              	<div class="loginioc">
                 	<ul>
                     	<li class="user-ioc">登录</li>
@@ -18,7 +18,7 @@
                             	<td><input id="password" type="password" class="login-inp" name="password" /></td>
                             </tr>
                             <tr>
-                            	<td style="color:#a0a1a1;"><input type="checkbox"/>&nbsp;&nbsp;记住登录状态<a href="#" style="color:#a0a1a1; float:right; text-decoration:underline;">忘记密码</a></td>
+                            	<td style="color:#a0a1a1;"><input type="checkbox" name="holdlogin"/>&nbsp;&nbsp;记住登录状态<a href="#" style="color:#a0a1a1; float:right; text-decoration:underline;">忘记密码</a></td>
                             </tr>
                              <tr>
                             	<td><input type="submit" value="登录爱博" class="login-but login-bg1" /><br />

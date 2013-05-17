@@ -1,33 +1,40 @@
 <?php
 include '../configs/load.php';
-include BASE_HOME."includes/IboUser.class.php";
 header("Content-type: text/plain; charset=utf-8");
-$msg = "";
+$msg = array();
 
-if(array_key_exists("email", $_GET) && array_key_exists("password", $_GET)){
-	$email = $_GET['email'];
-	$pass = $_GET['password'];
-	$userdb = new IboUser($dbutil);
-	$user = $userdb->getUser($email);
-	if($user){
-		if(encodePassword($pass) == $user->user_passwd){
-			$user->user_exp = $user->user_exp + 5;
-			$userdb->updateUserMessage(array('user_exp'=>$user->user_exp), $user->user_id);
-			$_SESSION['user'] = $user;
-			
-			$msg = "success:::<div class='user_colum'>欢迎你 : <font>".$user->user_name."</font><br />当前金币："
-			.$user->user_vmoney."&nbsp <a href='".URL_ROOT."manager.php'>管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='logout.php'>退出</a>"
-            ."</div>:::$user->user_vmoney";
-		}else{
-			$msg = "error:::用户名密码不正确！";
+if(array_key_exists("email", $_POST) && array_key_exists("password", $_POST)){
+	$email = $_POST['email'];
+	$pass = $_POST['password'];
+	$holdlogin = $_POST['holdlogin'];
+	
+	$checkd = checkLoginState($email, encodePassword($pass), $dbutil);
+	if(!is_int($checkd)){
+		if($holdlogin == "true"){
+			$cookiemsg = array();
+			$cookiemsg['email'] = $email;
+			$cookiemsg['key'] = passport_encrypt(encodePassword($pass) , COOKIEENCRYPTKEY);
+			setcookie("usermsg", json_encode($cookiemsg), time() + 3600 * 24 * 30);
 		}
-	}
-	else{
-		$msg = "error:::用户不存在！";
+		
+		
+		$user = $checkd;
+		$msg['code'] = "success";
+		$msg['msg'] = "<div class='user_colum'>欢迎你 : <font>".$user->user_name."</font><br />当前金币："
+			.$user->user_vmoney."&nbsp <a href='".URL_ROOT."manager.php'>管理中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='logout.php'>退出</a>"
+            ."</div>";
+        $msg['money'] = $user->user_vmoney;
+	}else if($checkd == 2){
+		$msg['code'] = "error";
+		$msg['msg'] = "用户名密码不正确！";
+	}else if($checkd == 3){
+		$msg['code'] = "error";
+		$msg['msg'] = "用户不存在！";
 	}
 	
 }else{
-	$msg = "error:::请输入登录信息！";
+	$msg['code'] = "error";
+	$msg['msg'] = "请输入登录信息！";
 }
-echo $msg;
+echo json_encode($msg);
 ?>

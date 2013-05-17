@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=UTF-8');
 include "../configs/load.php";
 include BASE_HOME.'includes/saetv2.ex.class.php';
-include BASE_HOME."includes/IboUser.class.php";
+include_once BASE_HOME."includes/IboUser.class.php";
 
 define( "WB_AKEY" , '995123813' );
 define( "WB_SKEY" , '9c0a16dd718ee29b2278342230e6ed2a' );

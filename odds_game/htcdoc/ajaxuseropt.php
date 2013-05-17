@@ -1,6 +1,6 @@
 <?php
 include '../configs/load.php';
-include BASE_HOME."includes/IboUser.class.php";
+include_once  BASE_HOME."includes/IboUser.class.php";
 
 $method = $_GET['method'];
 

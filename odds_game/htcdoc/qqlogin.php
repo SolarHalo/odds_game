@@ -1,7 +1,7 @@
 <?php
 ob_start();
 include "../configs/load.php";
-include BASE_HOME."includes/IboUser.class.php";
+include_once  BASE_HOME."includes/IboUser.class.php";
 require_once(BASE_HOME."/includes/Tencent.php");
 //填写自己的appid
 $client_id = '801324132';

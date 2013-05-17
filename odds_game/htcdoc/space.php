@@ -2,7 +2,7 @@
 include "../configs/load.php";
 include BASE_HOME."/includes/IboBet.class.php";
 include BASE_HOME.'includes/Latestupdate.class.php';
-include BASE_HOME.'includes/IboUser.class.php';
+include_once BASE_HOME.'includes/IboUser.class.php';
 
 $spaceuid = $_GET['uid'];
 $userdb = new IboUser($dbutil);

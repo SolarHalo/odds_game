@@ -5,6 +5,13 @@
 <script type="text/javascript" src="{{$urlroot}}/js/excanvas.min.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/jquery.flot.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/jquery-impromptu.js"></script>
+<style>
+
+ .tickLabel 
+        {
+            color:white;
+        }
+ </style>
 <div id="box">
     <div class="container">  
         <div class="container-left">
@@ -92,8 +99,16 @@ $(document).ready(function(){
 //	if(flag){
 //		myChart.draw();
 //	}
-
-	$.plot("#graph",[{label:"胜",data:voods},{label:"平",data:poods},{label:"负",data:foods}],{'legend':{'backgroundColor':'#FFFFFF'}});
+	var options = {
+		    series: {
+		      lines: { show: true },
+		      points: { show: true }
+		    }
+		  };
+	$.plot("#graph",[{label:"胜",data:voods,lines: { show: true },points: { show: true }},
+		             	{label:"平",data:poods,lines: { show: true },points: { show: true }},
+		             	{label:"负",data:foods,lines: { show: true },points: { show: true }}],
+		             	{'legend':{'backgroundColor':'#FFFFFF'}});
 	
 		
 	

@@ -64,6 +64,12 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
+	$(".touz-bot").click(betNow);
+	
+	$(".tcinput").live("keyup", caculateMoney);
+	
+	getWatchedUserbets();
+	
 	var data = {{$oddsdata}};
 
 	var datas = {{$betStatisticspie}};

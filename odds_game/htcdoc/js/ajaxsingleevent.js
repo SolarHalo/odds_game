@@ -1,18 +1,4 @@
-/**
- * 页面初始化
- */
-$(document).ready(function(){
-	//加载当前事件数据
-	
-	$(".touz-bot").click(betNow);
-	
-	$(".tcinput").live("keyup", caculateMoney);
-	
-	getWatchedUserbets();
-	
-	
-	
-});
+
 function betNow(event){
 	var eid = $(this).attr("un");
 	var om = $("#ownmoney").html();

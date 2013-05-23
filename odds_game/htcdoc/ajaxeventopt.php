@@ -35,6 +35,7 @@ if($method == 'betevent'){
 			$msg['code'] = "error";
 			$msg['msg']="部分赛事已结束，请刷新页面后重新投注！";
 			//echo "error:::部分赛事已结束，请刷新页面后重新投注！";
+			echo json_encode($msg);
 			exit(0);
 		}
 	}
@@ -49,6 +50,7 @@ if($method == 'betevent'){
 				$msg['code'] = "error";
 				$msg['msg']="数据库错误，请重试！";
 				//echo "error:::数据库错误，请重试！";
+				echo json_encode($msg);
 				exit(0);
 			}
 		}

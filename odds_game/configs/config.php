@@ -59,7 +59,10 @@ define('BASE_HOME', "D:/workspace/php/odds_game/odds_game/");
  
 //获得http路径的地址
 //define('DOMAIN_HOME', $_SERVER['HTTP_HOST']);
-define('DOMAIN_HOME', "http://ibo123.com/odds_game/htcdoc/");
-define('URL_ROOT', "http://ibo123.com/odds_game/htcdoc/");
+//define('DOMAIN_HOME', "http://ibo123.com/odds_game/htcdoc/");
+//define('URL_ROOT', "http://ibo123.com/odds_game/htcdoc/");
+
+define('DOMAIN_HOME', "http://localhost/");
+define('URL_ROOT', "http://localhost/");
 
 ?>

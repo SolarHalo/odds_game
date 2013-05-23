@@ -32,6 +32,7 @@ $historyOdds = json_encode($historyOdds);
 $smarty->assign("mainmenu" , "gamecenter"); 
 $smarty->assign('event',$event);
 $smarty->assign('betStatistics',$betStatistics);
+$smarty->assign('betStatisticspie',json_encode($betStatistics));
 $smarty->assign('oddsdata',$historyOdds);
 
 $smarty->display("singleevent.tpl");

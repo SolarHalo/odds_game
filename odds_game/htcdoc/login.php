@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include "../configs/load.php";
 include BASE_HOME.'includes/saetv2.ex.class.php';
 require_once(BASE_HOME."/includes/Tencent.php");
@@ -17,7 +18,11 @@ if(array_key_exists("email", $_POST) && array_key_exists("password", $_POST)){
 				$cookiemsg['key'] = passport_encrypt(encodePassword($pass) , COOKIEENCRYPTKEY);
 				setcookie("usermsg", json_encode($cookiemsg), time() + 3600 * 24 * 30);
 		}
-			
+		$redirectUrl = $_GET['redirectUrl'];
+		//登陆成功后，直接转向当前页面
+		if($redirectUrl!=null){
+			header("Location: ".$redirectUrl);
+		}	
 		$smarty->assign("logintem", "loginsuccess.tpl");
 	}else if($checks == 2){
 		$smarty->assign("logintem", "loginForm.tpl");

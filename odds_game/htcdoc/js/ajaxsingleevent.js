@@ -8,12 +8,16 @@ $(document).ready(function(){
 	
 	$(".tcinput").live("keyup", caculateMoney);
 	
+	getWatchedUserbets();
+	
+	
+	
 });
 function betNow(event){
-	
+	var eid = $(this).attr("un");
 	var om = $("#ownmoney").html();
 	if(om == "未登录"){
-		locateToLogin();
+		locateToLogin(eid);
 		$(this).val("");
 		return ;
 	}
@@ -27,29 +31,31 @@ function betNow(event){
 	}
 	if(noneM){
 		$.prompt('请为要投注的赛事填写本金！');
+		$(this).val("");
 		return ;
 	}
-	
 	var betodd = {};
-	var eid = $(this).attr("un");
-	var oddname = parent.find(".bold11").text();
+//	var eid = $(this).attr("un");
+	var oddname = parent.find(".betname").text();
 	var odd= parent.find(".bet_odd").text();
 	if(!betodd[eid]){
 		betodd[eid] = {};
 	}
 	betodd[eid][oddname] = {'odd': odd, 'oddname': oddname, 'betmoney': m};
-	
 	$.ajax({
 		'url': 'ajaxeventopt.php',
-		'data': {'method': 'betevent','betodd' :betodd},
+		'data': {'method': 'betevent', 'betodd' :betodd},
+		'dataType': 'json',
 		'success': function(data){
-			data = data.split(":::");
-			if(data[0].trim() == "error"){
-				alert(data[1]);
-			}else{
+			if(data.code == "success"){
 				window.location.href="singleevent.php?eventid="+eid;
+			}else{
+				$.prompt(""+data.msg);
 			}
 		},
+		'error':function(XMLHttpRequest, textStatus, errorThrown){
+			$.prompt(textStatus);
+		}
 	});
 }
 
@@ -58,15 +64,12 @@ function betNow(event){
  */
 function caculateMoney(event){
 	
-	$("#beterror4s").html("");
-	
 	var om = $("#ownmoney").html();
+	var eid = $(this).attr('un');
 	if(om == "未登录"){
-		locateToLogin();
+		locateToLogin(eid);
 		$(this).val("");
 		return ;
-	}else{
-		alert("logged");
 	}
 	om = Number(om);
 	var el = $(this);
@@ -96,15 +99,108 @@ function caculateMoney(event){
 	
 }
 
-function locateToLogin(){
+function locateToLogin(eventid){
 	$.prompt("您还未登录，请先登录!", {
 		title: "跳转到登录页面?",
 		buttons: { "是": true, "否": false },
 		submit: function(e,v,m,f){
 			if(v){
-				window.location = "login.php";
+				var pageto = "singleevent.php?eventid="+eventid;
+				window.location = "login.php?redirectUrl="+pageto;
 			}
 		}
 	});
 }
+
+//关注的用户
+function getWatchedUserbets(){
+	$.ajax({
+		'url': 'getWathedUserbet.php',
+		'success': function(data){
+			$("#watcheduserbet").html(data);
+		}
+	})
+}
+
+//当前赔率图
+function betline(data){
+//var data = {{$oddsdata}};
+	
+	var voods = new Array();
+	var poods = new Array();
+	var foods = new Array();
+	
+	var v = 0;
+	var p = 0;
+	var f = 0;
+
+	for (var d in data){
+		for(var k in data[d]){
+			if(k=="victory"){
+				voods[v] = [v,parseFloat(data[d][k])];
+				v++;
+			}
+			else if(k=="planish"){
+				
+				poods[p] = [p,parseFloat(data[d][k])];
+				p++;
+			}
+			else if(k=="fail"){
+				foods[f] = [f,parseFloat(data[d][k])];
+				f++;
+			}
+		}
+	}
+
+	var options = {
+		    series: {
+		      lines: { show: true },
+		      points: { show: true }
+		    }
+		  };
+	$.plot("#betline",[{label:"主胜",data:voods,lines: { show: true },points: { show: true },color: '#006A4C',},
+		             	{label:"主平",data:poods,lines: { show: true },points: { show: true },color: '#E8CE35'},
+		             	{label:"主负",data:foods,lines: { show: true },points: { show: true },color: '#A03B3E'}],
+		             	{'grid':{'color': '#FFFFFF'}});
+
+}
+
+//用户投注比例
+function betpie(datas){
+//	var datas = {{$betStatisticspie}};
+	var pieData = [];
+	for(var i=0;i<datas.length;i++){
+		var statistic = datas[i];
+		if("主胜"==statistic.odds_name){
+			pieData[i]={label: statistic.odds_name, data: statistic.sumUser, color: '#006A4C'};
+		}else if("主平"==statistic.odds_name){
+			pieData[i]={label: statistic.odds_name, data: statistic.sumUser, color: '#E8CE35'};
+		}else{
+			pieData[i]={label: statistic.odds_name, data: statistic.sumUser, color: '#A03B3E'};
+		}
+	}
+		 $.plot($("#betpie"), pieData,
+		           {
+		            series: {
+		                pie: {
+		                    show: true,
+		                    radius: 1,
+		                    label: {
+		                        show: true,
+		                        radius: 2 / 3,
+		                        formatter: function (label, series) {
+		                            return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label + '<br/>' + series.data[0][1] + '('+Math.round(series.percent)+'%)</div>';
+
+		                        },
+		                        threshold: 0.1,
+		                    }
+		                }
+		            },
+		            legend: {
+		                show: true,
+		                backgroundColor:'#FFFFFF'
+		            },
+		        });
+}
+
 

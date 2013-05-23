@@ -176,7 +176,7 @@ class IboEvent{
 	 * @param $event_id
 	 */
 	function getEventById($event_id){
-		$sql = "select * from ibo_event where event_id='".$event_id."'";
+		$sql = "select * from ibo_event where event_id=$event_id ";
 		return $this->dbutil->get_row($sql);
 	}
 }

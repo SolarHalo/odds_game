@@ -112,6 +112,27 @@ var userOpt = function(){
 				$("<span id='updateValue' style='float: left;'><input id='tagsInput' type='file' name='tagsInput' size='20' /></span>").appendTo("#"+elementid +" a:last");
 				$("<span id='updateButton' style='float: left;'><input type='button' value='上传' onclick='userOpt.updatePhoto(\""+elementid+"\")'/></span>").appendTo("#"+elementid +" span:last");
 			}
+		},
+		watch:function(userid,watchUserid,watch){
+			var method = "watchuser";
+			$.ajax({
+				'url': "ajaxuseropt.php",
+				'data': {'method': method, 'userid': userid,
+					'watchUserid':watchUserid,'watch':watch},
+				'success': function( data ){
+					eval(" var obj = "+data);
+					if("yes" == obj.result){
+						if(watch == 1){
+							$("#watchUsers").attr('href',"javascript:userOpt.watch('"+userid+"','"+watchUserid+"','0');");
+							$("#watchUsers").text("关注");
+							
+						}else{
+							$("#watchUsers").attr('href',"javascript:userOpt.watch('"+userid+"','"+watchUserid+"','1');");
+							$("#watchUsers").text("取消关注");
+						}
+					}
+				}
+			});
 		}
 	}
 }();

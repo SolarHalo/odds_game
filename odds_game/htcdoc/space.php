@@ -39,7 +39,7 @@ if($spacetype =="his"||$spacetype =="all"){
 	$spacebetsHistory = $betdb->getAllBetHistory4User($spaceuser->user_email,$spacetype == "his");
 }
 //if($user){
-	$watch = $watchUserDb->checkWatchUser($userid, $spaceuid);
+	$watch = $watchUserDb->checkWatchUser( $spaceuid,$userid);
 	$smarty->assign("watch" ,$watch);
 	$smarty->assign("userid" , $userid);
 	

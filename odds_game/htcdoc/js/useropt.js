@@ -133,6 +133,24 @@ var userOpt = function(){
 					}
 				}
 			});
+		},
+		
+		watchuserlist:function(userid,watchUserid,site){
+			var method = "watchuserlist";
+			$.ajax({
+				'url': "ajaxuseropt.php",
+				'data': {'method': method, 'userid': userid,
+					'watchUserid':watchUserid},
+				'success': function( data ){
+					eval(" var obj = "+data);
+					var html = "";
+					for(var watcher in  obj){
+						html += "<li><span> <a href='space.php?uid="+obj[watcher].userid+"'> "+
+							"<img src='"+obj[watcher].photo+"'  />粉丝："+obj[watcher].wcount+"</a></span></li>";
+					}
+					$('#watchuserlist').append(html);
+				}
+			});
 		}
 	}
 }();

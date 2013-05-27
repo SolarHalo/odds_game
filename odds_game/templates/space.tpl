@@ -29,6 +29,7 @@
                     	经 验 值:<font>{{$spaceuserexp}}</font>
                     </li>
                     
+                    {{if $userid != $spaceuserid}}
                     <li>
                     	
                     	<a id="watchUsers" class="guanzhu"  
@@ -39,10 +40,9 @@
                     		{{if $watch}}
                     		取消关注
                     		{{/if}}
-                    		</a>
-                    	
-                    	
-                    	</li>
+                    	</a>
+                   	</li>
+                   	{{/if}}
                     
                 </ul>
                 <div class="user-hr">
@@ -171,37 +171,19 @@
             </div>
             <div class="top-guanz">
             	<span class="fl">热门关注</span>
-               	 <ul class="fl">
+               	 <ul id='watchuserlist' class="fl">
+               	 
+               	 <script type="text/javascript">
+               	 userOpt.watchuserlist('{{$userid}}','{{$spaceuserid}}','{{$urlroot}}');
+               	 </script>
+               	 <!--
                 	<li>
                     	<span>
-                            <a href="#"><img src="images/uerimge.jpg"/>粉丝：1333</a>
+                            <a href="#"><img src="images/uerimge.jpg" onerror="images/uerimge.jpg" />粉丝：1333</a>
                         </span>
                     </li>
-                    <li>
-                    	<span>
-                            <a href="#"><img src="images/uerimge.jpg"/>粉丝：1333</a>
-                        </span>
-                    </li>
-                    <li>
-                    	<span>
-                            <a href="#"><img src="images/uerimge.jpg"/>粉丝：1333</a>
-                        </span>
-                    </li>
-                    <li>
-                    	<span>
-                            <a href="#"><img src="images/uerimge.jpg"/>粉丝：1333</a>
-                        </span>
-                    </li>
-                    <li>
-                    	<span>
-                            <a href="#"><img src="images/uerimge.jpg"/>粉丝：1333</a>
-                        </span>
-                    </li>
-                    <li>
-                    	<span>
-                            <a href="#"><img src="images/uerimge.jpg"/>粉丝：1333</a>
-                        </span>
-                    </li>
+                   -->
+                   
                 </ul>
             </div>
         </div> 

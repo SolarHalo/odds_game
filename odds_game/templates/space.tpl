@@ -25,6 +25,25 @@
                     	{{$spaceownmoney}}
                     	</font>金币
                     </li>
+                    <li>
+                    	经 验 值:<font>{{$spaceuserexp}}</font>
+                    </li>
+                    
+                    {{if $userid != $spaceuserid}}
+                    <li>
+                    	
+                    	<a id="watchUsers" class="guanzhu"  
+                    		href="javascript:userOpt.watch('{{$userid}}','{{$spaceuserid}}','{{$watch}}');">
+                    		{{if !$watch}}
+                    		关注
+                    		{{/if}}
+                    		{{if $watch}}
+                    		取消关注
+                    		{{/if}}
+                    	</a>
+                   	</li>
+                   	{{/if}}
+                    
                 </ul>
                 <div class="user-hr">
                 	<a href="?spacetype=now&uid={{$spaceuserid}}">正在投注{{$spacetypes}}</a>|<a href="?spacetype=his&uid={{$spaceuserid}}">投注历史</a>
@@ -146,31 +165,25 @@
                 </span>
                 <div style="height:40px; border-left:1px solid #c1c1c1; width:20px;float:left;">&nbsp;</div>
                 <span>
-                	关注者<br />
+                	粉丝<br />
 					<font>{{$spacefans[0]->total}}</font>人
                 </span>
             </div>
             <div class="top-guanz">
             	<span class="fl">热门关注</span>
-                <ul class="fl">
+               	 <ul id='watchuserlist' class="fl">
+               	 
+               	 <script type="text/javascript">
+               	 userOpt.watchuserlist('{{$userid}}','{{$spaceuserid}}','{{$urlroot}}');
+               	 </script>
+               	 <!--
                 	<li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
+                    	<span>
+                            <a href="#"><img src="images/uerimge.jpg" onerror="images/uerimge.jpg" />粉丝：1333</a>
+                        </span>
                     </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
+                   -->
+                   
                 </ul>
             </div>
         </div> 

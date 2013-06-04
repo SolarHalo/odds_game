@@ -138,16 +138,26 @@ function betline(data){
 		}
 	}
 
-	var options = {
-		    series: {
-		      lines: { show: true },
-		      points: { show: true }
-		    }
-		  };
+	options = {
+            // the color theme used for graphs
+            grid:{color:'#FFFFFF'},
+            legend: {
+                show: true,
+                noColumns: 1, // number of colums in legend table
+                labelFormatter: null, // fn: string -> string
+                labelBoxBorderColor: "#ccc", // border color for the little label boxes
+                container: null, // container (as jQuery object) to put legend in, null means default on top of graph
+                position: "ne", // position of default legend container within plot
+                margin:-40, // distance from grid edge to default legend container within plot
+                backgroundColor: null, // null means auto-detect
+                backgroundOpacity: 0, // set to 0 to avoid background
+                sorted: null    // default to no legend sorting
+            }
+	}
 	$.plot("#betline",[{label:"主胜",data:voods,lines: { show: true },points: { show: true },color: '#006A4C',},
 		             	{label:"主平",data:poods,lines: { show: true },points: { show: true },color: '#E8CE35'},
 		             	{label:"主负",data:foods,lines: { show: true },points: { show: true },color: '#A03B3E'}],
-		             	{'grid':{'color': '#FFFFFF'}});
+		             	options);
 
 }
 
@@ -184,7 +194,9 @@ function betpie(datas){
 		            },
 		            legend: {
 		                show: true,
-		                backgroundColor:'#FFFFFF'
+		                backgroundColor:'#FFFFFF',
+		                backgroundOpacity: 0,
+		                color:'#FFFFFF'
 		            },
 		        });
 }

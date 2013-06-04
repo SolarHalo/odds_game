@@ -12,6 +12,11 @@
         {
             color:white;
         }
+        
+  .legendLabel{
+  	color:white;
+  }
+  
  </style>
 <div id="box">
     <div class="container">  
@@ -33,8 +38,13 @@
                     <li class="w2"> <p>共 {{$betStatistic->sumUser}} 人购买&nbsp;&nbsp;总金额{{$betStatistic->sumVmoney}}</p></li>
                     <li class="w3">输入本金&nbsp;<input type="text" class="tcinput" un="{{$event->event_id}}"/></li>
                     <li class="w4">
-	                                                     预计返还本金： <font class="rmoney">0</font> 
+	                                                     预计返还本金： <font class="rmoney">0{{$isexpir}}</font> 
+	                    {{if $isexpired=='t'}}
+	                   		 已过期
+	                   	{{else}}
+	                   	
 	                    <a href="javascript:void(0);"  class="touz-bot" un="{{$event->event_id}}">投注</a>
+	                    {{/if}}
                     </li>  
                 </ul>
                 {{/foreach}}

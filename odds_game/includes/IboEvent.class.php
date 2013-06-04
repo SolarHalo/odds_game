@@ -179,5 +179,12 @@ class IboEvent{
 		$sql = "select * from ibo_event where event_id=$event_id ";
 		return $this->dbutil->get_row($sql);
 	}
+	
+	/**
+	 * 查询已过期赛事
+	 */
+	function getEventResult($event_id){
+		return $this->dbutil->get_row("select event_result from ibo_event where event_id = $event_id");
+	}
 }
 ?>

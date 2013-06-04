@@ -5,5 +5,5 @@
                             	<li><font class="{{if $betStatistic->odds_name == '主胜'}}bold11{{elseif $betStatistic->odds_name == '主平'}}bold12{{else}}bold13{{/if}}">{{$betStatistic->odds_name}}</font> <p>共 {{$betStatistic->sumUser}} 人购买&nbsp;&nbsp;总金额{{$betStatistic->sumVmoney}}</p></li>
                             {{/foreach}}
                             </ul>
-                            <img src="images/bg_icon.gif" />
+                           
                         </div>

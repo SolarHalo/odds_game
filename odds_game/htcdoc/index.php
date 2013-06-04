@@ -19,5 +19,4 @@ $smarty->assign("totalranks" , $totalRanks);
  
 $smarty->assign("events", $events);
 $smarty->display("index.tpl");
-
 ?>

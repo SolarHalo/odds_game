@@ -72,7 +72,7 @@ var fastbet = true;
             <div class="clumu fudong">
            
                 <span class="bordtop" >&nbsp;</span>
-	            <div class="zongje">总投注金额:<font id="rmoneycount">000.00</font></div> 
+	            <div id="zongje" class="zongje" style="display: none;">总投注金额:<font id="rmoneycount">000.00</font></div> 
 	            <div class="touz">
 	            	<a id="deleteAll" href="javascript:void(0);" class="q-delt">全部删除</a>
 <!--	                <a id="betnow" href="javascript:void(0);" class="touz-bot">投注</a>-->

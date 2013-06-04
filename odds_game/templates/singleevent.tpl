@@ -40,7 +40,7 @@
                     <li class="w4">
 	                                                     预计返还本金： <font class="rmoney">0{{$isexpir}}</font> 
 	                    {{if $isexpired=='t'}}
-	                   		 已过期
+	                   		 &nbsp;&nbsp;<span style="color:#ff0000">已过期</span>
 	                   	{{else}}
 	                   	
 	                    <a href="javascript:void(0);"  class="touz-bot" un="{{$event->event_id}}">投注</a>

@@ -146,31 +146,16 @@
                 </span>
                 <div style="height:40px; border-left:1px solid #c1c1c1; width:20px;float:left;">&nbsp;</div>
                 <span>
-                	关注者<br />
+                	粉丝<br />
 					<font>{{$fans[0]->total}}</font>人
                 </span>
             </div>
             <div class="top-guanz">
             	<span class="fl">热门关注</span>
-                <ul class="fl">
-                	<li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
-                    <li>
-                    	<a href="#"><img src="images/uerimge.jpg"/></a>
-                    </li>
+                <ul id='watchuserlist' class="fl">
+            		<script type="text/javascript">
+               	 	userOpt.watchuserlist('{{$userid}}','{{$spaceuserid}}','{{$urlroot}}');
+               	 	</script>
                 </ul>
             </div>
         </div> 

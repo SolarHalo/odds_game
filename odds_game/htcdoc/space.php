@@ -3,6 +3,10 @@ include "../configs/load.php";
 include BASE_HOME."/includes/IboBet.class.php";
 include BASE_HOME.'includes/Latestupdate.class.php';
 include_once BASE_HOME.'includes/IboUser.class.php';
+include_once BASE_HOME.'includes/IboWatchUser.class.php';
+
+$user = $_SESSION['user'];
+
 
 $spaceuid = $_GET['uid'];
 $userdb = new IboUser($dbutil);
@@ -13,12 +17,17 @@ if($spacetype == null){
 	$spacetype = "all";
 }
 
-if($spaceuser==null){
+if($spaceuser == null || $user == null){
 	echo "<script language='javascript' type='text/javascript'>";
 	echo "window.location.href='".URL_ROOT."'";
 	echo "</script>";
 	exit(0);
 }
+
+$userid = $user->user_id;
+
+$watchUserDb = new IboWatchUser($dbutil);
+
 
 $betdb = new IboBet($dbutil);
 $spacebets = null;
@@ -30,7 +39,12 @@ if($spacetype =="his"||$spacetype =="all"){
 	$spacebetsHistory = $betdb->getAllBetHistory4User($spaceuser->user_email,$spacetype == "his");
 }
 //if($user){
+	$watch = $watchUserDb->checkWatchUser( $spaceuid,$userid);
+	$smarty->assign("watch" ,$watch);
+	$smarty->assign("userid" , $userid);
+	
 	$smarty->assign("spaceownmoney" , $spaceuser->user_vmoney);
+	$smarty->assign("spaceuserexp", $spaceuser->user_exp);
 	$smarty->assign("spaceusername" , $spaceuser->user_name);
 	//$smarty->assign("name" , $user->user_email);
 	$smarty->assign("spaceuserid" , $spaceuser->user_id);

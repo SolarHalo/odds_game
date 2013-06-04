@@ -1,6 +1,7 @@
 <?php
 include '../configs/load.php';
 include_once  BASE_HOME."includes/IboUser.class.php";
+include_once  BASE_HOME."includes/IboWatchUser.class.php";
 
 $method = $_GET['method'];
 
@@ -91,5 +92,32 @@ if($method == "register"){
 			echo json_encode($arr);
 		}
 	}
+}elseif("watchuser" == $method){
+	$userid = $_GET['userid'];
+	$watchUserid = $_GET['watchUserid'];
+	$watch = $_GET['watch'];
+	
+	$userdb = new IboWatchUser($dbutil);
+	$dd = "";
+	if($watch == 1){
+		//取消关注
+		$dd=$userdb->unWatchUser($watchUserid,$userid);
+	}else{
+		//guanzh
+		$dd=$userdb->watchUser($watchUserid,$userid);
+	}
+	$arr = array ('result'=>'yes','error'=>$dd);
+	echo json_encode($arr);
+}elseif("watchuserlist" == $method){
+	$userid = $_GET['userid'];
+	$watchUserid = $_GET['watchUserid'];
+	$userdb = new IboWatchUser($dbutil);
+	
+	$rs = $userdb->watchUserList($userid, $watchUserid);
+	$arr = null;
+	foreach($rs as $data){
+		$arr[] = array('photo'=>$data->photo,'userid'=>$data->userid,"wcount"=>$data->wcount);
+	}
+	echo json_encode($arr);
 }
 ?>

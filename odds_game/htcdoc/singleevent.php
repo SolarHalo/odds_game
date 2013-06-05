@@ -21,6 +21,12 @@ $oddsDb = new IboOdds($dbutil);
 $event = $eventDb->getEventById($eventid);
 $betStatistics = $betDb->getBetStatisticByEventId($eventid);
 
+$expiredevent = $eventDb->getEventResult($eventid);
+$isexpired = 'f';
+if($expiredevent->event_result != '' && $expiredevent->event_result != null){
+	$isexpired = 't';
+}
+
 
 $historyOdds = $oddsDb->getHistoryOddsByEventId($eventid);
 $currentOdd = $oddsDb->getOddsByEventId($eventid);
@@ -34,6 +40,7 @@ $smarty->assign('event',$event);
 $smarty->assign('betStatistics',$betStatistics);
 $smarty->assign('betStatisticspie',json_encode($betStatistics));
 $smarty->assign('oddsdata',$historyOdds);
+$smarty->assign('isexpired',$isexpired);
 
 $smarty->display("singleevent.tpl");
 

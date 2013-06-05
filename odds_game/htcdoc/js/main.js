@@ -32,7 +32,7 @@ $(document).ready(function(){
 	//$(".eventicon").mouseenter(showsingleeventmsg);
 	
 	//$(".eventicon").mouseleave(removesingleeventmsg);
-	$(".eventicon").cluetip({arrows: true, dropShadow: false, ajaxCache: false,showTitle: false,
+	$(".eventiconbt").cluetip({arrows: true, dropShadow: false, ajaxCache: false,showTitle: false,
 		width: 320,height: 160,hoverIntent: false,waitImage:false,sticky: true,
 		positionBy: 'bottomTop',  mouseOutClose: true, delayedClose: 50});
 	

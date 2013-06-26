@@ -36,21 +36,24 @@ a {
 	background:#ce070e;
 	height:46px;
 	padding:10px;
-	}	
+	}
+	/*  ========== 20130527 修改 ↓↓↓↓ ========   */	
 .sw-but{
-	width:123px;
-	height:40px;
+	width:90px;
+	height:31px;
 	display: inline-table;
-	background-image:url(../images/sw-butbg.gif);
-	background-position:top left;
-	text-indent:-9999em;
-	margin-top:3px;
+	background-image:url(../images/but_bg.gif); 
+	margin:10px 0 0 10px;
 	float:right;
+	line-height:31px;
+	font-size:16px;
+	text-align:center; 
+	transition: all 0.0s ease-in-out 0s;
 	}	
-.sw-but:hover{
-	background-position:left -40px;
+.sw-but:hover{ 
 	transition: all 0.0s ease-in-out 0s;
 	}
+	/*  ========== 20130527 修改 ↑↑↑↑ ========   */	
 .nav{
 	float:left;
 	width:975px;
@@ -399,12 +402,13 @@ a {
 	float:left;
 	}
 .top-list li{
-	height:22px;
-	padding-top:6px;
+	padding:6px 0;
 	background:url(../images/hr-bg.gif) bottom left repeat-x;
 	width:245px;
 	margin-left:10px;
 	color:#f0f0f0;
+	display:table;
+
 	}
 .top-list li span{
 	padding:0 10px;
@@ -731,10 +735,10 @@ a {
 .top-guanz ul li{
 	width:35px;
 	float:left;
-	margin:0 7px 5px 0;
+	margin:5px;
 	height:35px;
-	overflow:hidden; 
-	}
+	overflow:hidden;
+	} 
 .top-guanz ul li img{
     border-radius: 3px 3px 3px 3px;
 	width:35px;
@@ -1055,7 +1059,7 @@ a {
 	margin-left:15px;
 	}
 .tcinput{
-	width:85px;
+	width:70px;
 	border:1px solid #666;
 	vertical-align:inherit!important;
 	padding:0!important;
@@ -1119,15 +1123,15 @@ a {
 	width:100px;
 	}
 .list-list li.w2{
-	width:200px;
+	width:180px;
 	text-align:left;
 	padding-left:5px;
 	}
 .w3{
-	width:186px;
+	width:150px;
 	} 
 .list-list li.w4{
-	width:180px;
+	width:236px;
 	padding-left:6px;
 	text-align:left;
 	}  
@@ -1178,9 +1182,11 @@ a {
 	}
 .top-guanz ul li:hover{
 	overflow:inherit;
+	height:100px;
 	}
 .top-guanz ul li a{
 	color:#852225;
+	line-height:27px;
 	}
 .user ul li a.guanzhu{
 	background-image: url("../images/gzioc.gif");
@@ -1250,4 +1256,37 @@ a {
 	float:left;
 }
 
+/*===================================20130527==========================*/
 
+.zhuc-but{
+	background-position:top left;
+	color:#005c42;
+	}
+.dengl-but{
+	background-position: bottom left;
+	color:#ceeae2;
+	}
+.dengl-but:hover{
+	color:#fff;
+	}
+.zhuc-but:hover{
+	background-position:bottom left;
+	color:#fff;
+	}
+/*===================================20130612==========================*/
+
+.user ul li a.guanzhu-Y{
+	display:block; 
+	position:inherit;
+	}
+.top-guanz ul li span{
+	float:left;
+	width:35px;
+	height:35px;
+	overflow:hidden;
+	}
+/*================================20130626========================*/
+.container-r{
+	width:281px;
+	float:left;
+	}

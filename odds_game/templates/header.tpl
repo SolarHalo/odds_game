@@ -3,10 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="{{$urlroot}}style/style.css" type="text/css" rel="stylesheet" />
+<link href="{{$urlroot}}style/jquery.cluetip.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="{{$urlroot}}js/jquery-1.8.0.min.js"></script> 
 <title>IBo123 博彩模拟游戏中心</title>
 </head>
-<BODY>
+<body>
 <div id="box">
 	<div id="head">
     	 <div class="toplogo">
@@ -18,9 +19,12 @@
             </a>
           
           {{if $ownmoney eq '未登录' }}
-		    <a id="trybutton" href="{{$urlroot}}login.php" class="sw-but">
-            	立即试玩
+          	<a href="{{$urlroot}}login.php" class="dengl-but sw-but">
+            	登录
             </a>
+            <a href="{{$urlroot}}register.php" class="zhuc-but sw-but">
+            	注册
+            </a> 
             {{else}} 
             <div class="user_colum">
             	欢迎你 : <font>{{$username}}</font><br />
@@ -31,7 +35,7 @@
             
          </div>
          <ul class="nav">
-         	<li><a href="http://localhost/index.php">首页</a></li>
+         	<li><a href="http://ibo123.com/">首页</a></li>
          	
             <li {{if $mainmenu eq 'gamecenter' }} class="xz" {{/if}}><a href="{{$urlroot}}">游戏中心</a></li>
             <li {{if $mainmenu eq 'latestupdate' }} class="xz" {{/if}}><a href="{{$urlroot}}latestupdate.php">最新动态</a></li>

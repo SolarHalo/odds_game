@@ -34,7 +34,7 @@
                 <span id="ownmoney" style="display:none;">{{$ownmoney}}</span>
                 {{foreach $betStatistics as $key=>$betStatistic}}
                 <ul class="list-list bg1">
-                    <li class="w1"><font class="{{if $betStatistic->odds_name == '主胜'}}bold11{{elseif $betStatistic->odds_name == '主平'}}bold12{{else}}bold13{{/if}} betname">{{$betStatistic->odds_name}}</font>&nbsp;&nbsp;<span class="bet_odd">{{$betStatistic->bet_odd}}</span></li>
+                    <li class="w1"><font class="{{if $betStatistic->odds_name == '胜'}}bold11{{elseif $betStatistic->odds_name == '平'}}bold12{{else}}bold13{{/if}} betname">{{$betStatistic->odds_name}}</font>&nbsp;&nbsp;<span class="bet_odd">{{$betStatistic->bet_odd}}</span></li>
                     <li class="w2"> <p>共 {{$betStatistic->sumUser}} 人购买&nbsp;&nbsp;总金额{{$betStatistic->sumVmoney}}</p></li>
                     <li class="w3">输入本金&nbsp;<input type="text" class="tcinput" un="{{$event->event_id}}"/></li>
                     <li class="w4">

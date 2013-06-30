@@ -62,7 +62,7 @@ define('BASE_HOME', "E:/gisrespository/personal/php/php/odds_game/odds_game/");
 //define('DOMAIN_HOME', "http://ibo123.com/odds_game/htcdoc/");
 //define('URL_ROOT', "http://ibo123.com/odds_game/htcdoc/");
 
-define('DOMAIN_HOME', "http://localhost/");
-define('URL_ROOT', "http://localhost/");
+define('DOMAIN_HOME', "http://localhost/odds_game/odds_game/htcdoc/");
+define('URL_ROOT', "http://localhost/odds_game/odds_game/htcdoc/");
 
 ?>

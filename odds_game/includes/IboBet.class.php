@@ -84,9 +84,9 @@
 	function getBetStatisticByEventId($event_id){
 		//$sql = "select t.odds_name,t.bet_odd ,count(t.user_name) sumUser,sum(t.bet_vmoney) sumVmoney from ibo_bet t where t.event_id='".$event_id."' group by t.odds_name,t.bet_odd";
 		$sql = "select a.odd_name odds_name, a.bet_odd, count(t.user_name) sumUser , sum(case when t.bet_vmoney is null then 0 else t.bet_vmoney end) sumVmoney from "
-				."(select event_id, '主胜' as odd_name, victory as bet_odd from ibo_odds where event_id='".$event_id."' union ALL "
-				."select event_id,'主平' as odd_name, planish as bet_odd from ibo_odds where event_id='".$event_id."' union ALL "
-				."select event_id,'主负' as odd_name, fail as bet_odd from ibo_odds where event_id='".$event_id."' ) a "
+				."(select event_id, '胜' as odd_name, victory as bet_odd from ibo_odds where event_id='".$event_id."' union ALL "
+				."select event_id,'平' as odd_name, planish as bet_odd from ibo_odds where event_id='".$event_id."' union ALL "
+				."select event_id,'负' as odd_name, fail as bet_odd from ibo_odds where event_id='".$event_id."' ) a "
 				."LEFT JOIN ibo_bet t on a.event_id = t.event_id and a.odd_name = t.odds_name group by a.odd_name";
 		
 		return $this->dbutil->get_results($sql);

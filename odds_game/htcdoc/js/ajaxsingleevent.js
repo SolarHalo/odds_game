@@ -154,9 +154,9 @@ function betline(data){
                 sorted: null    // default to no legend sorting
             }
 	}
-	$.plot("#betline",[{label:"主胜",data:voods,lines: { show: true },points: { show: true },color: '#006A4C',},
-		             	{label:"主平",data:poods,lines: { show: true },points: { show: true },color: '#E8CE35'},
-		             	{label:"主负",data:foods,lines: { show: true },points: { show: true },color: '#A03B3E'}],
+	$.plot("#betline",[{label:"胜",data:voods,lines: { show: true },points: { show: true },color: '#006A4C',},
+		             	{label:"平",data:poods,lines: { show: true },points: { show: true },color: '#E8CE35'},
+		             	{label:"负",data:foods,lines: { show: true },points: { show: true },color: '#A03B3E'}],
 		             	options);
 
 }
@@ -167,9 +167,9 @@ function betpie(datas){
 	var pieData = [];
 	for(var i=0;i<datas.length;i++){
 		var statistic = datas[i];
-		if("主胜"==statistic.odds_name){
+		if("胜"==statistic.odds_name){
 			pieData[i]={label: statistic.odds_name, data: statistic.sumUser, color: '#006A4C'};
-		}else if("主平"==statistic.odds_name){
+		}else if("平"==statistic.odds_name){
 			pieData[i]={label: statistic.odds_name, data: statistic.sumUser, color: '#E8CE35'};
 		}else{
 			pieData[i]={label: statistic.odds_name, data: statistic.sumUser, color: '#A03B3E'};

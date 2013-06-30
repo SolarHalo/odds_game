@@ -1,0 +1,37 @@
+﻿Merge branch 'master' of https://github.com/SolarHalo/odds_game
+
+Conflicts:
+	odds_game/htcdoc/style/style.css
+	odds_game/templates/header.tpl
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	modified:   .metadata/.log
+#	modified:   .metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs
+#	deleted:    odds_game/htcdoc/js/jscharts.js
+#	modified:   odds_game/htcdoc/style/style.css
+#	deleted:    odds_game/htcdoc/style/style_bak0309.css
+#	deleted:    odds_game/htcdoc/testAlert.php
+#	new file:   odds_game/templates/.header.tpl.swp
+#	modified:   odds_game/templates/eventtable.tpl
+#	modified:   odds_game/templates/header.tpl
+#	modified:   odds_game/templates/index.tpl
+#	modified:   odds_game/templates/singleeventmsg.tpl
+#	modified:   odds_game/templates/space.tpl
+#	new file:   odds_game/templates/test.tpl
+#
+

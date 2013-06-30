@@ -31,7 +31,7 @@ var fastbet = true;
             </div>
         </div>
         <!-- left END -->
-       
+       <div class="container-r">
         <div class="container-right">
         	<span class="cont-r-title-l">
             	&nbsp;投注项
@@ -85,7 +85,7 @@ var fastbet = true;
 	             <span class="bordbot" >&nbsp;</span> 
             </div>
         </div>
-        
+       
             {{include file='ranking.tpl'}}
             
             <div class="container-right" style="margin-top:5px; padding-top:8px;">
@@ -93,7 +93,7 @@ var fastbet = true;
             <div id="watcheduserbet" class="guanzhu_index-list_box" style="position:relative;">
             </div>
         </div>
-        
+      </div> 
      </div>
 </div>
 

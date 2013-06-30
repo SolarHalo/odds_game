@@ -17,12 +17,12 @@ if($spacetype == null){
 	$spacetype = "all";
 }
 
-if($spaceuser == null || $user == null){
-	echo "<script language='javascript' type='text/javascript'>";
-	echo "window.location.href='".URL_ROOT."'";
-	echo "</script>";
-	exit(0);
-}
+//if($spaceuser == null || $user == null){
+//	echo "<script language='javascript' type='text/javascript'>";
+//	echo "window.location.href='".URL_ROOT."'";
+//	echo "</script>";
+//	exit(0);
+//}
 
 $userid = $user->user_id;
 
@@ -38,10 +38,11 @@ if($spacetype =="now"||$spacetype =="all"){
 if($spacetype =="his"||$spacetype =="all"){
 	$spacebetsHistory = $betdb->getAllBetHistory4User($spaceuser->user_email,$spacetype == "his");
 }
-//if($user){
+if($user){
 	$watch = $watchUserDb->checkWatchUser( $spaceuid,$userid);
 	$smarty->assign("watch" ,$watch);
 	$smarty->assign("userid" , $userid);
+}
 	
 	$smarty->assign("spaceownmoney" , $spaceuser->user_vmoney);
 	$smarty->assign("spaceuserexp", $spaceuser->user_exp);

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * 数据库操作类
  * Enter description here ...

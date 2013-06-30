@@ -10,7 +10,7 @@
 			<li class="shij">{{$event->event_time|truncate:16:"":TRUE}}</li>
 			<li class="zhud">{{$event->team_mian_name}}</li>
 			<li class="ked">{{$event->team_sec_name}}</li>
-			<li class="changc"><a href="{{$urlroot}}singleevent.php?eventid={{$event->event_id}}" ><img src="images/i-icon.png"  class="eventiconbt" rel="singleeventmsg.php?eventid={{$event->event_id}}" /></a></li>
+			<li class="changc"><a href="{{$urlroot}}singleevent.php?eventid={{$event->event_id}}" ><img src="{{$urlroot}}images/i-icon.png"  class="eventiconbt" rel="{{$urlroot}}singleeventmsg.php?eventid={{$event->event_id}}" /></a></li>
 			<li class="zhus betbutton"><font class="bold2">{{$event->victory}}</font></li>
 			<li class="ping betbutton"><font class="bold2">{{$event->planish}}</font></li>
 			<li class="zhuf betbutton"><font class="bold2">{{$event->fail}}</font></li>
@@ -21,7 +21,7 @@
 			<li class="shij">{{$event->event_time|truncate:16:"":TRUE}}</li>
 			<li class="zhud">{{$event->team_mian_name}}</li>
 			<li class="ked">{{$event->team_sec_name}}</li>
-			<li class="changc"><a href="{{$urlroot}}singleevent.php?eventid={{$event->event_id}}" ><img src="images/i-icon.png"  class="eventiconbt" rel="singleeventmsg.php?eventid={{$event->event_id}}" /></a></li>
+			<li class="changc"><a href="{{$urlroot}}singleevent.php?eventid={{$event->event_id}}" ><img src="{{$urlroot}}images/i-icon.png"  class="eventiconbt" rel="{{$urlroot}}singleeventmsg.php?eventid={{$event->event_id}}" /></a></li>
 			<li class="zhus betbutton"><font class="bold2">{{$event->victory}}</font></li>
 			<li class="ping betbutton"><font class="bold2">{{$event->planish}}</font></li>
 			<li class="zhuf betbutton"><font class="bold2">{{$event->fail}}</font></li>

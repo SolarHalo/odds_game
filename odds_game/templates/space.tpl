@@ -29,10 +29,10 @@
                     	经 验 值:<font>{{$spaceuserexp}}</font>
                     </li>
                     
-                    {{if $userid != $spaceuserid}}
+                    {{if $userid}}
                     <li>
                     	
-                    	<a id="watchUsers" class="guanzhu"  
+                    	<a id="watchUsers" class="{{if !$watch}}guanzhu{{else}}guanzhu-Y{{/if}}"  
                     		href="javascript:userOpt.watch('{{$userid}}','{{$spaceuserid}}','{{$watch}}');">
                     		{{if !$watch}}
                     		关注

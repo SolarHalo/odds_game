@@ -18,6 +18,8 @@ class Smarty_Ibo extends Smarty {
         $this->setCompileCheck(true);
         $this->left_delimiter = '{{';
 		$this->right_delimiter = '}}';
+		
+		$this->debugging = true;
 
 		//设置缓存,开发调试时关闭,正式使用时开启
 		$this->caching = Smarty::CACHING_OFF;

@@ -32,7 +32,9 @@ $(document).ready(function(){
 	//$(".eventicon").mouseenter(showsingleeventmsg);
 	
 	//$(".eventicon").mouseleave(removesingleeventmsg);
-	$(".eventicon").cluetip({arrows: true, dropShadow: false, ajaxCache: false, positionBy: 'bottomTop', topOffset: -240, mouseOutClose: false, delayedClose: 500});
+	$(".eventiconbt").cluetip({arrows: true, dropShadow: false, ajaxCache: false,showTitle: false,
+		width: 420,height: 220,hoverIntent: false,waitImage:false,sticky: true,
+		positionBy: 'bottomTop',  mouseOutClose: true, delayedClose: 50});
 	
 	
 	getWatchedUserbets();
@@ -109,6 +111,8 @@ function betevent(){
 	cl.find(".gail").html(nodd);
 	$("#betpanel").append(cl);
 	
+	$("#zongje").css("display", "block");
+	
 	showMsg("该投注已经加入到投注单，请稍后填写本金进行投注!");
 }
 
@@ -123,6 +127,11 @@ function deleteMyBet(){
 	delete mybet[eventid][bettype];
 	el.parents(".clumu").remove();
 	$("#eventid_" + eventid).find(bettype == "主胜" ? ".zhus" : ( bettype == "平" ? ".ping" : ".zhuf")).children("font").removeClass("bold1").addClass("bold2");
+	
+	//如果已没有批量投注项，隐藏投注金额显示。
+	if($("#betpanel").children().length == 0){
+		$("#zongje").css("display", "none");
+	}
 }
 
 /**
@@ -177,6 +186,7 @@ function deleteAllBet(){
 		}
 	}
 	$("#betpanel").children().remove();
+	$("#zongje").css("display", "none");
 	mybet = {};
 }
 
@@ -401,7 +411,7 @@ function showsingleeventmsg(){
 		'url': 'singleeventmsg.php',
 		'data': {'eventid': eventid},
 		'success': function(data){
-			el.after(data);
+			$('body').append(data);
 		}
 	})
 	

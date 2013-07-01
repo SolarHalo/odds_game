@@ -47,7 +47,7 @@ if(array_key_exists("email", $_POST) && array_key_exists("password", $_POST)){
 
 	$code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 	
-	$tencentCallBack = OAuth::getAuthorizeURL(DOMAIN_HOME."qqlogin.php");
+	$tencentCallBack = OAuth::getAuthorizeURL("http://www.ibo123.com/odds_game/htcdoc/qqlogin.php");
 	
 	if(array_key_exists("error", $_GET)){
 		$error = $_GET['error'];

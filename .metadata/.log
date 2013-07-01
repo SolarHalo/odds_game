@@ -6832,7 +6832,51 @@ java.lang.NullPointerException
 	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
+<<<<<<< HEAD
+!ENTRY com.zend.php.debug.core 1 0 2013-05-17 20:34:01.296
+!MESSAGE The license for advanced debugging has expired.
+To activate all Zend Studio features, register your license by going to Help | Register.
+To purchase a license, go to the Zend Studio store at http://www.zend.com/store/software/studio. 
+
+!ENTRY com.zend.php.debug.core 1 0 2013-05-17 20:34:01.345
+!MESSAGE The license for advanced debugging has expired.
+To activate all Zend Studio features, register your license by going to Help | Register.
+To purchase a license, go to the Zend Studio store at http://www.zend.com/store/software/studio.
+
+!ENTRY com.zend.php.debug.core 1 0 2013-05-17 20:34:01.381
+!MESSAGE The license for advanced debugging has expired.
+To activate all Zend Studio features, register your license by going to Help | Register.
+To purchase a license, go to the Zend Studio store at http://www.zend.com/store/software/studio. 
+
+!ENTRY com.zend.php.debug.core 1 0 2013-05-17 20:34:01.381
+!MESSAGE The license for advanced debugging has expired.
+To activate all Zend Studio features, register your license by going to Help | Register.
+To purchase a license, go to the Zend Studio store at http://www.zend.com/store/software/studio.
+
+!ENTRY com.zend.php.debug.core 1 0 2013-05-17 20:34:01.385
+!MESSAGE The license for advanced debugging has expired.
+To activate all Zend Studio features, register your license by going to Help | Register.
+To purchase a license, go to the Zend Studio store at http://www.zend.com/store/software/studio. 
+
+!ENTRY com.zend.php.debug.core 1 0 2013-05-17 20:34:01.385
+!MESSAGE The license for advanced debugging has expired.
+To activate all Zend Studio features, register your license by going to Help | Register.
+To purchase a license, go to the Zend Studio store at http://www.zend.com/store/software/studio.
+
+!ENTRY com.zend.php.debug.core 1 0 2013-05-17 20:34:01.393
+!MESSAGE The license for advanced debugging has expired.
+To activate all Zend Studio features, register your license by going to Help | Register.
+To purchase a license, go to the Zend Studio store at http://www.zend.com/store/software/studio. 
+
+!ENTRY com.zend.php.debug.core 1 0 2013-05-17 20:34:01.394
+!MESSAGE The license for advanced debugging has expired.
+To activate all Zend Studio features, register your license by going to Help | Register.
+To purchase a license, go to the Zend Studio store at http://www.zend.com/store/software/studio.
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-17 20:35:16.820
+=======
 !ENTRY org.eclipse.osgi 2 1 2013-05-25 11:00:50.440
+>>>>>>> 18c1f2cfc89bbccfb2bdc1dc6a5b423e76857e03
 !MESSAGE NLS unused message: missingOneOfTwoAttributes in: org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl
 
 !ENTRY org.eclipse.osgi 2 1 2013-05-25 11:00:50.441

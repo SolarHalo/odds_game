@@ -5,6 +5,8 @@
 <script type="text/javascript" src="{{$urlroot}}/js/excanvas.min.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/jquery.flot.js"></script>
 <script type="text/javascript" src="{{$urlroot}}/js/jquery.flot.pie.js"></script>
+<script type="text/javascript" src="{{$urlroot}}/js/jquery.flot.time.js"></script>
+
 <script type="text/javascript" src="{{$urlroot}}/js/jquery-impromptu.js"></script>
 <style>
 

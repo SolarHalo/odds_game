@@ -123,22 +123,35 @@ function betline(data){
 	for (var d in data){
 		for(var k in data[d]){
 			if(k=="victory"){
-				voods[v] = [v,parseFloat(data[d][k])];
+				voods[v] = [strToDate(data[d]["create_time"]),parseFloat(data[d][k])];
 				v++;
 			}
 			else if(k=="planish"){
 				
-				poods[p] = [p,parseFloat(data[d][k])];
+				poods[p] = [strToDate(data[d]["create_time"]),parseFloat(data[d][k])];
 				p++;
 			}
 			else if(k=="fail"){
-				foods[f] = [f,parseFloat(data[d][k])];
+				foods[f] = [strToDate(data[d]["create_time"]),parseFloat(data[d][k])];
 				f++;
 			}
 		}
 	}
+	
+	function strToDate(str)
+	{
+		var new_str = str.replace(/:/g,"-");
+	    new_str = new_str.replace(/ /g,"-");
+	    var arr = new_str.split("-");
+	    var datum = new Date(Date.UTC(arr[0],arr[1]-1,arr[2],arr[3],arr[4],arr[5]));
+	    return datum;
+	} 
 
 	options = {
+			xaxis: {
+			    mode: "time",
+			    timeformat: "%Y-%m-%d %H:%M:%S"
+			},
             // the color theme used for graphs
             grid:{color:'#FFFFFF'},
             legend: {

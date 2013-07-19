@@ -11,7 +11,7 @@
 <div id="box">
 	<div id="head">
     	 <div class="toplogo">
-         	<a href="{{$urlroot}}">
+         	<a href="http://ibo123.com/">
             	<img src="{{$urlroot}}images/logo_ibo123.gif" class="fl"  title="IBO123.COM"/>
             </a>
             <a href="{{$urlroot}}">
@@ -35,7 +35,6 @@
             
          </div>
          <ul class="nav">
-         	<li><a href="http://ibo123.com/">首页</a></li>
          	
             <li {{if $mainmenu eq 'gamecenter' }} class="xz" {{/if}}><a href="{{$urlroot}}">游戏中心</a></li>
             <li {{if $mainmenu eq 'latestupdate' }} class="xz" {{/if}}><a href="{{$urlroot}}latestupdate.php">最新动态</a></li>

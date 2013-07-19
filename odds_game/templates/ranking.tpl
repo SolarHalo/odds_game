@@ -10,21 +10,21 @@
                 <ul class="top-list" data="week">
                 {{foreach $weekranks as $rank}}
                     <li>{{$rank->rank}}.<span><a href="{{$urlroot}}space.php?uid={{$rank->user_id}}">{{if $rank->user_name != ''}}{{$rank->user_name}}{{else}}{{$rank->user_email}}{{/if}}</a></span>
-                    <font>{{$rank->user_vmoney}}</font>分</li>
+                    <font>{{$rank->user_vmoney}}</font>金币</li>
                 {{/foreach}}
                 </ul>
                 
                 <ul class="top-list" style="display: none;" data="month">
                 {{foreach $monthranks as $rank}}
                     <li>{{$rank->rank}}.<span>{{if $rank->user_name != ''}}{{$rank->user_name}}{{else}}{{$rank->user_email}}{{/if}}</span>
-                    <font>{{$rank->user_vmoney}}</font>分</li>
+                    <font>{{$rank->user_vmoney}}</font>金币</li>
                 {{/foreach}}
                 </ul>
                 
                 <ul class="top-list"  style="display: none;" data="total">
                 {{foreach $totalranks as $rank}}
                     <li>{{$rank->rank}}.<span>{{if $rank->user_name != ''}}{{$rank->user_name}}{{else}}{{$rank->user_email}}{{/if}}</span>
-                    <font>{{$rank->user_vmoney}}</font>分</li>
+                    <font>{{$rank->user_vmoney}}</font>金币</li>
                 {{/foreach}}
                 </ul>
                 <span class="bordbot">&nbsp;</span>

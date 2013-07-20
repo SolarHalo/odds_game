@@ -21,6 +21,22 @@ $oddsDb = new IboOdds($dbutil);
 $event = $eventDb->getEventById($eventid);
 $betStatistics = $betDb->getBetStatisticByEventId($eventid);
 
+$betStatisticsorder = array();
+//按照胜平负排序
+if(!empty($betStatistics)){
+	$i = 0;
+	foreach($betStatistics as $key=>$betStatistic){
+		if($betStatistic->odds_name == '胜'){
+			$betStatisticsorder[0]=$betStatistic;
+		}else if($betStatistic->odds_name == '平'){
+			$betStatisticsorder[1]=$betStatistic;
+		}else{
+			$betStatisticsorder[2]=$betStatistic;
+		}
+	}
+	ksort($betStatisticsorder);
+}
+
 $expiredevent = $eventDb->getEventResult($eventid);
 $isexpired = 'f';
 if($expiredevent->event_result != '' && $expiredevent->event_result != null){
@@ -37,8 +53,8 @@ array_push($historyOdds,$currentOdd);
 $historyOdds = json_encode($historyOdds);
 $smarty->assign("mainmenu" , "gamecenter"); 
 $smarty->assign('event',$event);
-$smarty->assign('betStatistics',$betStatistics);
-$smarty->assign('betStatisticspie',json_encode($betStatistics));
+$smarty->assign('betStatistics',$betStatisticsorder);
+$smarty->assign('betStatisticspie',json_encode($betStatisticsorder));
 $smarty->assign('oddsdata',$historyOdds);
 $smarty->assign('isexpired',$isexpired);
 

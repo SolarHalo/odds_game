@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="{{$urlroot}}style/style.css" type="text/css" rel="stylesheet" />
+<link href="{{$urlroot}}style/ibogame_new.css" type="text/css" rel="stylesheet" />
 <link href="{{$urlroot}}style/jquery.cluetip.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="{{$urlroot}}js/jquery-1.8.0.min.js"></script> 
 <title>IBo123 博彩模拟游戏中心</title>

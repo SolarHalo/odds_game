@@ -1,0 +1,131 @@
+ #footer {
+    background: none repeat scroll 0 0 #333;
+    color: #3366FF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+     
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+	display:table;
+	margin:0 auto;
+	width:950px;
+	clear:both;
+}
+#footer-content {
+    margin: 0 auto auto 25px;
+    padding: 10px 5px 10px 0;
+    width: 945px;
+}
+#footer-content .left {
+    float: left;
+    width: 600px;
+}
+.footer_logoimg {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+.category_column {
+    color: #FFFFFF;
+    float: left;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 10px;
+    width: 130px;
+}
+.category_column {
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+#footer ul {
+    font-size: 13px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#util li, #footer li {
+    float: left;
+}
+.category_column UL LI {
+    background-image: url("../images/grey_arrow.gif");
+    background-position: 0 7px;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    float: none !important;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    padding-left: 15px;
+}
+#util li a, #footer li a {
+    display: block;
+}
+.category_column LI a {
+    color: #fff;
+    float: none;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+}
+#footer-content .right {
+    float: right;
+    width: 300px;
+} 
+#footer h2, #footer h2 a {
+    color: #FF0000;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 10px 10px 0;
+    text-decoration: none;
+}
+.footerstart {
+    color: #666666;
+	display:block;
+	margin:0 auto;
+	width:950px;
+	background:#fff;
+	padding:10px 10px 5px 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

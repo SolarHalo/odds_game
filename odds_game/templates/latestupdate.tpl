@@ -82,5 +82,5 @@
 	<!-- left END -->
 </div>
 </div>
-</body>
-</html>
+{{* 引入底部文件 *}}
+{{include file='footer.tpl'}}

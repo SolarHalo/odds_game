@@ -2,6 +2,7 @@
 include "../configs/load.php";
 include BASE_HOME.'includes/saetv2.ex.class.php';
 require_once(BASE_HOME."/includes/Tencent.php");
+header('Access-Control-Allow-Origin: *');
 
 
 define( "WB_AKEY" , '995123813' );

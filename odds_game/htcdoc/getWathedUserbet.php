@@ -1,6 +1,7 @@
 <?php
 include "../configs/load.php";
 include_once  BASE_HOME."includes/IboUser.class.php";
+header('Access-Control-Allow-Origin: *');
 
 $notlogin = false;
 $userbets = array();

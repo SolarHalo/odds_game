@@ -33,8 +33,8 @@
         <div class="api">
         	<p class="title-p">快速登录</p>
             <hr size="1" style="color:#CCC"/>
-            <a href="{{$tencenturl}}"><img src="images/QQlogin.gif" /></a>
-            <a href="{{$sinaauthurl}}"><img src="images/weibologin.gif" /></a>
+            <a href="{{$tencenturl}}"><img src="{{$urlroot}}/images/QQlogin.gif" /></a>
+            <a href="{{$sinaauthurl}}"><img src="{{$urlroot}}/images/weibologin.gif" /></a>
         </div>
 	</div> 
 </div>
@@ -65,7 +65,7 @@ function ajaxlogin(){
 	}
 
 	$.ajax({
-		'url': 'ajaxlogin.php',
+		'url': '{{$urlroot}}/ajaxlogin.php',
 		'data': {'email':email,'password':passwd, 'holdlogin': holdl},
 		'type': 'post',
 		'dataType':'json',

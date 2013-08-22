@@ -4,9 +4,9 @@
 {{foreach $userbets as $userbet}}
 <div class="clumu guanzhu_yonhu_index-list" style="margin-top:0;">
      <span class="bordtop">&nbsp;</span>
-	<div class="guanzhu_yonhu">
+	<div class="guanzhu_yonhu"> 
                 	<div>
-                    	<img src="{{$userbet.0->user_photo}}" />
+                    	<img src="{{$urlroot}}/{{$userbet.0->user_photo}}" />
                         <span>{{if $userbet.0->user_name != ''}}{{$userbet.0->user_name}}{{else}}{{$userbet.0->user_email}}{{/if}}</span>
                         <span>金币：{{$userbet.0->bet_vmoney}}</span>
                         <span>经验值：{{$userbet.0->user_exp}}</span>

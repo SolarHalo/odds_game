@@ -50,7 +50,7 @@ function refreashEvents(){
  */
 function getAllEvents(){
 	$.ajax({
-		'url': 'ajaxeventopt.php',
+		'url': 'http://www.ibo123.com/game/ajaxeventopt.php',
 		'data': {'method': 'getAllEvent'},
 		'success': function(data){
 			$(".bg1").remove();
@@ -241,7 +241,7 @@ function betNow(){
 		}
 		
 		$.ajax({
-			'url': 'ajaxeventopt.php',
+			'url': 'http://www.ibo123.com/game/ajaxeventopt.php',
 			'data': {'method': 'betevent', 'betodd' :betodd},
 			'dataType': 'json',
 			'success': function(data){
@@ -282,7 +282,7 @@ function betNow(){
  */
 function showLoginWindow(){
 	$.ajax({
-		'url': 'windowlogin.php',
+		'url': 'http://www.ibo123.com/game/windowlogin.php',
 		'success': function(data){
 			$("body").append(data);
 			$("#loginwindow").css("top", (window.innerHeight - 350) /2 + $(window).scrollTop() + 195 );
@@ -372,7 +372,7 @@ function fastbetOpt(){
 	beto[eid][bettype] = {'odd': odd, 'oddname': bettype, 'betmoney': bmoney};
 	
 	$.ajax({
-		'url': 'ajaxeventopt.php',
+		'url': 'http://www.ibo123.com/game/ajaxeventopt.php',
 		'data': {'method': 'betevent', 'betodd': beto},
 		'dataType': 'json',
 		'success': function(data){
@@ -408,7 +408,7 @@ function showsingleeventmsg(){
 	var el = $(this);
 	var eventid = el.html();
 	$.ajax({
-		'url': 'singleeventmsg.php',
+		'url': 'http://www.ibo123.com/game/singleeventmsg.php',
 		'data': {'eventid': eventid},
 		'success': function(data){
 			$('body').append(data);
@@ -424,7 +424,7 @@ function removesingleeventmsg(){
 
 function getWatchedUserbets(){
 	$.ajax({
-		'url': 'getWathedUserbet.php',
+		'url': 'http://www.ibo123.com/game/getWathedUserbet.php',
 		'success': function(data){
 			$("#watcheduserbet").html(data);
 		}
